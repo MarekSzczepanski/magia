@@ -35,12 +35,14 @@ const HeroWrap = styled.div`
 `
 const HeroContainer = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
   :first-of-type {
     width: 60%;
   }
   :last-of-type {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 6vw;
     width: 40%;
   }
 `
@@ -60,6 +62,7 @@ const CircleWrap = styled.div`
 `
 const H1 = styled.h1`
   position: relative;
+  max-width: 80%;
   padding-left: 3vw;
   font-size: 6vw;
   -webkit-box-shadow: 0px 0px 20px 2vw #1a1e23;
@@ -75,7 +78,9 @@ const H2 = styled.h2`
   letter-spacing: 1px;
 `
 const HeroBar = styled.div`
+  box-sizing: content-box;
   padding: 0 3vw;
+  border-top: .3vw solid #1a1e23;
   border-bottom: .3vw solid #1a1e23;
   background-color: #ff0420;
 `
@@ -83,7 +88,7 @@ const HeroBarWrap = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  height: 4vw;
+  height: 3vw;
   transform: translateX(105%);
   animation: ${props => props.animation} 19s linear infinite;
 `

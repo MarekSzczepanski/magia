@@ -37,8 +37,9 @@ h1, h2 {
   text-transform: uppercase;
 }
 a {
-  font-size: 1vw;
+  font-size: 1.1vw;
   font-weight: 600;
   text-transform: uppercase;
   text-decoration: none;
+  cursor: pointer;
 }

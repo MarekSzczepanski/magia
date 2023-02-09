@@ -11,8 +11,8 @@ module.exports = {
   siteMetadata: {
     title: `Strony Internetowe Ostróda`,
     description: `Projektowanie i tworzenie stron internetowych w Ostródzie i okolicach.`,
-    author: `Czarodziej`,
-    siteUrl: `https://strony.ostroda.org`,
+    author: `Magia`,
+    siteUrl: `https://magiainternetu.com`,
   },
   plugins: [
     `gatsby-plugin-image`,
