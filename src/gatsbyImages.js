@@ -37,3 +37,17 @@ export const Stars = (props) => {
         />
     )
 }
+
+export const InfographicImage = (props) => {
+    return (
+        <Image
+            src={props.src}
+            alt='wizerunek w internecie'
+            style={{
+                width: '9vw',
+                height: '9vw',
+                filter: 'brightness(0) invert(1)',
+            }}
+        />
+    )
+}

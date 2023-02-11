@@ -21,6 +21,9 @@ const Li = styled.li`
   padding-left: 3vw;
   list-style-type: none;
 `
+const StyledLink = styled(props => <Link {...props} />)`
+  color: #fff;
+`;
 
 const menuElements = [
   'oferta', 'portfolio', 'o nas', 'blog', 'kontakt'
@@ -29,13 +32,13 @@ const menuElements = [
 const Header = ({ siteTitle }) => (
   <StyledHeader>
     <div>
-      <Link to="/">{siteTitle}</Link>
+      <StyledLink to="/">{siteTitle}</StyledLink>
     </div>
     <Nav>
       <Ul>
         {menuElements.map((element, i)=> {
           return <Li key={i}>
-            <Link to={`/${element}`} activeStyle={{color: '#ff0420'}} rel='noopener noreferer'>{element}</Link>
+            <StyledLink to={`/${element}`} activeStyle={{color: '#ff0420'}} rel='noopener noreferer'>{element}</StyledLink>
           </Li>
         })}
       </Ul>

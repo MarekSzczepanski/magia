@@ -29,12 +29,20 @@ body {
   overflow-x: hidden;
   background-color: var(--color1);
 }
-h1, h2, h3, p, li, span, a {
+h1, h2, h3, h4, h5, p, li, span, a, footer {
   font-family: 'Rubik', sans-serif;
-  color: var(--color3)
 }
-h1, h2 {
+h1, h2, h3, h4, h5, footer {
   text-transform: uppercase;
+  letter-spacing: 1px;
+}
+h5 {
+  font-size: 1.6vw;
+  color: var(--color3);
+}
+p {
+  padding-top: .7vw;
+  color: var(--color2);
 }
 a {
   font-size: 1.1vw;
@@ -42,4 +50,7 @@ a {
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
+}
+ol {
+  list-style: decimal inside none;
 }
