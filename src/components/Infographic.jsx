@@ -36,7 +36,7 @@ const InfographicPart = styled.div`
       transform: scale(-1) translateX(-100%);
     }
     > .infographic-part-text {
-      padding: 0 4.5vw 0 0;
+      padding: 0 1.5vw 0 0;
     }
   }
   &:nth-of-type(odd) {
@@ -95,9 +95,10 @@ const InfographicText = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 4.5vw;
+  padding-left: 1.5vw;
 `
 const H5 = styled.h5`
+  font-size: 1.5vw;
   text-align: ${props => props.align ? props.align : 'left'};
 `
 const P = styled.p`
