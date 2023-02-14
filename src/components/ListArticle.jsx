@@ -26,11 +26,12 @@ const ListArticle = ({ allLi }) => (
     <H3>Dlaczego warto mieć <strong>stronę internetową</strong>?</H3>
     <ol>
       {allLi.map((li, i) => {
-        return <Li>
+        return <Li key={i}>
           <strong>{li.strong}</strong>: {li.text}
         </Li>
       })}
     </ol>
+    <a className='button'>bezpłatna wycena</a>
   </Wrap> 
 )
 
