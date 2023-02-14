@@ -94,6 +94,7 @@ const AnimationWrap = styled.div`
 `
 
 const allStars = [
+  {top:'3%', left:'69%', animation: 'transform: translate(1vw, 4vw)'},
   {top:'6%', left:'5%', animation: 'transform: translate(3vw, 6vw)'},
   {top:'7%', left:'40%', animation: 'transform: translate(-2vw, 2vw)'},
   {top:'8%', left:'93%', animation: 'transform: translate(-1vw, -8vw)'},
@@ -101,12 +102,17 @@ const allStars = [
   {top:'13%', left:'75%', animation: 'transform: translate(-7vw, 7vw)'},
   {top:'16%', left:'52%', animation: 'transform: translate(1vw, -3vw)'},
   {top:'17%', left:'90%', animation: 'transform: translate(-7vw, -4vw)'},
+  {top:'18%', left:'29%', animation: 'transform: translate(-7vw, -4vw)'},
   {top:'23%', left:'34%', animation: 'transform: translate(-6vw, 5vw)'},
   {top:'29%', left:'12%', animation: 'transform: translate(-3vw, 1vw)'},
+  {top:'30%', left:'50%', animation: 'transform: translate(-3vw, 2vw)'},
   {top:'32%', left:'55%', animation: 'transform: translate(5vw, -8vw)'},
   {top:'38%', left:'44%', animation: 'transform: translate(-5vw, -5vw)'},
+  {top:'38%', left:'97%', animation: 'transform: translate(2vw, 1vw)'},
+  {top:'40%', left:'54%', animation: 'transform: translate(1vw, 4vw)'},
   {top:'42%', left:'4%', animation: 'transform: translate(7vw, 2vw)'},
   {top:'48%', left:'25%', animation: 'transform: translate(-2vw, 8vw)'},
+  {top:'52%', left:'95%', animation: 'transform: translate(-2vw, 3vw)'},
   {top:'53%', left:'35%', animation: 'transform: translate(2vw, 2vw)'},
   {top:'59%', left:'67%', animation: 'transform: translate(-3vw, 9vw)'},
   {top:'62%', left:'2%', animation: 'transform: translate(7vw, -3vw)'},
@@ -116,8 +122,12 @@ const allStars = [
   {top:'72%', left:'3%', animation: 'transform: translate(7vw, -3vw)'},
   {top:'75%', left:'56%', animation: 'transform: translate(-1vw, -4vw)'},
   {top:'77%', left:'39%', animation: 'transform: translate(2vw, -2vw)'},
+  {top:'84%', left:'32%', animation: 'transform: translate(1vw, -4vw)'},
   {top:'85%', left:'20%', animation: 'transform: translate(-5vw, -4vw)'},
+  {top:'85%', left:'50%', animation: 'transform: translate(-1vw, 1vw)'},
+  {top:'86%', left:'71%', animation: 'transform: translate(5vw, -3vw)'},
   {top:'87%', left:'88%', animation: 'transform: translate(3vw, -2vw)'},
+  {top:'89%', left:'5%', animation: 'transform: translate(2vw, -6vw)'}
 ]
 
 const heroBarHeadings = [
