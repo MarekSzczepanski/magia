@@ -1,18 +1,6 @@
 import * as React from 'react';
 import Image from './components/Image';
 
-export const Wizard = (props) => {
-    return (
-        <Image
-            src='wand.png'
-            alt='czarodziej'
-            style={{
-                width: `${props.width}`
-            }}
-        />
-    )
-}
-
 export const Star = (props) => {
     return (
         <Image
@@ -46,6 +34,20 @@ export const InfographicImage = (props) => {
             style={{
                 width: '9vw',
                 height: '9vw',
+                filter: 'brightness(0) invert(1)',
+            }}
+        />
+    )
+}
+
+export const Shield = () => {
+    return (
+        <Image
+            src='shield.png'
+            alt='bezpieczeństwo'
+            style={{
+                width: '15vw',
+                height: '15vw',
                 filter: 'brightness(0) invert(1)',
             }}
         />

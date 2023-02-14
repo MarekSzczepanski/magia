@@ -11,6 +11,7 @@
     "gatsby-plugin-image": "^3.5.0",
     "gatsby-plugin-manifest": "^5.5.0",
     "gatsby-plugin-sharp": "^5.5.0",
+    "gatsby-remark-responsive-iframe": "^6.6.0",
     "gatsby-source-filesystem": "^5.5.0",
     "gatsby-source-wordpress": "^7.5.0",
     "gatsby-transformer-sharp": "^5.5.0",

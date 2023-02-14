@@ -29,7 +29,7 @@ body {
   overflow-x: hidden;
   background-color: var(--color1);
 }
-h1, h2, h3, h4, h5, p, li, span, a, footer {
+h1, h2, h3, h4, h5, p, li, span, a, footer, strong {
   font-family: 'Rubik', sans-serif;
 }
 h1, h2, h3, h4, h5, footer {
@@ -37,7 +37,6 @@ h1, h2, h3, h4, h5, footer {
   letter-spacing: 1px;
 }
 h5 {
-  font-size: 1.6vw;
   color: var(--color3);
 }
 p {
@@ -53,4 +52,27 @@ a {
 }
 ol {
   list-style: decimal inside none;
+}
+li {
+  list-style-position: inside;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 15vw;
+  height: 3vw;
+  border: .2vw solid var(--color1);
+  font-size: .9vw;
+  text-align: center;
+  letter-spacing: 1px;
+  background-color: var(--color1);
+  color: var(--color3);
+  transition: background-color .2s ease-out, color .2s ease-out;
+}
+.button:hover {
+  background-color: var(--color3);
+  color: var(--color1);
+  border-color: var(--color1);
 }
