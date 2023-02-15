@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Link } from "gatsby"
 import styled from 'styled-components'
 
 const Wrap = styled.article`
@@ -31,7 +32,7 @@ const ListArticle = ({ allLi }) => (
         </Li>
       })}
     </ol>
-    <a className='button'>bezpłatna wycena</a>
+    <Link className='button'>bezpłatna wycena</Link>
   </Wrap> 
 )
 

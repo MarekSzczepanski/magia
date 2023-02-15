@@ -41,7 +41,7 @@ const LiNoBullet = styled.li`
   list-style-type: none;
 `
 const LiSmallPadding = styled.li`
-  padding-bottom: .7vw;
+  padding-bottom: .75vw;
 `
 const H5 = styled.h5`
   font-size: 1.2vw;

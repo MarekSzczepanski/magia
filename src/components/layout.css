@@ -34,13 +34,13 @@ h1, h2, h3, h4, h5, p, li, span, a, footer, strong {
 }
 h1, h2, h3, h4, h5, footer {
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.07vw;
 }
 h5 {
   color: var(--color3);
 }
 p {
-  padding-top: .7vw;
+  padding-top: .75vw;
   color: var(--color2);
 }
 a {
@@ -57,22 +57,28 @@ li {
   list-style-position: inside;
 }
 .button {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 15vw;
   height: 3vw;
+  align-self: center;
+  padding: 0 1.5vw;
   border: .2vw solid var(--color1);
   font-size: .9vw;
   text-align: center;
-  letter-spacing: 1px;
+  letter-spacing: 0.05vw;
   background-color: var(--color1);
   color: var(--color3);
-  transition: background-color .2s ease-out, color .2s ease-out;
+  transition: background-color .2s ease-out, color .2s ease-out, border .2s ease-out;
 }
 .button:hover {
   background-color: var(--color3);
   color: var(--color1);
   border-color: var(--color1);
+}
+.button2:hover {
+  border-color: var(--color3);
+  color: var(--color1);
+  background-color: var(--color3);
 }

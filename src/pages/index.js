@@ -7,6 +7,7 @@ import Hero from '../components/Hero'
 import ListArticle from '../components/ListArticle'
 import Infographic from '../components/Infographic'
 import WhyUs from '../components/WhyUs'
+import KnowledgeNotRequired from '../components/KnowledgeNotRequired'
 
 export const query = graphql`
   query {
@@ -33,7 +34,7 @@ const allLi = [
     text: 'Strona internetowa jest wizytówką Twojej firmy. Może być pierwszym miejscem, w którym potencjalni klienci będą ją oceniać. Posiadanie profesjonalnej i atrakcyjnej witryny wzmacnia pozytywny wizerunek Twojej firmy i buduje dobrą reputację wśród klientów.'
   },
   {
-    strong: 'Wizerunek i reputacja',
+    strong: 'Dostęność',
     text: 'Strona www umożliwia udostępnianie szerokiego zakresu informacji o Twojej działalności, w tym oferty produktów lub usług, godzin pracy, czy lokalizacji. Dostępność tych informacji 24 godziny na dobę, 7 dni w tygodniu, ułatwia klientom dotarcie do niezbędnych danych.'
   },
   {
@@ -58,15 +59,18 @@ const IndexPage = ({data}) => (
       <Infographic></Infographic>
     </WebpagesInfo>
     <WhyUs></WhyUs>
+    <KnowledgeNotRequired></KnowledgeNotRequired>
 
-
-    <h3>Wpisy</h3>
+    {/*
+      <h3>Wpisy</h3>
     {data.allWpPost.edges.map(({ node }) => (
       <div key={node.id}>
         <p>{node.title}</p>
         {node.excerpt ? <p>{node.excerpt.replace('<p>', '').replace('</p>', '')}</p> : null}
       </div>
     ))}
+    */}
+    
   </Layout>
 )
 
