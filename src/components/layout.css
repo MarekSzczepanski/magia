@@ -82,3 +82,9 @@ li {
   color: var(--color1);
   background-color: var(--color3);
 }
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5vw 3vw;
+}
