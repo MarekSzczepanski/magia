@@ -22,10 +22,6 @@ const Layout = ({ children }) => {
     padding: 0;
     font-size: 1.2vw;
     font-weight: 800;
-    text-align: center;
-  `
-  const B = styled.span`
-   
   `
 
   return (
@@ -33,9 +29,9 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
         <main>{children}</main>
         <footer>
-          <P>Spotkajmy się osobiście - <B>Ostróda</B>, <B>Iława</B>, <B>Olsztyn!</B></P>
+          <P>Spotkajmy się osobiście - Ostróda, Iława, Olsztyn!</P>
           <Stars width={'2vw'}></Stars>
-          <P>Zdalnie - <B>cała Polska!</B></P>
+          <P>Zdalnie - cała Polska!</P>
           <Stars width={'2vw'}></Stars>
           <P>© {new Date().getFullYear()} - <Link to='/' rel='noopener noreferer' activeStyle={{color: '#1a1e23', fontSize: '1.2vw', fontWeight: '800'}}>magiainternetu.com</Link></P>
         </footer>

@@ -95,7 +95,6 @@ const AnimationWrap = styled.div`
 
 const allStars = [
   {top:'3%', left:'69%', animation: 'transform: translate(1vw, 4vw)'},
-  {top:'6%', left:'5%', animation: 'transform: translate(3vw, 6vw)'},
   {top:'7%', left:'40%', animation: 'transform: translate(-2vw, 2vw)'},
   {top:'8%', left:'93%', animation: 'transform: translate(-1vw, -8vw)'},
   {top:'10%', left:'15%', animation: 'transform: translate(5vw, 3vw)'},

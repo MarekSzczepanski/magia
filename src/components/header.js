@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import styled from 'styled-components'
+import { Logo } from '../gatsbyImages'
 
 const StyledHeader = styled.header`
   display: flex;
@@ -10,6 +11,21 @@ const StyledHeader = styled.header`
   height: 6vw;
   padding: 0 3vw;
   z-index: 2;
+`
+const LogoParent = styled.div`
+  position: relative;
+  &:after {
+    content: 'magia';
+    display: block;
+    transform: translate(.1vw, -.3vw);
+    font-family: 'Rubik', sans-serif;
+    font-size: 1vw;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .15vw;
+    color: #fff;
+  }
 `
 const Nav = styled.nav`
   padding-left: 3vw;
@@ -31,9 +47,9 @@ const menuElements = [
 
 const Header = ({ siteTitle }) => (
   <StyledHeader>
-    <div>
-      <StyledLink to="/">{siteTitle}</StyledLink>
-    </div>
+    <LogoParent>
+      <StyledLink to="/"><Logo></Logo></StyledLink>
+    </LogoParent>
     <Nav>
       <Ul>
         {menuElements.map((element, i)=> {
