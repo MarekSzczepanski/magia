@@ -1,6 +1,16 @@
 import * as React from 'react';
 import Image from './components/Image';
 
+export const Logo = () => {
+    return (
+        <Image
+            src='logo-red.png'
+            alt='magia internetu'
+            className='logo'
+        />
+    ) 
+}
+
 export const Star = (props) => {
     return (
         <Image
@@ -18,8 +28,8 @@ export const Stars = (props) => {
         <Image
             src='stars.png'
             alt='gwiazdy'
+            class={props => props.class}
             style={{
-                width: `${props.width}`,
                 filter: 'brightness(0) invert(.1)',
             }}
         />

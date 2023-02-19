@@ -88,3 +88,18 @@ footer {
   align-items: center;
   padding: 1.5vw 3vw;
 }
+.logo {
+  width: 4.5vw;
+}
+.stars-hero-bar > div {
+  width: 2vw;
+}
+
+@media(orientation: portrait) {
+  .logo {
+    width: 24vw;
+  }
+  .stars-hero-bar > div {
+    width: 8vw;
+  }
+}

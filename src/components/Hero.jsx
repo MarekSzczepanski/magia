@@ -15,18 +15,31 @@ const Wrap = styled.section`
 const HeroWrap = styled.div`
   display: flex;
   height: 100%;
+  @media (orientation: portrait) {
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 `
 const HeroContainer = styled.div`
   display: flex;
   align-items: center;
   :first-of-type {
     width: 60%;
+    @media (orientation: portrait) {
+      width: 100%;
+    }
   }
   :last-of-type {
     display: flex;
     justify-content: flex-end;
     padding-right: 6vw;
     width: 40%;
+    @media (orientation: portrait) {
+      justify-content: center;
+      width: 100%;
+      padding-right: 0;
+    }
   }
 `
 const CircleWrap = styled.div`
@@ -37,29 +50,48 @@ const CircleWrap = styled.div`
   width: 30vw;
   height: 30vw;
   border-radius: 50%;
-  -webkit-box-shadow: 0 0 10vw #ff0420;
-  -moz-box-shadow: 0 0 10vw #ff0420;
-  box-shadow: 0 0 10vw #ff0420;
+  -webkit-box-shadow: 0 0 12vw #ff0420;
+  -moz-box-shadow: 0 0 12vw #ff0420;
+  box-shadow: 0 0 12vw #ff0420;
   background-color: #ff0420;
   z-index: 2;
+  @media (orientation: portrait) {
+    width: 75vw;
+    height: 75vw;
+    -webkit-box-shadow: 0 0 18vw #ff0420;
+    -moz-box-shadow: 0 0 18vw #ff0420;
+    box-shadow: 0 0 18vw #ff0420;
+  }
 `
 const H1 = styled.h1`
   position: relative;
   max-width: 80%;
   padding-left: 3vw;
   font-size: 6vw;
-  -webkit-box-shadow: 0px 0px 20px 2vw #1a1e23;
-  -moz-box-shadow: 0px 0px 20px 2vw #1a1e23;
-  box-shadow: 0px 0px 20px 2vw #1a1e23;
   background-color: #1a1e23;
   color: #fff;
   z-index: 2;
+  @media (orientation: landscape) {
+    -webkit-box-shadow: 0px 0px 20px 2vw #1a1e23;
+    -moz-box-shadow: 0px 0px 20px 2vw #1a1e23;
+    box-shadow: 0px 0px 20px 2vw #1a1e23;
+  }
+  @media (orientation: portrait) {
+    max-width: 100%;
+    padding: 0;
+    font-size: 12vw;
+    text-align: center;
+    background-color: transparent;
+  }
 `
 const H2 = styled.h2`
   font-size: 5vw;
   text-align: center;
   color: #fff;
   letter-spacing: 1px;
+  @media (orientation: portrait) {
+    font-size: 12vw;
+  }
 `
 const HeroBar = styled.div`
   box-sizing: content-box;
@@ -75,15 +107,25 @@ const HeroBarWrap = styled.div`
   height: 3vw;
   transform: translateX(105%);
   animation: ${props => props.animation} 19s linear infinite;
+  @media (orientation: portrait) {
+    height: 12vw;
+    animation: ${props => props.animationPortrait} 13s linear infinite;
+  }
 `
 const BarH2 = styled.h2`
   font-size: 1.8vw;
   white-space: nowrap;
   letter-spacing: 1px;
   color: #1a1e23;
+  @media (orientation: portrait) {
+    font-size: 5vw;
+  }
 `
 const StarsParent = styled.div`
   padding: 0 3vw;
+  @media (orientation: portrait) {
+    padding: 0 6vw;
+  }
 `
 const AnimationWrap = styled.div`
   position: absolute;
@@ -150,12 +192,12 @@ const Hero = () => (
       </HeroContainer>
     </HeroWrap>
     <HeroBar>
-      <HeroBarWrap animation={animationTo('transform: translateX(-215%)')}>
+      <HeroBarWrap animation={animationTo('transform: translateX(-215%)')} animationPortrait={animationTo('transform: translateX(-600%)')}>
         {heroBarHeadings.map((heading, i) => {
           return <React.Fragment key={i}>
             <BarH2>{heading}</BarH2>
-            <StarsParent>
-              <Stars width='2vw'></Stars>
+            <StarsParent className='stars-hero-bar'>
+              <Stars></Stars>
             </StarsParent>
           </React.Fragment>
         })}
