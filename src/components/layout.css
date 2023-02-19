@@ -94,6 +94,13 @@ footer {
 .stars-hero-bar > div {
   width: 2vw;
 }
+.infographic-image {
+  width: 9vw;
+  height: 9vw;
+}
+footer > .stars {
+  width: 2vw;
+}
 
 @media(orientation: portrait) {
   .logo {
@@ -101,5 +108,9 @@ footer {
   }
   .stars-hero-bar > div {
     width: 8vw;
+  }
+  .infographic-image {
+    width: 18vw;
+    height: 18vw;
   }
 }

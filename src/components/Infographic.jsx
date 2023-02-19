@@ -9,10 +9,17 @@ const Wrap = styled.article`
   width: 60%;
   height: 100%;
   padding: 3vw 6vw;
+  @media (orientation: portrait) {
+    width: 100%;
+    padding: 6vw 3vw;
+  }
 `
 const H3 = styled.h3`
   font-size: 2.4vw;
   color: #1a1e23;
+  @media (orientation: portrait) {
+    font-size: 6vw;
+  }
 `
 const H4 = styled.h4`
   max-width: 60%;
@@ -20,6 +27,11 @@ const H4 = styled.h4`
   font-size: 2.5vw;
   text-align: center;
   color: #fff;
+  @media (orientation: portrait) {
+    max-width: 90%;
+    padding: 3vw 0 6vw;
+    font-size: 7.5vw;
+  }
 `
 const InfographicPart = styled.div`
   display: flex;
@@ -48,6 +60,11 @@ const InfographicPart = styled.div`
     width: 33%;
     height: 12vw;
   }
+  @media (orientation: portrait) {
+    > * {
+      height: 24vw;
+    }
+  }
 `
 const ImageContainer = styled.div`
   display: flex;
@@ -70,6 +87,18 @@ const HalfCircle = styled.div`
     border-top-right-radius: 7vw;
     border-bottom-right-radius: 7vw;
   }
+  @media (orientation: portrait) {
+    width: 12vw;
+    height: 24vw;
+    &:nth-of-type(odd) {
+      border-top-left-radius: 14vw;
+      border-bottom-left-radius: 14vw;
+    }
+    &:nth-of-type(even) {
+      border-top-right-radius: 14vw;
+      border-bottom-right-radius: 14vw;
+    }
+  }
 `
 const Circle = styled.div`
   display: flex;
@@ -84,12 +113,20 @@ const Circle = styled.div`
   background-color: #fff;
   transform: translateX(-50%);
   z-index: 3;
+  @media (orientation: portrait) {
+    top: 6vw;
+    width: 12vw;
+    height: 12vw;
+  }
 `
 const CircleNumber = styled.span`
   position: relative;
   font-size: 4vw;
   color: #1a1e23;
   z-index: 3;
+  @media (orientation: portrait) {
+    font-size: 8vw;
+  }
 `
 const InfographicText = styled.div`
   display: flex;
@@ -100,11 +137,17 @@ const InfographicText = styled.div`
 const H5 = styled.h5`
   font-size: 1.5vw;
   text-align: ${props => props.align ? props.align : 'left'};
+  @media (orientation: portrait) {
+    font-size: 3vw;
+  }
 `
 const P = styled.p`
   font-size: 1.2vw;
   font-weight: 500;
   text-align: ${props => props.align ? props.align : 'left'};
+  @media (orientation: portrait) {
+    font-size: 2.4vw;
+  }
 `
 const VerticalLine = styled.div`
   position: absolute;
@@ -114,6 +157,9 @@ const VerticalLine = styled.div`
   height: 12vw;
   background-color: #fff;
   z-index: 2;
+  @media (orientation: portrait) {
+    height: 24vw;
+  }
 `
 
 const infographicParts = [

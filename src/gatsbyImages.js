@@ -28,7 +28,7 @@ export const Stars = (props) => {
         <Image
             src='stars.png'
             alt='gwiazdy'
-            class={props => props.class}
+            className={'stars'}
             style={{
                 filter: 'brightness(0) invert(.1)',
             }}
@@ -41,9 +41,8 @@ export const InfographicImage = (props) => {
         <Image
             src={props.src}
             alt='wizerunek w internecie'
+            className={'infographic-image'}
             style={{
-                width: '9vw',
-                height: '9vw',
                 filter: 'brightness(0) invert(1)',
             }}
         />

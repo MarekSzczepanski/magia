@@ -7,6 +7,9 @@ const Wrap = styled.article`
   padding: 3vw;
   border-right: .3vw solid #1a1e23;
   background-color: #fff;
+  @media (orientation: portrait) {
+    width: 100%;
+  }
 `
 const H3 = styled.h3`
   font-size: 2.4vw;

@@ -26,6 +26,9 @@ export const query = graphql`
 const WebpagesInfo = styled.section`
   display: flex;
   background-color: #ff0420;
+  @media (orientation: portrait) {
+    flex-direction: column-reverse;
+  }
 `
 
 const allLi = [

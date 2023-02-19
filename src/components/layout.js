@@ -19,6 +19,8 @@ const Layout = ({ children }) => {
   `)
 
   const P = styled.p`
+    display: flex;
+    align-items: center;
     padding: 0;
     font-size: 1.2vw;
     font-weight: 800;
