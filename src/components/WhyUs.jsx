@@ -2,7 +2,7 @@ import * as React from "react"
 import styled from 'styled-components'
 import { Shield } from '../gatsbyImages'
 
-const Wrap = styled.article`
+const Wrap = styled.section`
   padding: 3vw;
   background-color: #1a1e23;
 `
@@ -142,28 +142,30 @@ const all_text = [
 
 const WhyUs = () => (
   <Wrap>
-    <H2>dlaczego magia?</H2>
-    {all_text.map((text, i) => {
-      return <Section key={i}>
-        <Text padding={i%2 ? '0 0 0 6vw' : '0 6vw 0 0'}>
-          <H3>{text.heading}</H3>
-          {text.paragraph}
-        </Text>
-        { !text.noVideo ? <IframeParent>
-          <Iframe
-            src="https://www.youtube.com/embed/QKk8RGBcOaI" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </Iframe>
-        </IframeParent> :
-        <ImageParent>
-          <Shield></Shield>
-        </ImageParent>
-        }
-      </Section>
-    })}
+    <article>
+      <H2>dlaczego magia?</H2>
+      {all_text.map((text, i) => {
+        return <Section key={i}>
+          <Text padding={i%2 ? '0 0 0 6vw' : '0 6vw 0 0'}>
+            <H3>{text.heading}</H3>
+            {text.paragraph}
+          </Text>
+          { !text.noVideo ? <IframeParent>
+            <Iframe
+              src="https://www.youtube.com/embed/QKk8RGBcOaI" 
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </Iframe>
+          </IframeParent> :
+          <ImageParent>
+            <Shield></Shield>
+          </ImageParent>
+          }
+        </Section>
+      })}
+    </article>
   </Wrap>
 )
 

@@ -8,12 +8,20 @@ const Wrap = styled.article`
   border-right: .3vw solid #1a1e23;
   background-color: #fff;
   @media (orientation: portrait) {
+    position: ${props => props.isActive ? 'static' : 'absolute'};
+    transform: translateX(${props => props.isActive ? '0' : '100%'});
     width: 100%;
+    padding: 6vw 3vw;
+    transition: transform .5s ease-out;
   }
 `
 const H3 = styled.h3`
   font-size: 2.4vw;
   color: #1a1e23;
+  @media (orientation: portrait) {
+    font-size: 9vw;
+    text-align: center;
+  }
 `
 const Li = styled.li`
   padding-bottom: 1.5vw;
@@ -23,10 +31,24 @@ const Li = styled.li`
   &:first-of-type {
     padding-top: 3vw;
   }
+  @media (orientation: portrait) {
+    padding-bottom: 6vw;
+    font-size: 5vw;
+    line-height: 8vw;
+    &:first-of-type {
+      padding-top: 9vw;
+    }
+  }
+`
+const Container = styled.div`
+  @media (orientation: portrait) {
+    display: flex;
+    justify-content: center;
+  }
 `
 
-const ListArticle = ({ allLi }) => (
-  <Wrap>
+const ListArticle = ({ allLi, isActive }) => (
+  <Wrap isActive={isActive}>
     <H3>Dlaczego warto mieć <strong>stronę internetową</strong>?</H3>
     <ol>
       {allLi.map((li, i) => {
@@ -35,7 +57,9 @@ const ListArticle = ({ allLi }) => (
         </Li>
       })}
     </ol>
-    <Link className='button'>bezpłatna wycena</Link>
+    <Container>
+      <Link className='button'>bezpłatna wycena</Link>
+    </Container>
   </Wrap> 
 )
 

@@ -51,18 +51,21 @@ const InfographicPart = styled.div`
       padding: 0 1.5vw 0 0;
     }
   }
-  &:nth-of-type(odd) {
-    > .infographic-part-text {
-
-    }
-  }
   > * {
     width: 33%;
     height: 12vw;
   }
   @media (orientation: portrait) {
+    &:nth-of-type(even) {
+      .infographic-half-circle {
+        transform: scale(-1) translateX(calc(-100% + 6vw));
+      }
+      > .infographic-part-text {
+        padding: 0;
+      }
+    }
     > * {
-      height: 24vw;
+      height: 36vw;
     }
   }
 `
@@ -88,15 +91,16 @@ const HalfCircle = styled.div`
     border-bottom-right-radius: 7vw;
   }
   @media (orientation: portrait) {
-    width: 12vw;
-    height: 24vw;
+    width: 18vw;
+    height: 36vw;
+    transform: translateX(-6vw);
     &:nth-of-type(odd) {
-      border-top-left-radius: 14vw;
-      border-bottom-left-radius: 14vw;
+      border-top-left-radius: 21vw;
+      border-bottom-left-radius: 21vw;
     }
     &:nth-of-type(even) {
-      border-top-right-radius: 14vw;
-      border-bottom-right-radius: 14vw;
+      border-top-right-radius: 21vw;
+      border-bottom-right-radius: 21vw;
     }
   }
 `
@@ -114,9 +118,9 @@ const Circle = styled.div`
   transform: translateX(-50%);
   z-index: 3;
   @media (orientation: portrait) {
-    top: 6vw;
-    width: 12vw;
-    height: 12vw;
+    top: 9vw;
+    width: 18vw;
+    height: 18vw;
   }
 `
 const CircleNumber = styled.span`
@@ -125,7 +129,7 @@ const CircleNumber = styled.span`
   color: #1a1e23;
   z-index: 3;
   @media (orientation: portrait) {
-    font-size: 8vw;
+    font-size: 12vw;
   }
 `
 const InfographicText = styled.div`
@@ -133,12 +137,15 @@ const InfographicText = styled.div`
   flex-direction: column;
   justify-content: center;
   padding-left: 1.5vw;
+  @media (orientation: portrait) {
+    padding-left: 0;
+  }
 `
 const H5 = styled.h5`
   font-size: 1.5vw;
   text-align: ${props => props.align ? props.align : 'left'};
   @media (orientation: portrait) {
-    font-size: 3vw;
+    font-size: 4.5vw;
   }
 `
 const P = styled.p`
@@ -146,7 +153,7 @@ const P = styled.p`
   font-weight: 500;
   text-align: ${props => props.align ? props.align : 'left'};
   @media (orientation: portrait) {
-    font-size: 2.4vw;
+    font-size: 3.6vw;
   }
 `
 const VerticalLine = styled.div`
@@ -158,7 +165,19 @@ const VerticalLine = styled.div`
   background-color: #fff;
   z-index: 2;
   @media (orientation: portrait) {
-    height: 24vw;
+    height: 36vw;
+  }
+`
+const Container = styled.div`
+  display: ${props => props.isReadMoreActive ? 'none' : 'flex'}; 
+  justify-content: center;
+  width: 100%;
+  padding-top: 9vw;
+  &: > h5 {
+    display: flex;
+  }
+  @media (orientation: landscape) {
+    display: none;
   }
 `
 
@@ -190,29 +209,39 @@ const infographicParts = [
   },
 ]
 
-const Infographic = () => (
-  <Wrap>
-    <H3>magia internetu</H3>
-    <H4>korzyści płynące z twojej witryny</H4>
-    {infographicParts.map((part, i) => {
-      return <InfographicPart key={i}>
-        <ImageContainer className='infograpgic-image-container'>
-          <InfographicImage src={part.image} />
-        </ImageContainer>
-        <Circles>
-          <HalfCircle className='infographic-half-circle'></HalfCircle>
-          <Circle>
-            <CircleNumber>{i+1}</CircleNumber>
-          </Circle>
-          <VerticalLine></VerticalLine>
-        </Circles>
-        <InfographicText className='infographic-part-text'>
-          <H5 align={ (i + 1) % 2 ? 'right' : null }>{part.heading}</H5>
-          <P align={ (i + 1) % 2 ? 'right' : null }>{part.paragraph}</P>
-        </InfographicText>
-      </InfographicPart>
-    })}
-  </Wrap>
-)
+const Infographic = ({toggleReadMore, isReadMoreActive}) => {
+
+  const handleClick = () => {
+    toggleReadMore(!isReadMoreActive);
+  }
+
+  return (
+    <Wrap>
+      <H3>magia internetu</H3>
+      <H4>korzyści płynące z twojej witryny</H4>
+      {infographicParts.map((part, i) => {
+        return <InfographicPart key={i}>
+          <ImageContainer className='infograpgic-image-container'>
+            <InfographicImage src={part.image} />
+          </ImageContainer>
+          <Circles>
+            <HalfCircle className='infographic-half-circle'></HalfCircle>
+            <Circle>
+              <CircleNumber>{i+1}</CircleNumber>
+            </Circle>
+            <VerticalLine></VerticalLine>
+          </Circles>
+          <InfographicText className='infographic-part-text'>
+            <H5 align={ (i + 1) % 2 ? 'right' : null }>{part.heading}</H5>
+            <P align={ (i + 1) % 2 ? 'right' : null }>{part.paragraph}</P>
+          </InfographicText>
+        </InfographicPart>
+      })}
+      <Container isReadMoreActive={isReadMoreActive}>
+        <button onClick={handleClick} className='button button3'>dowiedz się więcej</button>
+      </Container>
+    </Wrap>
+  )
+}
 
 export default Infographic

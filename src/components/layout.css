@@ -29,7 +29,7 @@ body {
   overflow-x: hidden;
   background-color: var(--color1);
 }
-h1, h2, h3, h4, h5, p, li, span, a, footer, strong {
+h1, h2, h3, h4, h5, p, li, span, a, footer, strong, button {
   font-family: 'Rubik', sans-serif;
 }
 h1, h2, h3, h4, h5, footer {
@@ -66,11 +66,14 @@ li {
   padding: 0 1.5vw;
   border: .2vw solid var(--color1);
   font-size: .9vw;
+  font-weight: 600;
   text-align: center;
+  text-transform: uppercase;
   letter-spacing: 0.05vw;
   background-color: var(--color1);
   color: var(--color3);
   transition: background-color .2s ease-out, color .2s ease-out, border .2s ease-out;
+  cursor: pointer;
 }
 .button:hover {
   background-color: var(--color3);
@@ -81,6 +84,11 @@ li {
   border-color: var(--color3);
   color: var(--color1);
   background-color: var(--color3);
+}
+.button3 {
+  border-color: var(--color3);
+  color: var(--color3);
+  background-color: var(--color1);
 }
 footer {
   display: flex;
@@ -103,6 +111,9 @@ footer > .stars {
 }
 
 @media(orientation: portrait) {
+  p {
+    padding-top: 1.5vw;
+  }
   .logo {
     width: 24vw;
   }
@@ -110,7 +121,16 @@ footer > .stars {
     width: 8vw;
   }
   .infographic-image {
-    width: 18vw;
-    height: 18vw;
+    width: 24vw;
+    height: 24vw;
+  }
+  h1, h2, h3, h4, h5, footer {
+    letter-spacing: 0.14vw;
+  }
+  .button {
+    height: 12vw;
+    padding: 0 6vw;
+    font-size: 4vw;
+    letter-spacing: 0.2vw;
   }
 }

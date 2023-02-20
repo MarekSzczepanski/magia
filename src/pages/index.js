@@ -8,6 +8,7 @@ import ListArticle from '../components/ListArticle'
 import Infographic from '../components/Infographic'
 import WhyUs from '../components/WhyUs'
 import KnowledgeNotRequired from '../components/KnowledgeNotRequired'
+import { useState } from 'react'
 
 export const query = graphql`
   query {
@@ -28,6 +29,7 @@ const WebpagesInfo = styled.section`
   background-color: #ff0420;
   @media (orientation: portrait) {
     flex-direction: column-reverse;
+    position: relative;
   }
 `
 
@@ -54,15 +56,18 @@ const allLi = [
   },
 ]
 
-const IndexPage = ({data}) => (
-  <Layout>
-    <Hero></Hero>
-    <WebpagesInfo>
-      <ListArticle allLi={allLi}></ListArticle>
-      <Infographic></Infographic>
-    </WebpagesInfo>
-    <WhyUs></WhyUs>
-    <KnowledgeNotRequired></KnowledgeNotRequired>
+const IndexPage = () => {
+  const [isReadMoreActive, toggleReadMore] = useState(false);
+
+  return (
+    <Layout>
+      <Hero></Hero>
+      <WebpagesInfo>
+        <ListArticle allLi={allLi} isActive={isReadMoreActive}></ListArticle>
+        <Infographic toggleReadMore={toggleReadMore} isReadMoreActive={isReadMoreActive}></Infographic>
+      </WebpagesInfo>
+      <WhyUs></WhyUs>
+      <KnowledgeNotRequired></KnowledgeNotRequired>
 
     {/*
       <h3>Wpisy</h3>
@@ -74,8 +79,9 @@ const IndexPage = ({data}) => (
     ))}
     */}
     
-  </Layout>
-)
+    </Layout>
+  )
+}
 
 export const Head = () => <Seo title="Home" />
 export default IndexPage
