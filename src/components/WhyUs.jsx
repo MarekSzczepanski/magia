@@ -5,36 +5,91 @@ import { Shield } from '../gatsbyImages'
 const Wrap = styled.section`
   padding: 3vw;
   background-color: #1a1e23;
+  @media (orientation: portrait) {
+    padding: 6vw 3vw;
+  }
 `
 const H2 = styled.h2`
   padding-bottom: 6vw;
   font-size: 4vw;
   text-align: center;
   color: #ff0420;
+  @media (orientation: portrait) {
+    padding-bottom: 6vw;
+    font-size: 9vw;
+  }
 `
+
+/* remember to change it after adding iframes */
 const Section = styled.section`
   display: flex;
+  align-items: center;
   padding-bottom: 6vw;
   &:nth-of-type(even) {
     flex-direction: row-reverse;
+  }
+  @media (orientation: portrait) {
+    flex-direction: column;
+    align-items: center;
+    &:nth-of-type(even) {
+      flex-direction: column;
+    }
+    > div:last-of-type {
+      display: none;
+    }
+    &:last-of-type {
+      flex-direction: column-reverse;
+      > div:last-of-type {
+        display: flex;
+      }
+    }
   }
 `
 const Text = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 60vw;
   padding: ${props => props.padding};
+  @media (orientation: portrait) {
+    width: 100%;
+    padding: 0;
+  }
 `
 const H3 = styled.h3`
   font-size: 2.5vw;
   color: #ff0420;
+  @media (orientation: portrait) {
+    padding-top: 6vw;
+    font-size: 7.5vw;
+    text-align: center;
+  }
 `
 const H4 = styled.h4`
   padding-bottom: 3vw;
   font-size: 1.5vw;
+  @media (orientation: portrait) {
+    font-size: 5vw;
+    line-height: 9vw;
+    text-align: center;
+  }
+`
+const H4NoPadding = styled.h4`
+  @media (orientation: portrait) {
+    padding-top: 6vw;
+    font-size: 6vw;
+    line-height: 9vw;
+    text-align: center;
+  }
 `
 const Li = styled.li`
   padding-bottom: 1.5vw;
+  @media (orientation: portrait) {
+    padding-bottom: 6vw;
+    font-size: 5vw;
+    line-height: 8vw;
+    text-align: left;
+  }
 `
 const LiNoBullet = styled.li`
   padding-bottom: 1.5vw;  
@@ -42,20 +97,39 @@ const LiNoBullet = styled.li`
 `
 const LiSmallPadding = styled.li`
   padding-bottom: .75vw;
+  @media (orientation: portrait) {
+    padding-bottom: 3vw;
+    text-align: left;
+  }
 `
 const H5 = styled.h5`
   font-size: 1.2vw;
   color: #ff0420;
+  @media (orientation: portrait) {
+    padding-top: 6vw;
+    font-size: 5vw;
+    line-height: 6vw;
+    text-align: center;
+  }
 `
 const P = styled.p`
   font-size: 1.2vw;
   line-height: 2vw;
   color: #fff;
+  @media (orientation: portrait) {
+    font-size: 5vw;
+    line-height: 8vw;
+    text-align: center;
+  }
 `
 const Strong = styled.strong`
   padding-top: .1vw;
   font-size: 1.2vw;
   line-height: 2vw;
+  @media (orientation: portrait) {
+    font-size: 5vw;
+    line-height: 8vw;
+  }
 `
 const IframeParent = styled.div`
   display: flex;
@@ -65,6 +139,11 @@ const Iframe = styled.iframe`
   width: 40vw;
   height: 26.66vw;
   font-size: 1vw;
+  @media (orientation: portrait) {
+    width: 94vw;
+    height: 62.66vw;
+    margin-top: 6vw;
+  }
 `
 const ImageParent = styled.div`
   display: flex;
@@ -78,6 +157,11 @@ const ImageParent = styled.div`
   -webkit-box-shadow: 0 0 10vw #ff0420;
   -moz-box-shadow: 0 0 10vw #ff0420;
   box-shadow: 0 0 10vw #ff0420;
+  @media (orientation: portrait) {
+    width: 80vw;
+    height: 80vw;
+    margin: 6vw 0 9vw;
+  }
 `
 
 const all_text = [
@@ -88,7 +172,7 @@ const all_text = [
       <Li>Wyszukiwarki uwzględniają szybkość ładowania się strony w swoich algorytmach rankingowych. <Strong>Długie ładowanie - niska pozycja w Google</Strong>.</Li>
       <Li>Użytkownicy często korzystają z Internetu na swoich telefonach oraz tabletach, więc szybkość strony jest szczególnie ważna w przypadku użytkowników korzystających z sieci komórkowych.</Li>
     </ul>
-    <h4>Dlaczego nasze strony są wyraźnie szybsze?</h4>
+    <H4NoPadding>Dlaczego nasze strony są wyraźnie szybsze?</H4NoPadding>
     <P>Tworzymy w technologii <Strong>HEADLESS</Strong> - nowatorskiej metodzie umożliwiającej wstępne ładowanie się strony <Strong>zanim</Strong> użytkownik ją odwiedzi - po stronie serwera!</P>
     </P>
   },
@@ -137,9 +221,6 @@ const all_text = [
   }
 ]
 
-
-
-
 const WhyUs = () => (
   <Wrap>
     <article>
@@ -150,9 +231,9 @@ const WhyUs = () => (
             <H3>{text.heading}</H3>
             {text.paragraph}
           </Text>
-          { !text.noVideo ? <IframeParent>
+          { !text.noVideo && false ? <IframeParent>
             <Iframe
-              src="https://www.youtube.com/embed/QKk8RGBcOaI" 
+              src='https://www.youtube.com/embed/QKk8RGBcOaI'
               title="YouTube video player" 
               frameborder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

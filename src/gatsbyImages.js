@@ -54,10 +54,9 @@ export const Shield = () => {
         <Image
             src='shield.png'
             alt='bezpieczeństwo'
+            className='shield'
             style={{
-                width: '15vw',
-                height: '15vw',
-                filter: 'brightness(0) invert(1)',
+                filter: 'brightness(0) invert(1)'
             }}
         />
     )

@@ -109,6 +109,10 @@ footer {
 footer > .stars {
   width: 2vw;
 }
+.shield {
+  width: 15vw;
+  height: 15vw;
+}
 
 @media(orientation: portrait) {
   html {
@@ -139,5 +143,9 @@ footer > .stars {
     padding: 0 6vw;
     font-size: 4vw;
     letter-spacing: 0.2vw;
+  }
+  .shield {
+    width: 35vw;
+    height: 35vw;
   }
 }
