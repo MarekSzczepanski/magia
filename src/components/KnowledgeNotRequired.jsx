@@ -5,23 +5,36 @@ import styled from 'styled-components'
 const Wrap = styled.section`
     padding: 3vw;
     background-color: #1a1e23;
+    @media (orientation: portrait) {
+        padding-bottom: 9vw;
+    }
 `
 const H3 = styled.h3`
     padding-bottom: .75vw;
     font-size: 3vw;
     text-align: center;
     color: #fff;
+    @media (orientation: portrait) {
+        font-size: 7.5vw;
+    }
 `
 const H4 = styled.h4`
     padding-bottom: 3vw;
     font-size: 2vw;
     text-align: center;
     color: #ff0420;
+    @media (orientation: portrait) {
+        padding-top: 3vw;
+        font-size: 6vw;
+    }
 `
 const Ul = styled.ul`
     display: flex;
     justify-content: space-between;
     padding: 3vw 0 9vw;
+    @media (orientation: portrait) {
+        flex-direction: column;
+    }
 `
 const Li = styled.li`
     display: flex;
@@ -33,12 +46,32 @@ const Li = styled.li`
     border-radius: 3vw;
     list-style-type: none;
     background-color: #ff0420;
+    -webkit-box-shadow: 0px 6vw 6vw -3vw rgba(255, 4, 32, 1);
+    -moz-box-shadow: 0px 6vw 6vw -3vw rgba(255, 4, 32, 1);
     box-shadow: 0px 6vw 6vw -3vw rgba(255, 4, 32, 1);
     &:last-of-type > div {
         padding-top: .8vw;
         > p {
             font-size: 1.3vw;
             line-height: 1.8vw;
+        }
+    }
+    @media (orientation: portrait) {
+        width: 100%;
+        height: 134.23vw;
+        margin: 6vw 0 12vw;
+        padding: 9vw 6vw;
+        border-width: .9vw;
+        border-radius: 12vw;
+        -webkit-box-shadow: 0px 12vw 12vw -6vw rgba(255, 4, 32, 1);
+        -moz-box-shadow: 0px 12vw 12vw -6vw rgba(255, 4, 32, 1);
+        box-shadow: 0px 12w 12vw -6vw rgba(255, 4, 32, 1);
+        &:last-of-type > div {
+            padding-top: 3vw;
+            > p {
+                font-size: 6vw;
+                line-height: 9vw;
+            }
         }
     }
 `
@@ -51,6 +84,12 @@ const H5 = styled.h5`
     text-align: center;
     line-height: 2.4vw;
     color: #fff;
+    @media (orientation: portrait) {
+        padding-bottom: 6vw;
+        font-size: 7.5vw;
+        line-height: 9vw;
+        letter-spacing: .3vw;
+    }
 `
 const H6 = styled.h6`
     padding-top: 1.5vw;
@@ -59,16 +98,32 @@ const H6 = styled.h6`
     text-transform: uppercase;
     letter-spacing: .05vw;
     color: #fff;
+    @media (orientation: portrait) {
+        padding-top: 6vw;
+        font-size: 6vw;
+        line-height: 7.5vw;
+        letter-spacing: .15vw;
+    }
 `
 const P = styled.p`
     font-size: 1.1vw;
     font-weight: 500;
     text-align: center;
+    @media (orientation: portrait) {
+        padding-top: 3vw;
+        font-size: 4.5vw;
+        line-height: 6vw;
+    }
 `
 const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @media (orientation: portrait) {
+        > h4 {
+            margin-bottom: 3vw;
+        }
+    }
 `
 
 const cardContent = [

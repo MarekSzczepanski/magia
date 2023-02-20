@@ -148,4 +148,12 @@ footer > .stars {
     width: 35vw;
     height: 35vw;
   }
+  footer {
+    flex-direction: column;
+    padding: 6vw 3vw;
+  }
+  footer > .stars {
+    width: 6vw;
+    margin: 6vw 0;
+  }
 }

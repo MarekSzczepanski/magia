@@ -24,6 +24,27 @@ const Layout = ({ children }) => {
     padding: 0;
     font-size: 1.2vw;
     font-weight: 800;
+    > a {
+      margin-left: 1.5vw;
+      font-size: 1.2vw;
+      color: #1a1e23;
+      &:hover {
+        color: #fff;
+      }
+    }
+    @media (orientation: portrait) {
+      display: flex;
+      flex-direction column;
+      margin-left: 0;
+      font-size: 4.5vw;
+      line-height: 6vw;
+      text-align: center;
+      > a {
+        width: 100%;
+        margin: 3vw 0 0 0;
+        font-size: 4.5vw;
+      }
+    }
   `
 
   return (
@@ -35,7 +56,7 @@ const Layout = ({ children }) => {
           <Stars width={'2vw'}></Stars>
           <P>Zdalnie - cała Polska!</P>
           <Stars width={'2vw'}></Stars>
-          <P>© {new Date().getFullYear()} - <Link to='/' rel='noopener noreferer' activeStyle={{color: '#1a1e23', fontSize: '1.2vw', fontWeight: '800'}}>magiainternetu.com</Link></P>
+          <P>© {new Date().getFullYear()} <Link to='/' rel='noopener noreferer' activeStyle={{fontWeight: '800', transition: 'color .2s ease-in'}}>magiainternetu.com</Link></P>
         </footer>
     </>
   )
