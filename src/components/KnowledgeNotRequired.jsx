@@ -50,7 +50,7 @@ const Li = styled.li`
     -moz-box-shadow: 0px 6vw 6vw -3vw rgba(255, 4, 32, 1);
     box-shadow: 0px 6vw 6vw -3vw rgba(255, 4, 32, 1);
     &:last-of-type > div {
-        padding-top: .8vw;
+        padding-top: .6vw;
         > p {
             font-size: 1.3vw;
             line-height: 1.8vw;
