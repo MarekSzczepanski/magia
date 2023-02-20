@@ -111,6 +111,13 @@ footer > .stars {
 }
 
 @media(orientation: portrait) {
+  html {
+    overflow-x: hidden;
+  }
+  body {
+    position: relative;
+    overflow-x: hidden;
+  }
   p {
     padding-top: 1.5vw;
   }

@@ -14,11 +14,13 @@ const StyledHeader = styled.header`
   z-index: 2;
   @media (orientation: portrait) {
     flex-direction: column;
+    position: fixed;
+    top: 0;
     height: 100vh;
     ${props => props.isActiveOnPortrait ? null : 'transform: translateX(-100%);'}
     background-color: #ff0420;
     transition: transform .2s ease-out;
-    z-index: 3;
+    z-index: 4;
   }
 `
 const LogoParent = styled.div`
@@ -92,7 +94,7 @@ const Burger = styled.div`
   right: 3vw;
   padding: 3vw;
   cursor: pointer;
-  z-index: 3;
+  z-index: 4;
   @media (orientation: landscape) {
     display: none;
   }
