@@ -58,7 +58,7 @@ const ListArticle = ({ allLi, isActive }) => (
       })}
     </ol>
     <Container>
-      <Link className='button'>bezpłatna wycena</Link>
+      <Link to='/' className='button'>bezpłatna wycena</Link>
     </Container>
   </Wrap> 
 )

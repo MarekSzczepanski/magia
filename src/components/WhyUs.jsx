@@ -112,6 +112,16 @@ const H5 = styled.h5`
     text-align: center;
   }
 `
+const Container = styled.div`
+  font-size: 1.2vw;
+  line-height: 2vw;
+  color: #fff;
+  @media (orientation: portrait) {
+    font-size: 5vw;
+    line-height: 8vw;
+    text-align: center;
+  }
+`
 const P = styled.p`
   font-size: 1.2vw;
   line-height: 2vw;
@@ -167,27 +177,29 @@ const ImageParent = styled.div`
 const all_text = [
   {
     heading: 'szybkość',
-    paragraph: <P><ul>
+    paragraph: <Container><ul>
       <Li>Klienci oczekują błyskawicznego załadowania się witryny - <Strong>40% odwiedzających opuszcza stronę, która nie zdąża załadować się w ciągu 3 sekund!</Strong> Każda sekunda opóźnienia witryny przekłada się na 7%-owy spadek sprzedaży. Może się to przekładać na tysiące złotych strat w skali roku.</Li>
       <Li>Wyszukiwarki uwzględniają szybkość ładowania się strony w swoich algorytmach rankingowych. <Strong>Długie ładowanie - niska pozycja w Google</Strong>.</Li>
       <Li>Użytkownicy często korzystają z Internetu na swoich telefonach oraz tabletach, więc szybkość strony jest szczególnie ważna w przypadku użytkowników korzystających z sieci komórkowych.</Li>
     </ul>
     <H4NoPadding>Dlaczego nasze strony są wyraźnie szybsze?</H4NoPadding>
     <P>Tworzymy w technologii <Strong>HEADLESS</Strong> - nowatorskiej metodzie umożliwiającej wstępne ładowanie się strony <Strong>zanim</Strong> użytkownik ją odwiedzi - po stronie serwera!</P>
-    </P>
+    </Container>
   },
   {
     heading: 'responsywność',
-    paragraph: <P>Z Magią masz pewność, że Twoja strona będzie <Strong>w pełni</Strong> responsywna. 
+    paragraph: <Container>
+    <P>Z Magią masz pewność, że Twoja strona będzie <Strong>w pełni</Strong> responsywna. 
     Większość witryn, tworzonych nawet przez renomowane agencje, "rozjeżdża się" na niewielkich laptopach, 
     a na szerokich ekranach komputerów wyświetlany tekst jest zbyt mały.
     Często spotykane są problemy z interfejsem przy zmianie wielkości okna przeglądarki na komputerze, czy przełączaniu widoku z pionowego na poziomy na telefonie.
     Nasze projekty są w pełni dostosowane do <Strong>wszystkich</Strong> urządzeń - komputerów stacjonarnych, laptopów, tabletów, smartfonów, a nawet telewizorów.
     </P>
+    </Container>
   },
   {
     heading: 'UX - doświadczenia użytkownika',
-    paragraph: <P>
+    paragraph: <Container>
       <H4>Nasze strony nie wkurzają!</H4>
       <ul>
         <LiNoBullet>
@@ -204,11 +216,11 @@ const all_text = [
           <P>Nie wprowadzamy internautów w błąd przesadzonym designem, by każdy natychmiast się orientował co do czego służy oraz od razu znalazł to, czego szuka.</P>
         </LiNoBullet>
       </ul>
-    </P>
+    </Container>
   },
   {
     heading: 'Opieka posprzedażowa',
-    paragraph: <P>
+    paragraph: <Container>
       <H4>Utrzymujemy świetne relacje z naszymi klientami</H4>
       <ol>
         <LiSmallPadding>Dbamy o SEO Twojej strony - jej dobrą pozycję w Google.</LiSmallPadding>
@@ -216,7 +228,7 @@ const all_text = [
         <LiSmallPadding>Doradzamy i <Strong>chętnie</Strong> odpowiadamy na Twoje pytania.</LiSmallPadding>
         <LiSmallPadding>Zajmujemy się całością internetowej części Twojego biznesu.</LiSmallPadding>
       </ol>
-    </P>,
+    </Container>,
     noVideo: true
   }
 ]

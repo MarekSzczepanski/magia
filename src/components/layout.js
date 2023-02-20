@@ -7,6 +7,35 @@ import { Stars } from '../gatsbyImages'
 import Header from "./header"
 import "./layout.css"
 
+const P = styled.p`
+  display: flex;
+  align-items: center;
+  padding: 0;
+  font-size: 1.2vw;
+  font-weight: 800;
+  > a {
+    margin-left: 1.5vw;
+    font-size: 1.2vw;
+    color: #1a1e23;
+    &:hover {
+      color: #fff;
+    }
+  }
+  @media (orientation: portrait) {
+    display: flex;
+    flex-direction column;
+    margin-left: 0;
+    font-size: 4.5vw;
+    line-height: 6vw;
+    text-align: center;
+    > a {
+      width: 100%;
+      margin: 3vw 0 0 0;
+      font-size: 4.5vw;
+    }
+  }
+`
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -17,35 +46,6 @@ const Layout = ({ children }) => {
       }
     }
   `)
-
-  const P = styled.p`
-    display: flex;
-    align-items: center;
-    padding: 0;
-    font-size: 1.2vw;
-    font-weight: 800;
-    > a {
-      margin-left: 1.5vw;
-      font-size: 1.2vw;
-      color: #1a1e23;
-      &:hover {
-        color: #fff;
-      }
-    }
-    @media (orientation: portrait) {
-      display: flex;
-      flex-direction column;
-      margin-left: 0;
-      font-size: 4.5vw;
-      line-height: 6vw;
-      text-align: center;
-      > a {
-        width: 100%;
-        margin: 3vw 0 0 0;
-        font-size: 4.5vw;
-      }
-    }
-  `
 
   return (
     <>

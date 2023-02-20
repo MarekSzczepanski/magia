@@ -160,7 +160,7 @@ const KnowledgeNotRequired = () => (
     <H4>jeśli trzeba, <strong>wszystkim</strong> zajmiemy się sami</H4>
     <Ul>
         {cardContent.map((card, i) => {
-            return <Li>
+            return <Li key={i}>
                 <H5>{card.heading}</H5>
                 <div>
                     {card.subheading1 ? <H6>{card.subheading1}</H6> : null}
@@ -178,7 +178,7 @@ const KnowledgeNotRequired = () => (
     </Ul>
     <Container>
         <H4>masz jakiekolwiek wątpliwości?</H4>
-        <Link className='button button2'>zadzwoń po darmową poradę!</Link>
+        <Link to='/' className='button button2'>zadzwoń po darmową poradę!</Link>
     </Container>
   </Wrap> 
 )
