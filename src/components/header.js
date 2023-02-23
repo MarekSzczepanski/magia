@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import styled from 'styled-components'
-import { Logo } from '../gatsbyImages'
+import { Logo, Telephone, Facebook, Youtube } from '../gatsbyImages'
 import { useState } from 'react'
 
 const StyledHeader = styled.header`
@@ -58,12 +58,16 @@ const Nav = styled.nav`
 `
 const Ul = styled.ul`
   display: flex;
+  align-items: center;
   @media (orientation: portrait) {
     flex-direction: column;
   }
 `
 const Li = styled.li`
   list-style-type: none;
+  &.socials {
+    padding-left: 0;
+  }
   @media (orientation: landscape) {
     padding-left: 3vw;
   }
@@ -76,10 +80,24 @@ const Li = styled.li`
     &:hover > a {
       color: #fff;
     }
+    &.phone, &.socials {
+      position: absolute;
+      bottom: 3vh;
+      height: 6vh;
+      border: 0;
+    }
+    &.socials {
+      bottom: 12vh;
+      width: 12vw;
+    }
   }
 `
 const StyledLink = styled(props => <Link {...props} />)`
   color: #fff;
+  transition: color .2s ease-out;
+  &:hover {
+    color: #ff0420;
+  }
   @media (orientation: portrait) {
     font-size: 9vw;
     font-weight: 800;
@@ -93,6 +111,7 @@ const Burger = styled.div`
   top: 3vw;
   right: 3vw;
   padding: 3vw;
+  mix-blend-mode: difference;
   cursor: pointer;
   z-index: 4;
   @media (orientation: landscape) {
@@ -125,9 +144,67 @@ const BurgerBar = styled.div`
     transform: rotate(-45deg);
   }
 `
+const PhoneParent = styled.div`
+  display: flex;
+  align-items: center;
+  > div {
+    width: 1.5vw;
+    height: 1.5vw;
+  }
+  @media (orientation: portrait) {
+    > div {
+      width: 4.5vw;
+      height: 4.5vw;
+    }
+  }
+`
+const A = styled.a`
+  display: flex;
+  align-items: center;
+  padding-left: .9vw;
+  color: #fff;
+  transition: color .2s ease-out;
+  @media (orientation: landscape) {
+    &:hover {
+      color: #ff0420;
+    }
+  }
+  @media (orientation: portrait) {
+    margin-left: 1.5vw;
+    font-size: 4.5vw;
+    font-weight: 800;
+    letter-spacing: .4vw;
+    transition: color .1s ease-in;
+  }
+`
+const SocialsParent = styled.div`
+  > a > div {
+    width: 1.5vw;
+    height: 1.5vw;
+    transition: transform .1s ease-out;
+    &:hover {
+      transform: scale(1.2);
+    } 
+  }
+  &.facebook {
+    margin-left: 1.5vw;
+  }
+  @media (orientation: portrait) {
+    > a > div {
+      width: 6vw;
+      height: 6vw;
+    }
+    &.facebook {
+      margin: 0 24vw 6vh 0;
+    }
+    &.youtube {
+      margin: 0 0 6vh 24vw;
+    }
+  }
+`
 
 const menuElements = [
-  'oferta', 'portfolio', 'o nas', 'blog', 'kontakt'
+  'oferta'/*, 'portfolio', 'o nas', 'blog', 'kontakt'*/
 ]
 
 const Header = () => {
@@ -150,6 +227,22 @@ const Header = () => {
                 <StyledLink to={`/${element}`} activeStyle={{color: '#ff0420'}} rel='noopener noreferer'>{element}</StyledLink>
               </Li>
             })}
+            <Li className='phone'>
+              <PhoneParent>
+                <Telephone></Telephone>
+                <A href="tel:+48723062926">+48 723 062 926</A>
+              </PhoneParent>
+            </Li>
+            <Li className='socials'>
+              <SocialsParent className='facebook'>
+                <A href='https://www.facebook.com/profile.php?id=100090169522227' rel='noreferrer noopener' target='_blank'><Facebook></Facebook></A>
+              </SocialsParent>
+            </Li>
+            <Li className='socials'>
+              <SocialsParent className='youtube'>
+                <A href='https://www.youtube.com/@magia-strony-internetowe' rel='noreferrer noopener' target='_blank'><Youtube></Youtube></A>
+              </SocialsParent>
+            </Li>
           </Ul>
         </Nav>
       </StyledHeader>

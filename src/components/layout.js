@@ -7,31 +7,60 @@ import { Stars } from '../gatsbyImages'
 import Header from "./header"
 import "./layout.css"
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 33%;
+  height: 9vw;
+  > p {
+    color: #fff;
+  }
+  @media (orientation: portrait) {
+    max-width: 100%;
+    height: 48vw;
+  }
+`
 const P = styled.p`
   display: flex;
   align-items: center;
   padding: 0;
   font-size: 1.2vw;
   font-weight: 800;
-  > a {
+  letter-spacing: .1vw;
+  a {
     margin-left: 1.5vw;
-    font-size: 1.2vw;
-    color: #1a1e23;
-    &:hover {
-      color: #fff;
-    }
   }
   @media (orientation: portrait) {
-    display: flex;
-    flex-direction column;
-    margin-left: 0;
     font-size: 4.5vw;
-    line-height: 6vw;
-    text-align: center;
+    justify-content: center;
+    padding-bottom: 3vw;
+    letter-spacing: .3vw;
+  }
+`
+const StyledLink = styled.span`
+  > a {
+    font-size: 1.2vw;
+    font-weight: 800;
+    letter-spacing: .1vw;
+    text-decoration: underline;
+    text-decoration-thickness: .15vw;
+    text-underline-offset: .3vw;
+    color: #1a1e23;
+    transition: color .1s ease-in;
+  }
+  &:hover > a {
+    color: #fff;
+  }
+  @media (orientation: portrait) {
     > a {
+      display: flex;
+      flex-direction column;
       width: 100%;
-      margin: 3vw 0 0 0;
       font-size: 4.5vw;
+      line-height: 6vw;
+      text-align: center;
+      letter-spacing: .3vw;
     }
   }
 `
@@ -52,11 +81,16 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
         <main>{children}</main>
         <footer>
-          <P>Spotkajmy się osobiście - Ostróda, Iława, Olsztyn!</P>
+          <Container>
+            <P>Spotkajmy się osobiście:</P>
+            <StyledLink><Link to='/strony-internetowe-ostroda' rel='noreferer'>strony internetowe Ostróda</Link></StyledLink>
+            <StyledLink><Link to='/strony-internetowe-ostroda' rel='noreferer'>strony internetowe Iława</Link></StyledLink>
+            <StyledLink><Link to='/#' rel='noreferer'>strony internetowe Olsztyn</Link></StyledLink>
+          </Container>
           <Stars width={'2vw'}></Stars>
           <P>Zdalnie - cała Polska!</P>
           <Stars width={'2vw'}></Stars>
-          <P>© {new Date().getFullYear()} <Link to='/' rel='noopener noreferer' activeStyle={{fontWeight: '800', transition: 'color .2s ease-in'}}>magiainternetu.com</Link></P>
+          <P>© {new Date().getFullYear()} <StyledLink><Link to='/#' rel='noreferer'>magiainternetu.com</Link></StyledLink></P>
         </footer>
     </>
   )
