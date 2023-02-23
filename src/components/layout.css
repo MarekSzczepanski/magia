@@ -29,7 +29,7 @@ body {
   overflow-x: hidden;
   background-color: var(--color1);
 }
-h1, h2, h3, h4, h5, p, li, span, a, footer, strong, button {
+h1, h2, h3, h4, h5, p, li, span, a, footer, strong, button, ol {
   font-family: 'Rubik', sans-serif;
 }
 h1, h2, h3, h4, h5, footer {
@@ -150,7 +150,7 @@ footer > .stars {
   }
   footer {
     flex-direction: column;
-    padding: 6vw 3vw;
+    padding: 9vw 3vw;
   }
   footer > .stars {
     width: 6vw;

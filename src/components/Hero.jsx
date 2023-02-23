@@ -96,8 +96,8 @@ const H2 = styled.h2`
 const HeroBar = styled.div`
   box-sizing: content-box;
   padding: 0 3vw;
-  border-top: .3vw solid #1a1e23;
-  border-bottom: .3vw solid #1a1e23;
+  border-top: .2vw solid #1a1e23;
+  border-bottom: .2vw solid #1a1e23;
   background-color: #ff0420;
 `
 const HeroBarWrap = styled.div`
@@ -171,19 +171,11 @@ const allStars = [
   {top:'89%', left:'5%', animation: 'transform: translate(2vw, -6vw)'}
 ]
 
-const heroBarHeadings = [
-  'projektowanie i tworzenie stron www',
-  'sklepy internetowe',
-  'witryny wordpress',
-  'strony widoczne w wyszukiwarce google', 
-  'serwisy i aplikacje www'
-]
-
-const Hero = () => (
+const Hero = ({h1, heroBarHeadings, heroBarTransform, heroBarTransformMobile}) => (
   <Wrap>
     <HeroWrap>
       <HeroContainer>
-        <H1>strony internetowe ostróda</H1>
+        <H1>{h1}</H1>
       </HeroContainer>
       <HeroContainer>
         <CircleWrap>
@@ -192,7 +184,7 @@ const Hero = () => (
       </HeroContainer>
     </HeroWrap>
     <HeroBar>
-      <HeroBarWrap animation={animationTo('transform: translateX(-215%)')} animationPortrait={animationTo('transform: translateX(-600%)')}>
+      <HeroBarWrap animation={animationTo(`transform: translateX(${heroBarTransform})`)} animationPortrait={animationTo(`transform: translateX(${heroBarTransformMobile})`)}>
         {heroBarHeadings.map((heading, i) => {
           return <React.Fragment key={i}>
             <BarH2>{heading}</BarH2>

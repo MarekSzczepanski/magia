@@ -61,3 +61,51 @@ export const Shield = () => {
         />
     )
 }
+
+export const World = () => {
+    return (
+        <Image
+            src='worldwide.png'
+            alt='świat'
+            style={{
+                filter: 'brightness(0) invert(1)'
+            }}
+        />
+    )
+}
+
+export const Telephone = () => {
+    return (
+        <Image
+            src='telephone.png'
+            alt='telefon'
+            style={{
+                filter: 'brightness(0) invert(1)'
+            }}
+        />
+    )
+}
+
+export const Facebook = () => {
+    return (
+        <Image
+            src='facebook.png'
+            alt='facebook'
+            style={{
+                filter: 'brightness(0) invert(1)'
+            }}
+        />
+    )
+}
+
+export const Youtube = () => {
+    return (
+        <Image
+            src='youtube.png'
+            alt='youtube'
+            style={{
+                filter: 'brightness(0) invert(1)'
+            }}
+        />
+    )
+}
