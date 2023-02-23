@@ -5,6 +5,7 @@ import styled from 'styled-components'
 const Wrap = styled.article`
   width: 40%;
   padding: 3vw;
+  border-top: .1vw solid #1a1e23;
   border-right: .3vw solid #1a1e23;
   background-color: #fff;
   @media (orientation: portrait) {

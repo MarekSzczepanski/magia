@@ -9,6 +9,7 @@ const Wrap = styled.article`
   width: 60%;
   height: 100%;
   padding: 3vw 6vw;
+  border-top: .1vw solid #1a1e23;
   @media (orientation: portrait) {
     width: 100%;
     padding: 6vw 3vw;
