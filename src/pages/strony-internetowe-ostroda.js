@@ -48,7 +48,7 @@ const allLi = [
   },
   {
     strong: 'Sprzedaż',
-    text: 'Sklep internetowy umożliwia sprzedaż produktów lub usług online.Dzięki stronie www możesz umożliwić klientom łatwe i wygodne dokonywanie zakupów.'
+    text: 'Sklep internetowy umożliwia sprzedaż produktów lub usług online. Dzięki stronie www możesz umożliwić klientom łatwe i wygodne dokonywanie zakupów.'
   },
   {
     strong: 'Pozycja w Google',
@@ -91,5 +91,5 @@ const Ostroda = () => {
   )
 }
 
-export const Head = () => <Seo title="Home" />
+export const Head = () => <Seo title="Strony Internetowe Ostróda" />
 export default Ostroda

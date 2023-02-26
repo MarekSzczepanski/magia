@@ -110,7 +110,7 @@ const AboutInternet = () => (
         Jest to szczególnie ważne dla małych i średnich firm.
         </P>
         <StyledLink>
-            <Link to='/' rel='noreferer' className='button'>zapoznaj się z naszą ofertą</Link>
+            <Link to='/oferta' rel='noreferer' className='button'>zapoznaj się z naszą ofertą</Link>
         </StyledLink>
     </Container>
     <Container2>

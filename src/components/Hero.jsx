@@ -84,9 +84,11 @@ const H1 = styled.h1`
     background-color: transparent;
   }
 `
-const H2 = styled.h2`
+const Span = styled.span`
   font-size: 5vw;
+  font-weight: 700;
   text-align: center;
+  text-transform: uppercase;
   color: #fff;
   letter-spacing: 1px;
   @media (orientation: portrait) {
@@ -112,10 +114,12 @@ const HeroBarWrap = styled.div`
     animation: ${props => props.animationPortrait} 13s linear infinite;
   }
 `
-const BarH2 = styled.h2`
+const BarWord = styled.span`
   font-size: 1.8vw;
+  font-weight: 700;
   white-space: nowrap;
   letter-spacing: 1px;
+  text-transform: uppercase;
   color: #1a1e23;
   @media (orientation: portrait) {
     font-size: 5vw;
@@ -179,7 +183,7 @@ const Hero = ({h1, heroBarHeadings, heroBarTransform, heroBarTransformMobile}) =
       </HeroContainer>
       <HeroContainer>
         <CircleWrap>
-          <H2>magia</H2>
+          <Span>magia</Span>
         </CircleWrap>
       </HeroContainer>
     </HeroWrap>
@@ -187,7 +191,7 @@ const Hero = ({h1, heroBarHeadings, heroBarTransform, heroBarTransformMobile}) =
       <HeroBarWrap animation={animationTo(`transform: translateX(${heroBarTransform})`)} animationPortrait={animationTo(`transform: translateX(${heroBarTransformMobile})`)}>
         {heroBarHeadings.map((heading, i) => {
           return <React.Fragment key={i}>
-            <BarH2>{heading}</BarH2>
+            <BarWord>{heading}</BarWord>
             <StarsParent className='stars-hero-bar'>
               <Stars></Stars>
             </StarsParent>

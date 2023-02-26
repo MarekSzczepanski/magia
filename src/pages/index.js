@@ -9,7 +9,7 @@ import AboutInternet from "../components/AboutInternet"
 import WhyProfessional from "../components/WhyProfessional"
 
 const heroBarHeadings = [
-  'stworzymy dla Ciebie stronę i zajmiemy się jej pozycjonowaniem',
+  'stworzymy dla Ciebie witrynę i zajmiemy się jej pozycjonowaniem',
   'darmowa konsultacja i wycena',
   'chętnie odpowiemy na pytania',
   'zapraszamy do zapoznania się z naszą ofertą'
@@ -27,6 +27,6 @@ const IndexPage = () => (
   </Layout>
 )
 
-export const Head = () => <Seo title="Kompleksowe usługi WWW - Magia" />
+export const Head = () => <Seo title="Kompleksowe usługi WWW | Magia" description="Tworzymy witryny i je pozycjonujemy. Skorzystaj z bezpłatnej wyceny i darmowej porady. Chętnie odpowiemy na Twoje pytania." />
 
 export default IndexPage

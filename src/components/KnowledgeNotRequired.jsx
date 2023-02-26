@@ -9,7 +9,7 @@ const Wrap = styled.section`
         padding-bottom: 9vw;
     }
 `
-const H3 = styled.h3`
+const H2 = styled.h2`
     padding-bottom: .75vw;
     font-size: 3vw;
     text-align: center;
@@ -18,9 +18,11 @@ const H3 = styled.h3`
         font-size: 7.5vw;
     }
 `
-const H4 = styled.h4`
+const PLarge = styled.p`
     padding-bottom: 3vw;
     font-size: 2vw;
+    font-weight: 700;
+    text-transform: uppercase;
     text-align: center;
     color: #ff0420;
     @media (orientation: portrait) {
@@ -75,13 +77,17 @@ const Li = styled.li`
         }
     }
 `
-const H5 = styled.h5`
+const SpanParent = styled.div`
+    display: flex;
+`
+const Span = styled.span`
     margin: 0 auto;
     padding-bottom: 1.5vw;
     border-bottom: .1vw solid #fff;
     font-size: 1.8vw;
     font-weight: 800;
     text-align: center;
+    text-transform: uppercase;
     line-height: 2.4vw;
     color: #fff;
     @media (orientation: portrait) {
@@ -91,7 +97,7 @@ const H5 = styled.h5`
         letter-spacing: .3vw;
     }
 `
-const H6 = styled.h6`
+const H3 = styled.h3`
     padding-top: 1.5vw;
     font-size: 1.1vw;
     text-align: center;
@@ -120,7 +126,7 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     @media (orientation: portrait) {
-        > h4 {
+        > div {
             margin-bottom: 3vw;
         }
     }
@@ -156,19 +162,21 @@ const cardContent = [
 
 const KnowledgeNotRequired = () => (
   <Wrap>
-    <H3>nie musisz się na tym wszystkim znać!</H3>
-    <H4>jeśli trzeba, <strong>wszystkim</strong> zajmiemy się sami</H4>
+    <H2>Nie musisz się na tym wszystkim znać!</H2>
+    <PLarge>jeśli trzeba, <strong>wszystkim</strong> zajmiemy się sami</PLarge>
     <Ul>
         {cardContent.map((card, i) => {
             return <Li key={i}>
-                <H5>{card.heading}</H5>
+                <SpanParent>
+                    <Span>{card.heading}</Span>
+                </SpanParent>
                 <div>
-                    {card.subheading1 ? <H6>{card.subheading1}</H6> : null}
+                    {card.subheading1 ? <H3>{card.subheading1}</H3> : null}
                     <P>{card.paragraph1}</P>
                 </div>
                 {card.subheading2 || card.paragraph2 ? 
                     <div>
-                        {card.subheading2 ? <H6>{card.subheading2}</H6> : null}
+                        {card.subheading2 ? <H3>{card.subheading2}</H3> : null}
                         {card.paragraph2 ? <P>{card.paragraph2}</P> : null}
                     </div>
                     : null
@@ -177,7 +185,7 @@ const KnowledgeNotRequired = () => (
         })}
     </Ul>
     <Container>
-        <H4>masz jakiekolwiek wątpliwości?</H4>
+        <PLarge>masz jakiekolwiek wątpliwości?</PLarge>
         <Link to='/' className='button button2'>zadzwoń po darmową poradę!</Link>
     </Container>
   </Wrap> 

@@ -34,8 +34,21 @@ const H2 = styled.h2`
     font-size: 2.2vw;
     text-align: center;
     color: #1a1e23;
+    &:after {
+        content: '';
+        display: block;
+        width: 90%;
+        height: .3vw;
+        margin: 3vw auto 4.5vw;
+        background-color: #ff0420;
+    }
     @media (orientation: portrait) {
         font-size: 6vw;
+        &:after {
+            @media (orientation: portrait) {
+                height: .9vw;
+            }
+        }
     }
 `
 const P = styled.p`
@@ -49,46 +62,40 @@ const P = styled.p`
     }
 `
 const Line = styled.div`
-    width: 90%;
-    height: .3vw;
-    margin: 3vw 0 6vw;
-    background-color: #ff0420;
-    @media (orientation: portrait) {
-        height: .9vw;
-    }
+    
 `
 
 const boxes = [
     {
-        heading: 'strony internetowe',
-        text: 'Tworzymy strony www przy pomocy najnowszych technologii i najlepszych języków programowania.'
+        heading: 'Witryny i Aplikacje WWW',
+        text: 'Tworzymy witryny www przy pomocy najnowszych technologii i najlepszych języków programowania.'
     },
     {
-        heading: 'skuteczne sklepy online',
+        heading: 'Skuteczne Sklepy Online',
         text: 'Programujemy różnego typu efektywne platformy do sprzedaży online z wysokim współczynnikiem konwersji.'
     },
     {
-        heading: 'niezawodne systemy CMS',
+        heading: 'Niezawodne Systemy CMS',
         text: 'Używamy przystępnych paneli zarządzania witrynami umożliwiających łatwą edycję i dodawanie treści.'
     },
     {
-        heading: 'estetyczna grafika',
+        heading: 'Estetyczna Grafika',
         text: 'Projektujemy atrakcyjne wizualnie witryny dbając o ich wyjątkowość i branże, jakie mają reprezentować.'
     },
     {
-        heading: 'intuicyjny interfejs',
+        heading: 'Intuicyjny Interfejs',
         text: 'Kładziemy nacisk na pozytywne doświadczenia użytkowników i klientów pod względem poruszania się po witrynie.'
     },
     {
-        heading: 'przetestowane realizacje',
+        heading: 'Przetestowane Realizacje',
         text: 'Testujemy wygląd projektów na każdego typu komputerach, tabletach, telefonach, przeglądarkach i systemach operacyjnych.'
     },
     {
-        heading: 'pozycjonowanie i SEO',
+        heading: 'Pozycjonowanie i SEO',
         text: 'Zapewniamy firmom atrakcyjne lokaty w Google w wymiarze programistycznym, poprzez pisanie artykułów i innych możliwości.'
     },
     {
-        heading: 'audyt serwisów www',
+        heading: 'Audyt Serwisów WWW',
         text: 'Analizujemy biznesy online w celu poprawy ich wydajności technicznej oraz przystępności i atrakcyjności dla klientów.'
     }
 ]
@@ -98,7 +105,6 @@ const WhatWeDo = () => (
     {boxes.map((box, i) => {
         return <Container key={i}>
             <H2>{box.heading}</H2>
-            <Line></Line>
             <P>{box.text}</P>
         </Container>
     })}

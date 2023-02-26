@@ -45,10 +45,7 @@ const Section = styled.section`
     }
   }
 `
-const Text = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+const Text = styled.section`
   width: 60vw;
   padding: ${props => props.padding};
   @media (orientation: portrait) {
@@ -57,6 +54,7 @@ const Text = styled.div`
   }
 `
 const H3 = styled.h3`
+  padding-bottom: .75vw;
   font-size: 2.5vw;
   color: #ff0420;
   @media (orientation: portrait) {
@@ -65,16 +63,10 @@ const H3 = styled.h3`
     text-align: center;
   }
 `
-const H4 = styled.h4`
-  padding-bottom: 3vw;
+const H4v2 = styled.h4`
+  padding-top: 1.5vw;
   font-size: 1.5vw;
-  @media (orientation: portrait) {
-    font-size: 5vw;
-    line-height: 9vw;
-    text-align: center;
-  }
-`
-const H4NoPadding = styled.h4`
+  color: #ff0420;
   @media (orientation: portrait) {
     padding-top: 6vw;
     font-size: 6vw;
@@ -82,8 +74,24 @@ const H4NoPadding = styled.h4`
     text-align: center;
   }
 `
+const PLarge = styled.p`
+  padding: 0 0 3vw 0;
+  font-size: 1.5vw;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1vw;
+  color: #fff;
+  @media (orientation: portrait) {
+    font-size: 5vw;
+    line-height: 9vw;
+    text-align: center;
+  }
+`
 const Li = styled.li`
   padding-bottom: 1.5vw;
+  font-size: 1.3vw;
+  line-height: 2vw;
+  color: #fff;
   @media (orientation: portrait) {
     padding-bottom: 6vw;
     font-size: 5vw;
@@ -91,35 +99,16 @@ const Li = styled.li`
     text-align: left;
   }
 `
-const LiNoBullet = styled.li`
-  padding-bottom: 1.5vw;  
-  list-style-type: none;
-`
 const LiSmallPadding = styled.li`
   padding-bottom: .75vw;
-  @media (orientation: portrait) {
-    padding-bottom: 3vw;
-    text-align: left;
-  }
-`
-const H5 = styled.h5`
-  font-size: 1.2vw;
-  color: #ff0420;
-  @media (orientation: portrait) {
-    padding-top: 6vw;
-    font-size: 5vw;
-    line-height: 6vw;
-    text-align: center;
-  }
-`
-const Container = styled.div`
-  font-size: 1.2vw;
+  font-size: 1.3vw;
   line-height: 2vw;
   color: #fff;
   @media (orientation: portrait) {
+    padding-bottom: 3vw;
     font-size: 5vw;
     line-height: 8vw;
-    text-align: center;
+    text-align: left;
   }
 `
 const P = styled.p`
@@ -134,14 +123,17 @@ const P = styled.p`
 `
 const Strong = styled.strong`
   padding-top: .1vw;
-  font-size: 1.2vw;
+  font-size: 1.3vw;
   line-height: 2vw;
   @media (orientation: portrait) {
     font-size: 5vw;
     line-height: 8vw;
   }
 `
-const IframeParent = styled.div`
+const Ol = styled.ol`
+  padding-top: 1.5vw;
+`
+const IframeParent = styled.section`
   display: flex;
   align-items: center;
 `
@@ -155,7 +147,7 @@ const Iframe = styled.iframe`
     margin-top: 6vw;
   }
 `
-const ImageParent = styled.div`
+const ImageParent = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -168,6 +160,7 @@ const ImageParent = styled.div`
   -moz-box-shadow: 0 0 10vw #ff0420;
   box-shadow: 0 0 10vw #ff0420;
   @media (orientation: portrait) {
+    display: none;
     width: 80vw;
     height: 80vw;
     margin: 6vw 0 9vw;
@@ -176,59 +169,71 @@ const ImageParent = styled.div`
 
 const all_text = [
   {
-    heading: 'szybkość',
-    paragraph: <Container><ul>
-      <Li>Klienci oczekują błyskawicznego załadowania się witryny - <Strong>40% odwiedzających opuszcza stronę, która nie zdąża załadować się w ciągu 3 sekund!</Strong> Każda sekunda opóźnienia witryny przekłada się na 7%-owy spadek sprzedaży. Może się to przekładać na tysiące złotych strat w skali roku.</Li>
-      <Li>Wyszukiwarki uwzględniają szybkość ładowania się strony w swoich algorytmach rankingowych. <Strong>Długie ładowanie - niska pozycja w Google</Strong>.</Li>
-      <Li>Użytkownicy często korzystają z Internetu na swoich telefonach oraz tabletach, więc szybkość strony jest szczególnie ważna w przypadku użytkowników korzystających z sieci komórkowych.</Li>
-    </ul>
-    <H4NoPadding>Dlaczego nasze strony są wyraźnie szybsze?</H4NoPadding>
-    <P>Tworzymy w technologii <Strong>HEADLESS</Strong> - nowatorskiej metodzie umożliwiającej wstępne ładowanie się strony <Strong>zanim</Strong> użytkownik ją odwiedzi - po stronie serwera!</P>
-    </Container>
+    content: <div>
+    <section>
+      <H3>Szybkość</H3>
+      <ul>
+        <Li>Klienci oczekują błyskawicznego załadowania się witryny - 
+        <Strong>40% odwiedzających opuszcza stronę, która nie zdąża załadować się w ciągu 
+        3 sekund!</Strong> Każda sekunda opóźnienia witryny przekłada się na 7%-owy spadek sprzedaży. 
+        Może się to przekładać na tysiące złotych strat w skali roku.</Li>
+        <Li>Wyszukiwarki uwzględniają szybkość ładowania się strony w swoich algorytmach rankingowych. <Strong>Długie ładowanie - 
+        niska pozycja w Google</Strong>.</Li>
+        <Li>Użytkownicy często korzystają z Internetu na swoich telefonach oraz tabletach, 
+        więc szybkość strony jest szczególnie ważna w przypadku użytkowników korzystających z sieci komórkowych.</Li>
+      </ul>
+    </section>
+    <section>
+      <H4v2>Dlaczego nasze strony są wyraźnie szybsze?</H4v2>
+      <P>Tworzymy w technologii <Strong>HEADLESS</Strong> - nowatorskiej metodzie umożliwiającej wstępne 
+      ładowanie się strony <Strong>zanim</Strong> użytkownik ją odwiedzi - po stronie serwera!</P>
+    </section>
+    </div>
   },
   {
-    heading: 'responsywność',
-    paragraph: <Container>
+    content: <div>
+    <H3>Responsywność</H3>
     <P>Z Magią masz pewność, że Twoja strona będzie <Strong>w pełni</Strong> responsywna. 
     Większość witryn, tworzonych nawet przez renomowane agencje, "rozjeżdża się" na niewielkich laptopach, 
     a na szerokich ekranach komputerów wyświetlany tekst jest zbyt mały.
     Często spotykane są problemy z interfejsem przy zmianie wielkości okna przeglądarki na komputerze, czy przełączaniu widoku z pionowego na poziomy na telefonie.
     Nasze projekty są w pełni dostosowane do <Strong>wszystkich</Strong> urządzeń - komputerów stacjonarnych, laptopów, tabletów, smartfonów, a nawet telewizorów.
     </P>
-    </Container>
+    </div>
   },
   {
-    heading: 'UX - doświadczenia użytkownika',
-    paragraph: <Container>
-      <H4>Nasze strony nie wkurzają!</H4>
-      <ul>
-        <LiNoBullet>
-          <H5>Koniec ze skaczącymi po stronie przyciskami</H5>
-          <P>Elementy naszych witryn nie przeskakują podczas ładowania się strony, ani po najechaniu kursorem lub kliknięciu na cokolwiek.</P>
-        </LiNoBullet>
-        <LiNoBullet>
-          <H5>Interaktywne elementy</H5>
-          <P>Przyciski, linki, zdjęcia i wszystkie inne interaktywne elementy na naszych stronach reagują animacjami na klikanie czy najechanie na nie kursorem, 
-            by Twój klient z łatwością domyślił się w jaki sposób korzystać z interfejsu.</P>
-        </LiNoBullet>
-        <LiNoBullet>
-          <H5>Intuicyjny design</H5>
-          <P>Nie wprowadzamy internautów w błąd przesadzonym designem, by każdy natychmiast się orientował co do czego służy oraz od razu znalazł to, czego szuka.</P>
-        </LiNoBullet>
-      </ul>
-    </Container>
+    content: <div>
+    <H3>UX - Doświadczenia Użytkownika</H3>
+    <PLarge>Nasze strony nie wkurzają!</PLarge>
+    <section>
+      <H4v2>Koniec ze skaczącymi po stronie przyciskami</H4v2>
+      <P>Elementy naszych witryn nie przeskakują podczas ładowania się strony, ani po najechaniu kursorem lub kliknięciu na cokolwiek.</P>
+    </section>
+    <section>
+      <H4v2>Interaktywne elementy</H4v2>
+      <P>Przyciski, linki, zdjęcia i wszystkie inne interaktywne elementy na naszych stronach reagują animacjami na klikanie czy najechanie na nie kursorem, 
+       by Twój klient z łatwością domyślił się w jaki sposób korzystać z interfejsu.</P>
+    </section>
+    <section>
+      <H4v2>Intuicyjny design</H4v2>
+      <P>Nie wprowadzamy internautów w błąd przesadzonym designem, by każdy natychmiast się orientował co do czego służy oraz od razu znalazł to, czego szuka.</P>
+    </section>
+    </div>
   },
   {
-    heading: 'Opieka posprzedażowa',
-    paragraph: <Container>
-      <H4>Utrzymujemy świetne relacje z naszymi klientami</H4>
-      <ol>
+    content: <div>
+    <H3>Opieka Posprzedażowa</H3>
+    <PLarge>Utrzymujemy świetne relacje z naszymi klientami!</PLarge>
+    <section>
+      <H4v2>Nasze wsparcie posprzedażowe:</H4v2>
+      <Ol>
         <LiSmallPadding>Dbamy o SEO Twojej strony - jej dobrą pozycję w Google.</LiSmallPadding>
         <LiSmallPadding>Pomagamy obsługiwać Twoją witrynę.</LiSmallPadding>
         <LiSmallPadding>Doradzamy i <Strong>chętnie</Strong> odpowiadamy na Twoje pytania.</LiSmallPadding>
         <LiSmallPadding>Zajmujemy się całością internetowej części Twojego biznesu.</LiSmallPadding>
-      </ol>
-    </Container>,
+      </Ol>
+    </section>
+    </div>,
     noVideo: true
   }
 ]
@@ -240,8 +245,7 @@ const WhyUs = () => (
       {all_text.map((text, i) => {
         return <Section key={i}>
           <Text padding={i%2 ? '0 0 0 6vw' : '0 6vw 0 0'}>
-            <H3>{text.heading}</H3>
-            {text.paragraph}
+            {text.content}
           </Text>
           { !text.noVideo && false ? <IframeParent>
             <Iframe

@@ -224,7 +224,7 @@ const Header = () => {
           <Ul>
             {menuElements.map((element, i)=> {
               return <Li key={i}>
-                <StyledLink to={`/${element}`} activeStyle={{color: '#ff0420'}} rel='noopener noreferer'>{element}</StyledLink>
+                <StyledLink to={`/${element}`} rel='noopener noreferer'>{element}</StyledLink>
               </Li>
             })}
             <Li className='phone'>

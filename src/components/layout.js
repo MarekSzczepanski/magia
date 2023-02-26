@@ -12,7 +12,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   max-width: 33%;
-  height: 9vw;
+  height: 4.5vw;
   > p {
     color: #fff;
   }
@@ -84,8 +84,8 @@ const Layout = ({ children }) => {
           <Container>
             <P>Spotkajmy się osobiście:</P>
             <StyledLink><Link to='/strony-internetowe-ostroda' rel='noreferer'>strony internetowe Ostróda</Link></StyledLink>
-            <StyledLink><Link to='/strony-internetowe-ostroda' rel='noreferer'>strony internetowe Iława</Link></StyledLink>
-            <StyledLink><Link to='/#' rel='noreferer'>strony internetowe Olsztyn</Link></StyledLink>
+            {/*<StyledLink><Link to='/strony-internetowe-ostroda' rel='noreferer'>strony internetowe Iława</Link></StyledLink>
+            <StyledLink><Link to='/#' rel='noreferer'>strony internetowe Olsztyn</Link></StyledLink>*/}
           </Container>
           <Stars width={'2vw'}></Stars>
           <P>Zdalnie - cała Polska!</P>

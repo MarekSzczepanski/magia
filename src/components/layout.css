@@ -149,6 +149,7 @@ footer > .stars {
     height: 35vw;
   }
   footer {
+    position: relative;
     flex-direction: column;
     padding: 9vw 3vw;
   }

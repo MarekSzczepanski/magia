@@ -16,7 +16,7 @@ const Wrap = styled.article`
     transition: transform .5s ease-out;
   }
 `
-const H3 = styled.h3`
+const H2 = styled.h2`
   font-size: 2.4vw;
   color: #1a1e23;
   @media (orientation: portrait) {
@@ -50,7 +50,7 @@ const Container = styled.div`
 
 const ListArticle = ({ allLi, isActive }) => (
   <Wrap isActive={isActive}>
-    <H3>Dlaczego warto mieć <strong>stronę internetową</strong>?</H3>
+    <H2>Dlaczego warto mieć <strong>stronę internetową</strong>?</H2>
     <ol>
       {allLi.map((li, i) => {
         return <Li key={i}>
@@ -59,7 +59,8 @@ const ListArticle = ({ allLi, isActive }) => (
       })}
     </ol>
     <Container>
-      <Link to='/' className='button'>bezpłatna wycena</Link>
+      {/* <Link to='/' className='button'>bezpłatna wycena</Link> */}
+      <a href='tel:+48723062926' className='button'>bezpłatna wycena</a>
     </Container>
   </Wrap> 
 )
