@@ -4,18 +4,17 @@ import Image from './components/Image';
 export const Logo = () => {
     return (
         <Image
-            src='logo-red.png'
-            alt='magia internetu'
+            src='logo-magia.png'
+            alt='logo magia'
             className='logo'
         />
     ) 
 }
 
-export const Star = (props) => {
+export const Star = () => {
     return (
         <Image
-            src='sparkle.png'
-            alt='gwiazdy'
+            src='gwiazda.png'
             style={{
                 filter: 'brightness(0) invert(1)'
             }}
@@ -23,11 +22,11 @@ export const Star = (props) => {
     )
 }
 
-export const Stars = (props) => {
+export const Stars = () => {
     return (
         <Image
-            src='stars.png'
-            alt='gwiazdy'
+            src='gwiazdy.png'
+            alt='gwiazdy - przerywnik oferta'
             className={'stars'}
             style={{
                 filter: 'brightness(0) invert(.1)',
@@ -40,7 +39,7 @@ export const InfographicImage = (props) => {
     return (
         <Image
             src={props.src}
-            alt='wizerunek w internecie'
+            alt='strony-internetowe-korzyści'
             className={'infographic-image'}
             style={{
                 filter: 'brightness(0) invert(1)',
@@ -52,8 +51,8 @@ export const InfographicImage = (props) => {
 export const Shield = () => {
     return (
         <Image
-            src='shield.png'
-            alt='bezpieczeństwo'
+            src='opieka-posprzedażowa-strony-internetowe.png'
+            alt='opieka posprzedażowa strony internetowe'
             className='shield'
             style={{
                 filter: 'brightness(0) invert(1)'
@@ -65,8 +64,8 @@ export const Shield = () => {
 export const World = () => {
     return (
         <Image
-            src='worldwide.png'
-            alt='świat'
+            src='świat-internetu.png'
+            alt='świat internetu'
             style={{
                 filter: 'brightness(0) invert(1)'
             }}
@@ -77,8 +76,8 @@ export const World = () => {
 export const Telephone = () => {
     return (
         <Image
-            src='telephone.png'
-            alt='telefon'
+            src='telefon-magia.png'
+            alt='telefon magia'
             style={{
                 filter: 'brightness(0) invert(1)'
             }}
@@ -89,8 +88,8 @@ export const Telephone = () => {
 export const Facebook = () => {
     return (
         <Image
-            src='facebook.png'
-            alt='facebook'
+            src='facebook-magia.png'
+            alt='facebook magia'
             style={{
                 filter: 'brightness(0) invert(1)'
             }}
@@ -101,8 +100,8 @@ export const Facebook = () => {
 export const Youtube = () => {
     return (
         <Image
-            src='youtube.png'
-            alt='youtube'
+            src='youtube-magia.png'
+            alt='youtube magia'
             style={{
                 filter: 'brightness(0) invert(1)'
             }}

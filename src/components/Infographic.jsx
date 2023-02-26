@@ -15,14 +15,16 @@ const Wrap = styled.article`
     padding: 6vw 3vw;
   }
 `
-const H3 = styled.h3`
+const AboveHeading = styled.span`
   font-size: 2.4vw;
+  font-weight: 600;
+  text-transform: uppercase;
   color: #1a1e23;
   @media (orientation: portrait) {
     font-size: 6vw;
   }
 `
-const H4 = styled.h4`
+const H2 = styled.h2`
   max-width: 60%;
   padding: 1.3vw 0 2.6vw;
   font-size: 2.5vw;
@@ -34,7 +36,7 @@ const H4 = styled.h4`
     font-size: 7.5vw;
   }
 `
-const InfographicPart = styled.div`
+const InfographicPart = styled.section`
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -142,9 +144,10 @@ const InfographicText = styled.div`
     padding-left: 0;
   }
 `
-const H5 = styled.h5`
+const H3 = styled.h3`
   font-size: 1.5vw;
   text-align: ${props => props.align ? props.align : 'left'};
+  color: #fff;
   @media (orientation: portrait) {
     font-size: 4.5vw;
   }
@@ -174,7 +177,7 @@ const Container = styled.div`
   justify-content: center;
   width: 100%;
   padding-top: 9vw;
-  &: > h5 {
+  &: > h3 {
     display: flex;
   }
   @media (orientation: landscape) {
@@ -184,27 +187,27 @@ const Container = styled.div`
 
 const infographicParts = [
   {
-    image: 'reputation.png',
+    image: 'reputacja.png',
     heading: 'wizerunek',
     paragraph: 'Zaimponuj klientom budując swoją reputację w sieci.'
   },
   {
-    image: '24-hours.png',
+    image: 'przystępność.png',
     heading: 'dostępność',
     paragraph: 'Pozwól klientom przeglądać Twoją ofertę 24/7.'
   },
   {
-    image: 'megaphone.png',
+    image: 'reklama-online.png',
     heading: 'marketing',
     paragraph: 'Wykorzystaj swoją stronę jako skuteczne narzędzie marketingowe.'
   },
   {
-    image: 'acquisition.png',
+    image: 'e-commerce.png',
     heading: 'sprzedaż',
     paragraph: 'Ułatw klientom zakup Twoich usług i produktów dzięki sprzedaży online.'
   },
   {
-    image: 'fire.png',
+    image: 'zainteresowanie.png',
     heading: 'widoczność',
     paragraph: 'Zyskaj dotatkowe zainteresowanie dzięki widoczności w wyszukiwarce Google.'
   },
@@ -218,8 +221,8 @@ const Infographic = ({toggleReadMore, isReadMoreActive}) => {
 
   return (
     <Wrap>
-      <H3>magia internetu</H3>
-      <H4>korzyści płynące z twojej witryny</H4>
+      <AboveHeading>magia internetu</AboveHeading>
+      <H2>korzyści płynące z twojej witryny</H2>
       {infographicParts.map((part, i) => {
         return <InfographicPart key={i}>
           <ImageContainer className='infograpgic-image-container'>
@@ -233,7 +236,7 @@ const Infographic = ({toggleReadMore, isReadMoreActive}) => {
             <VerticalLine></VerticalLine>
           </Circles>
           <InfographicText className='infographic-part-text'>
-            <H5 align={ (i + 1) % 2 ? 'right' : null }>{part.heading}</H5>
+            <H3 align={ (i + 1) % 2 ? 'right' : null }>{part.heading}</H3>
             <P align={ (i + 1) % 2 ? 'right' : null }>{part.paragraph}</P>
           </InfographicText>
         </InfographicPart>
