@@ -10,7 +10,7 @@ import WhyUs from '../components/WhyUs'
 import KnowledgeNotRequired from '../components/KnowledgeNotRequired'
 import { useState } from 'react'
 
-export const query = graphql`
+/*export const query = graphql`
   query {
     allWpPost {
       edges {
@@ -22,7 +22,7 @@ export const query = graphql`
       }
     }
   }
-`
+`*/
 
 const WebpagesInfo = styled.section`
   display: flex;

@@ -39,22 +39,22 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: `gatsby-source-wordpress`,
-      options: {
-          // Specify the URL of the WordPress source
-          url: `http://localhost/strony/graphql`,
-          protocol: `http`,
-          // Indicates if a site is hosted on WordPress.com
-          hostingWPCOM: false,
-          // Specify which URL structures to fetch
-          includedRoutes: [
-            '**/posts',
-            '**/tags',
-            '**/categories'
-          ]
-      }
-    },
+    //{
+    //  resolve: `gatsby-source-wordpress`,
+    //  options: {
+    //      // Specify the URL of the WordPress source
+    //      url: `http://localhost/strony/graphql`,
+    //      protocol: `http`,
+    //      // Indicates if a site is hosted on WordPress.com
+    //      hostingWPCOM: false,
+    //      // Specify which URL structures to fetch
+    //      includedRoutes: [
+    //        // '**/posts',
+    //       // '**/tags',
+    //        // '**/categories'
+    //      ]
+    //  }
+    //},
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {

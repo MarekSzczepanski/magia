@@ -61,9 +61,6 @@ const P = styled.p`
         line-height: 6vw;
     }
 `
-const Line = styled.div`
-    
-`
 
 const boxes = [
     {
