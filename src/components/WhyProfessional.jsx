@@ -5,7 +5,7 @@ const Wrap = styled.section`
     padding: 6vw 3vw;     
     background-color: #1a1e23;
     @media (orientation: portrait) {
-        padding: 9vw 3vw;
+        padding: 9vw 6vw;
     }
 `
 const H2 = styled.h2`
@@ -15,8 +15,8 @@ const H2 = styled.h2`
     letter-spacing: .2vw;
     color: #fff;
     @media (orientation: portrait) {
-        font-size: 7.5vw;
-        line-height: 10.5vw;
+        font-size: 6.5vw;
+        line-height: 8.75vw;
         letter-spacing: .3vw;
     }
 `

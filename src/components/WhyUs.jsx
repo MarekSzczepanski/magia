@@ -1,6 +1,6 @@
 import * as React from "react"
 import styled from 'styled-components'
-import { Shield } from '../gatsbyImages'
+import { StaticImage } from "gatsby-plugin-image"
 
 const Wrap = styled.section`
   padding: 3vw;
@@ -16,7 +16,7 @@ const H2 = styled.h2`
   color: #ff0420;
   @media (orientation: portrait) {
     padding-bottom: 6vw;
-    font-size: 9vw;
+    font-size: 8.5vw;
   }
 `
 
@@ -173,9 +173,9 @@ const all_text = [
     <section>
       <H3>Szybkość</H3>
       <ul>
-        <Li>Klienci oczekują błyskawicznego załadowania się witryny - 
-        <Strong>40% odwiedzających opuszcza stronę, która nie zdąża załadować się w ciągu 
-        3 sekund!</Strong> Każda sekunda opóźnienia witryny przekłada się na 7%-owy spadek sprzedaży. 
+        <Li>Klienci oczekują błyskawicznego załadowania się witryny - <Strong>40%</Strong> odwiedzających 
+        opuszcza stronę, która nie zdąża załadować się w ciągu <Strong>3 sekund!</Strong> Każda 
+        sekunda opóźnienia witryny przekłada się na 7%-owy spadek sprzedaży. 
         Może się to przekładać na tysiące złotych strat w skali roku.</Li>
         <Li>Wyszukiwarki uwzględniają szybkość ładowania się strony w swoich algorytmach rankingowych. <Strong>Długie ładowanie - 
         niska pozycja w Google</Strong>.</Li>
@@ -257,7 +257,17 @@ const WhyUs = () => (
             </Iframe>
           </IframeParent> :
           <ImageParent>
-            <Shield></Shield>
+            <StaticImage
+              src="../images/opieka-posprzedazowa-strony-internetowe.svg"
+              placeholder="blurred"
+              width={512}
+              height={512}
+              formats={["auto", "webp", "avif"]}
+              alt="opieka posprzedażowa strony internetowe"
+              transformOptions={{ fit: "cover", cropFocus: "attention" }}
+              loading='eager'
+              class={'shield'}
+            />
           </ImageParent>
           }
         </Section>

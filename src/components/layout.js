@@ -2,7 +2,7 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from 'styled-components'
 import { Link } from "gatsby"
-import { Stars } from '../gatsbyImages'
+import { StaticImage } from "gatsby-plugin-image"
 
 import Header from "./header"
 import "./layout.css"
@@ -18,7 +18,10 @@ const Container = styled.div`
   }
   @media (orientation: portrait) {
     max-width: 100%;
-    height: 48vw;
+    height: 18vw;
+    > p {
+      font-size: 5vw;
+    }
   }
 `
 const P = styled.p`
@@ -84,12 +87,33 @@ const Layout = ({ children }) => {
           <Container>
             <P>Spotkajmy się osobiście:</P>
             <StyledLink><Link to='/strony-internetowe-ostroda' rel='noreferer'>strony internetowe Ostróda</Link></StyledLink>
-            {/*<StyledLink><Link to='/strony-internetowe-ostroda' rel='noreferer'>strony internetowe Iława</Link></StyledLink>
-            <StyledLink><Link to='/#' rel='noreferer'>strony internetowe Olsztyn</Link></StyledLink>*/}
+            {/* <StyledLink><Link to='/strony-internetowe-ostroda' rel='noreferer'>strony internetowe Iława</Link></StyledLink> */}
+            {/* <StyledLink><Link to='/#' rel='noreferer'>strony internetowe Olsztyn</Link></StyledLink> */}
           </Container>
-          <Stars width={'2vw'}></Stars>
+          <StaticImage
+            src="../images/gwiazdy.svg"
+            placeholder="blurred"
+            width={60}
+            height={60}
+            formats={["auto", "webp", "avif"]}
+            alt="gwiazdy - przerywnik oferta"
+            transformOptions={{ fit: "cover", cropFocus: "attention" }}
+            loading='eager'
+            className='footer-stars'
+          />
           <P>Zdalnie - cała Polska!</P>
-          <Stars width={'2vw'}></Stars>
+          <StaticImage
+            src="../images/gwiazdy.svg"
+            placeholder="blurred"
+            width={60}
+            height={60}
+            formats={["auto", "webp", "avif"]}
+            alt="gwiazdy - przerywnik oferta"
+            transformOptions={{ fit: "cover", cropFocus: "attention" }}
+            loading='eager'
+            className='footer-stars'
+          />
+          
           <P>© {new Date().getFullYear()} <StyledLink><Link to='/#' rel='noreferer'>magiainternetu.com</Link></StyledLink></P>
         </footer>
     </>

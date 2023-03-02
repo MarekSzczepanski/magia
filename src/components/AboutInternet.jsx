@@ -1,7 +1,7 @@
 import * as React from "react"
 import styled from 'styled-components'
 import { Link } from "gatsby"
-import { World } from '../gatsbyImages'
+import { StaticImage } from "gatsby-plugin-image"
 
 const Wrap = styled.section`
    display: flex;
@@ -39,7 +39,8 @@ const P = styled.p`
     }
 `
 const StyledLink = styled.div`
-    
+    display: flex;
+    justify-content: center;
 `
 const Container2 = styled.div`
     position: relative;
@@ -115,7 +116,16 @@ const AboutInternet = () => (
     </Container>
     <Container2>
         <Box>
-            <World></World>
+            <StaticImage
+                src="../images/swiat-online.svg"
+                placeholder="blurred"
+                width={512}
+                height={512}
+                formats={["auto", "webp", "avif"]}
+                alt="świat online"
+                transformOptions={{ fit: "cover", cropFocus: "attention" }}
+                loading='eager'
+            /> 
             <Span>dostępność informacji</Span>
             <Span>łatwa komunikacja</Span>
             <Span>sprzedaż online</Span>

@@ -14,6 +14,7 @@ const H1 = styled.h1`
   color: #ff0420;
   @media (orientation: portrait) {
     font-size: 18vw;
+    padding: 24vw 0;
   }
 `
 const ContainerParent = styled.div`

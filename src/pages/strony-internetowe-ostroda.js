@@ -1,7 +1,7 @@
 import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { graphql } from 'gatsby'
+//import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Hero from '../components/Hero'
 import ListArticle from '../components/ListArticle'
@@ -57,11 +57,12 @@ const allLi = [
 ]
 
 const heroBarHeadings = [
-  'projektowanie i tworzenie stron www',
+  'projektowanie i tworzenie stron www w Ostródzie',
   'sklepy internetowe',
-  'witryny wordpress',
-  'strony widoczne w wyszukiwarce google', 
-  'serwisy i aplikacje www'
+  'wordpress',
+  'strony widoczne w wyszukiwarce Google', 
+  'serwisy i aplikacje WWW',
+  'Ostróda i okolice'
 ]
 
 const Ostroda = () => {
@@ -69,7 +70,7 @@ const Ostroda = () => {
 
   return (
     <Layout>
-      <Hero h1={'strony internetowe ostróda'} heroBarHeadings={heroBarHeadings} heroBarTransform={'-215%'} heroBarTransformMobile={'-600%'}></Hero>
+      <Hero h1={'strony internetowe ostróda'} heroBarHeadings={heroBarHeadings} heroBarTransform={'-260%'} heroBarTransformMobile={'-660%'}></Hero>
       <WebpagesInfo>
         <ListArticle allLi={allLi} isActive={isReadMoreActive}></ListArticle>
         <Infographic toggleReadMore={toggleReadMore} isReadMoreActive={isReadMoreActive}></Infographic>
@@ -91,5 +92,5 @@ const Ostroda = () => {
   )
 }
 
-export const Head = () => <Seo title="Strony Internetowe Ostróda" />
+export const Head = () => <Seo title="Strony Internetowe Ostróda" description="Strony internetowe Ostróda - tworzymy strony oraz sklepy WWW. Zadzwoń po bezpłatną poradę i wycenę. ☎ 723-062-926" />
 export default Ostroda

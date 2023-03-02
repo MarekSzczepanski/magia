@@ -1,6 +1,6 @@
 import * as React from "react"
 import styled from 'styled-components'
-import { InfographicImage } from '../gatsbyImages'
+import { StaticImage } from "gatsby-plugin-image"
 
 const Wrap = styled.article`
   display: flex;
@@ -12,7 +12,7 @@ const Wrap = styled.article`
   border-top: .1vw solid #1a1e23;
   @media (orientation: portrait) {
     width: 100%;
-    padding: 6vw 3vw;
+    padding: 6vw;
   }
 `
 const AboveHeading = styled.span`
@@ -44,7 +44,7 @@ const InfographicPart = styled.section`
   width: 100%;
   &:nth-of-type(even) {
     flex-direction: row-reverse;
-    .infograpgic-image-container {
+    .infographic-image-container {
       justify-content: flex-end;
     }
     .infographic-half-circle {
@@ -61,7 +61,7 @@ const InfographicPart = styled.section`
   @media (orientation: portrait) {
     &:nth-of-type(even) {
       .infographic-half-circle {
-        transform: scale(-1) translateX(calc(-100% + 6vw));
+        transform: scale(-1) translateX(calc(-100% + 7vw));
       }
       > .infographic-part-text {
         padding: 0;
@@ -96,7 +96,7 @@ const HalfCircle = styled.div`
   @media (orientation: portrait) {
     width: 18vw;
     height: 36vw;
-    transform: translateX(-6vw);
+    transform: translateX(-7vw);
     &:nth-of-type(odd) {
       border-top-left-radius: 21vw;
       border-bottom-left-radius: 21vw;
@@ -149,7 +149,7 @@ const H3 = styled.h3`
   text-align: ${props => props.align ? props.align : 'left'};
   color: #fff;
   @media (orientation: portrait) {
-    font-size: 4.5vw;
+    font-size: 4vw;
   }
 `
 const P = styled.p`
@@ -187,27 +187,77 @@ const Container = styled.div`
 
 const infographicParts = [
   {
-    image: 'reputacja.png',
+    image: <StaticImage
+      src='../images/reputacja.svg'
+      placeholder="blurred"
+      width={200}
+      height={200}
+      formats={["auto", "webp", "avif"]}
+      alt="strony internetowe reputacja"
+      transformOptions={{ fit: "cover", cropFocus: "attention" }}
+      loading='eager'
+      class={'infographic-image'}
+      />,
     heading: 'wizerunek',
     paragraph: 'Zaimponuj klientom budując swoją reputację w sieci.'
   },
   {
-    image: 'przystępność.png',
+    image: <StaticImage
+      src='../images/przystepnosc.svg'
+      placeholder="blurred"
+      width={200}
+      height={200}
+      formats={["auto", "webp", "avif"]}
+      alt="dostępność stron internetowych"
+      transformOptions={{ fit: "cover", cropFocus: "attention" }}
+      loading='eager'
+      class={'infographic-image'}
+      />,
     heading: 'dostępność',
     paragraph: 'Pozwól klientom przeglądać Twoją ofertę 24/7.'
   },
   {
-    image: 'reklama-online.png',
+    image: <StaticImage
+      src='../images/reklama-online.svg'
+      placeholder="blurred"
+      width={200}
+      height={200}
+      formats={["auto", "webp", "avif"]}
+      alt="reklama w internecie"
+      transformOptions={{ fit: "cover", cropFocus: "attention" }}
+      loading='eager'
+      class={'infographic-image'}
+      />,
     heading: 'marketing',
     paragraph: 'Wykorzystaj swoją stronę jako skuteczne narzędzie marketingowe.'
   },
   {
-    image: 'e-commerce.png',
+    image: <StaticImage
+      src='../images/e-commerce.svg'
+      placeholder="blurred"
+      width={200}
+      height={200}
+      formats={["auto", "webp", "avif"]}
+      alt="magia sklepy internetowe"
+      transformOptions={{ fit: "cover", cropFocus: "attention" }}
+      loading='eager'
+      class={'infographic-image'}
+    />,
     heading: 'sprzedaż',
     paragraph: 'Ułatw klientom zakup Twoich usług i produktów dzięki sprzedaży online.'
   },
   {
-    image: 'zainteresowanie.png',
+    image: <StaticImage
+      src='../images/zainteresowanie.svg'
+      placeholder="blurred"
+      width={200}
+      height={200}
+      formats={["auto", "webp", "avif"]}
+      alt="piekielnie szybkie www"
+      transformOptions={{ fit: "cover", cropFocus: "attention" }}
+      loading='eager'
+      class={'infographic-image'}
+    />,
     heading: 'widoczność',
     paragraph: 'Zyskaj dotatkowe zainteresowanie dzięki widoczności w wyszukiwarce Google.'
   },
@@ -225,8 +275,8 @@ const Infographic = ({toggleReadMore, isReadMoreActive}) => {
       <H2>korzyści płynące z twojej witryny</H2>
       {infographicParts.map((part, i) => {
         return <InfographicPart key={i}>
-          <ImageContainer className='infograpgic-image-container'>
-            <InfographicImage src={part.image} />
+          <ImageContainer className='infographic-image-container'>
+            {part.image}
           </ImageContainer>
           <Circles>
             <HalfCircle className='infographic-half-circle'></HalfCircle>

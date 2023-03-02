@@ -52,7 +52,6 @@ const Li = styled.li`
     -moz-box-shadow: 0px 6vw 6vw -3vw rgba(255, 4, 32, 1);
     box-shadow: 0px 6vw 6vw -3vw rgba(255, 4, 32, 1);
     &:last-of-type > div {
-        padding-top: .6vw;
         > p {
             font-size: 1.3vw;
             line-height: 1.8vw;
@@ -69,10 +68,10 @@ const Li = styled.li`
         -moz-box-shadow: 0px 12vw 12vw -6vw rgba(255, 4, 32, 1);
         box-shadow: 0px 12w 12vw -6vw rgba(255, 4, 32, 1);
         &:last-of-type > div {
-            padding-top: 3vw;
             > p {
-                font-size: 6vw;
-                line-height: 9vw;
+                padding-top: 6vw;
+                font-size: 5.7vw;
+                line-height: 8.5vw;
             }
         }
     }
@@ -151,11 +150,12 @@ const cardContent = [
         heading: 'jak umieścić ją w Internecie?',
         subheading1: 'jeśli masz swoją domenę i hosting:',
         paragraph1: 'Wgramy witrynę na Twój serwer i przypiszemy do niego domenę, jesli nie chcesz robić tego osobiście.',
-        subheading2: 'jeśli ich nie masz:',
+        subheading2: 'jeśli nie masz:',
         paragraph2: 'Zadbamy o hosting oraz domenę dla Ciebie.'
     },
     {
         heading: 'czy może się zepsuć?',
+        subheading1: 'Regularny monitoring:',
         paragraph1: 'Regularnie monitorujemy strony naszych klientów, by przeciwdziałać usterkom. W przypadku jakiejkolwiek awarii możesz liczyć na naszą pomoc!',
     },
 ]

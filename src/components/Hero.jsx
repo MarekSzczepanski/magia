@@ -1,6 +1,6 @@
 import * as React from "react"
 import styled, { keyframes } from 'styled-components'
-import { Stars, Star} from '../gatsbyImages'
+import { StaticImage } from "gatsby-plugin-image"
 
 const animationTo = (props) => keyframes`
   to { ${props}; }
@@ -79,7 +79,7 @@ const H1 = styled.h1`
   @media (orientation: portrait) {
     max-width: 100%;
     padding: 0;
-    font-size: 12vw;
+    font-size: 11vw;
     text-align: center;
     background-color: transparent;
   }
@@ -193,14 +193,35 @@ const Hero = ({h1, heroBarHeadings, heroBarTransform, heroBarTransformMobile}) =
           return <React.Fragment key={i}>
             <BarWord>{heading}</BarWord>
             <StarsParent className='stars-hero-bar'>
-              <Stars></Stars>
+              <StaticImage
+                src="../images/gwiazdy.svg"
+                placeholder="blurred"
+                width={60}
+                height={60}
+                formats={["auto", "webp", "avif"]}
+                alt="gwiazdy - przerywnik oferta"
+                transformOptions={{ fit: "cover", cropFocus: "attention" }}
+                loading='eager'
+              />
+              
             </StarsParent>
           </React.Fragment>
         })}
       </HeroBarWrap>
     </HeroBar>
     {allStars.map((star, i) => {
-      return <AnimationWrap width='1vw' top={star.top} left={star.left} animation={animationTo(star.animation)} key={i}><Star></Star></AnimationWrap>
+      return <AnimationWrap width='1vw' top={star.top} left={star.left} animation={animationTo(star.animation)} key={i}>
+        <StaticImage
+          src="../images/gwiazda.svg"
+          placeholder="blurred"
+          width={30}
+          height={30}
+          formats={["auto", "webp", "avif"]}
+          alt="gwiazda"
+          transformOptions={{ fit: "cover", cropFocus: "attention" }}
+          loading='eager'
+        /> 
+      </AnimationWrap>
     })}
   </Wrap>
 )

@@ -1,8 +1,8 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import styled from 'styled-components'
-import { Logo, Telephone, Facebook, Youtube } from '../gatsbyImages'
 import { useState } from 'react'
+import { StaticImage } from "gatsby-plugin-image"
 
 const StyledHeader = styled.header`
   display: flex;
@@ -17,6 +17,7 @@ const StyledHeader = styled.header`
     position: fixed;
     top: 0;
     height: 100vh;
+    height: 100dvh;
     ${props => props.isActiveOnPortrait ? null : 'transform: translateX(-100%);'}
     background-color: #ff0420;
     transition: transform .2s ease-out;
@@ -218,7 +219,19 @@ const Header = () => {
     <>
       <StyledHeader isActiveOnPortrait={isPortraitMenuActive}>
         <LogoParent>
-          <StyledLink to="/"><Logo></Logo></StyledLink>
+          <StyledLink to="/">
+            <StaticImage
+              src="../images/logo-magia.svg"
+              className='logo'
+              placeholder="blurred"
+              width={250}
+              height={250}
+              formats={["auto", "webp", "avif"]}
+              alt="logo Magia"
+              transformOptions={{ fit: "cover", cropFocus: "attention" }}
+              loading='eager'
+            />
+          </StyledLink>
         </LogoParent>
         <Nav>
           <Ul>
@@ -229,18 +242,49 @@ const Header = () => {
             })}
             <Li className='phone'>
               <PhoneParent>
-                <Telephone></Telephone>
+                <StaticImage
+                  src="../images/telefon-magia.svg"
+                  placeholder="blurred"
+                  width={50}
+                  height={50}
+                  formats={["auto", "webp", "avif"]}
+                  alt="telefon Magia"
+                  transformOptions={{ fit: "cover", cropFocus: "attention" }}
+                  loading='eager'
+                />
                 <A href="tel:+48723062926">+48 723 062 926</A>
               </PhoneParent>
             </Li>
             <Li className='socials'>
               <SocialsParent className='facebook'>
-                <A href='https://www.facebook.com/profile.php?id=100090169522227' rel='noreferrer noopener' target='_blank'><Facebook></Facebook></A>
+                <A href='https://www.facebook.com/profile.php?id=100090169522227' rel='noreferrer noopener' target='_blank'>
+                  <StaticImage
+                    src="../images/facebook-magia.svg"
+                    placeholder="blurred"
+                    width={64}
+                    height={64}
+                    formats={["auto", "webp", "avif"]}
+                    alt="Facebook Magia"
+                    transformOptions={{ fit: "cover", cropFocus: "attention" }}
+                    loading='eager'
+                  />
+                </A>
               </SocialsParent>
             </Li>
             <Li className='socials'>
               <SocialsParent className='youtube'>
-                <A href='https://www.youtube.com/@magia-strony-internetowe' rel='noreferrer noopener' target='_blank'><Youtube></Youtube></A>
+                <A href='https://www.youtube.com/@magia-strony-internetowe' rel='noreferrer noopener' target='_blank'>
+                <StaticImage
+                    src="../images/youtube-magia.svg"
+                    placeholder="blurred"
+                    width={64}
+                    height={64}
+                    formats={["auto", "webp", "avif"]}
+                    alt="Youtube Magia"
+                    transformOptions={{ fit: "cover", cropFocus: "attention" }}
+                    loading='eager'
+                  />
+                </A>
               </SocialsParent>
             </Li>
           </Ul>
