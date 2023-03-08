@@ -1,16 +1,17 @@
 import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-//import { graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Hero from '../components/Hero'
 import ListArticle from '../components/ListArticle'
 import Infographic from '../components/Infographic'
+import Portfolio from '../components/Portfolio'
 import WhyUs from '../components/WhyUs'
 import KnowledgeNotRequired from '../components/KnowledgeNotRequired'
 import { useState } from 'react'
 
-/*export const query = graphql`
+export const query = graphql`
   query {
     allWpPost {
       edges {
@@ -22,14 +23,15 @@ import { useState } from 'react'
       }
     }
   }
-`*/
+`
 
 const WebpagesInfo = styled.section`
+  position: relative;
   display: flex;
   background-color: #ff0420;
+  z-index: 2;
   @media (orientation: portrait) {
     flex-direction: column-reverse;
-    position: relative;
   }
 `
 
@@ -65,21 +67,23 @@ const heroBarHeadings = [
   'Ostróda i okolice'
 ]
 
-const Ostroda = () => {
+const Ostroda = ({data}) => {
   const [isReadMoreActive, toggleReadMore] = useState(false);
-
+  
   return (
     <Layout>
-      <Hero h1={'strony internetowe ostróda'} heroBarHeadings={heroBarHeadings} heroBarTransform={'-260%'} heroBarTransformMobile={'-660%'}></Hero>
+      <Hero h1={'strony internetowe ostróda'} heroBarHeadings={heroBarHeadings} heroBarTransform={'-260%'} heroBarTransformMobile={'-700%'}></Hero>
       <WebpagesInfo>
         <ListArticle allLi={allLi} isActive={isReadMoreActive}></ListArticle>
         <Infographic toggleReadMore={toggleReadMore} isReadMoreActive={isReadMoreActive}></Infographic>
       </WebpagesInfo>
+      <Portfolio></Portfolio>
       <WhyUs></WhyUs>
       <KnowledgeNotRequired></KnowledgeNotRequired>
-
-    {/*
-      <h3>Wpisy</h3>
+      
+    
+     {/*
+     } <h3>Wpisy</h3>
     {data.allWpPost.edges.map(({ node }) => (
       <div key={node.id}>
         <p>{node.title}</p>

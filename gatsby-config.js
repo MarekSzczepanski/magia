@@ -39,22 +39,22 @@ module.exports = {
         icon: `src/images/favicon.svg`,
       },
     },
-    //{
-    //  resolve: `gatsby-source-wordpress`,
-    //  options: {
-    //      // Specify the URL of the WordPress source
-    //      url: `http://localhost/strony/graphql`,
-    //      protocol: `http`,
-    //      // Indicates if a site is hosted on WordPress.com
-    //      hostingWPCOM: false,
-    //      // Specify which URL structures to fetch
-    //      includedRoutes: [
-    //        // '**/posts',
-    //       // '**/tags',
-    //        // '**/categories'
-    //      ]
-    //  }
-    //},
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+          // Specify the URL of the WordPress source
+          url: `https://magia.vyost.usermd.net/graphql`,
+          protocol: `https`,
+          // Indicates if a site is hosted on WordPress.com
+          hostingWPCOM: false,
+          // Specify which URL structures to fetch
+          includedRoutes: [
+             //'**/posts',
+            // '**/tags',
+           // '**/categories'
+          ]
+      }
+    },
     {
       resolve: `gatsby-plugin-google-fonts-with-attributes`,
       options: {
