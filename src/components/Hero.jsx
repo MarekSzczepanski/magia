@@ -111,7 +111,7 @@ const HeroBarWrap = styled.div`
   animation: ${props => props.animation} 19s linear infinite;
   @media (orientation: portrait) {
     height: 12vw;
-    animation: ${props => props.animationPortrait} 13s linear infinite;
+    animation: ${props => props.animationPortrait} 19s linear infinite;
   }
 `
 const BarWord = styled.span`
@@ -198,7 +198,7 @@ const Hero = ({h1, heroBarHeadings, heroBarTransform, heroBarTransformMobile}) =
                 placeholder="blurred"
                 width={60}
                 height={60}
-                formats={["auto", "webp", "avif"]}
+                formats={["auto", "webp"]}
                 alt="gwiazdy - przerywnik oferta"
                 transformOptions={{ fit: "cover", cropFocus: "attention" }}
                 loading='eager'
@@ -216,7 +216,7 @@ const Hero = ({h1, heroBarHeadings, heroBarTransform, heroBarTransformMobile}) =
           placeholder="blurred"
           width={30}
           height={30}
-          formats={["auto", "webp", "avif"]}
+          formats={["auto", "webp"]}
           alt="gwiazda"
           transformOptions={{ fit: "cover", cropFocus: "attention" }}
           loading='eager'

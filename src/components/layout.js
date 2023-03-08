@@ -95,7 +95,7 @@ const Layout = ({ children }) => {
             placeholder="blurred"
             width={60}
             height={60}
-            formats={["auto", "webp", "avif"]}
+            formats={["auto", "webp"]}
             alt="gwiazdy - przerywnik oferta"
             transformOptions={{ fit: "cover", cropFocus: "attention" }}
             loading='eager'
@@ -107,7 +107,7 @@ const Layout = ({ children }) => {
             placeholder="blurred"
             width={60}
             height={60}
-            formats={["auto", "webp", "avif"]}
+            formats={["auto", "webp"]}
             alt="gwiazdy - przerywnik oferta"
             transformOptions={{ fit: "cover", cropFocus: "attention" }}
             loading='eager'

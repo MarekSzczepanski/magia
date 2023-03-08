@@ -226,7 +226,7 @@ const Header = () => {
               placeholder="blurred"
               width={250}
               height={250}
-              formats={["auto", "webp", "avif"]}
+              formats={["auto", "webp"]}
               alt="logo Magia"
               transformOptions={{ fit: "cover", cropFocus: "attention" }}
               loading='eager'
@@ -247,7 +247,7 @@ const Header = () => {
                   placeholder="blurred"
                   width={50}
                   height={50}
-                  formats={["auto", "webp", "avif"]}
+                  formats={["auto", "webp"]}
                   alt="telefon Magia"
                   transformOptions={{ fit: "cover", cropFocus: "attention" }}
                   loading='eager'
@@ -263,7 +263,7 @@ const Header = () => {
                     placeholder="blurred"
                     width={64}
                     height={64}
-                    formats={["auto", "webp", "avif"]}
+                    formats={["auto", "webp"]}
                     alt="Facebook Magia"
                     transformOptions={{ fit: "cover", cropFocus: "attention" }}
                     loading='eager'
@@ -279,7 +279,7 @@ const Header = () => {
                     placeholder="blurred"
                     width={64}
                     height={64}
-                    formats={["auto", "webp", "avif"]}
+                    formats={["auto", "webp"]}
                     alt="Youtube Magia"
                     transformOptions={{ fit: "cover", cropFocus: "attention" }}
                     loading='eager'

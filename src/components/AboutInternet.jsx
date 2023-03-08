@@ -121,7 +121,7 @@ const AboutInternet = () => (
                 placeholder="blurred"
                 width={512}
                 height={512}
-                formats={["auto", "webp", "avif"]}
+                formats={["auto", "webp"]}
                 alt="świat online"
                 transformOptions={{ fit: "cover", cropFocus: "attention" }}
                 loading='eager'

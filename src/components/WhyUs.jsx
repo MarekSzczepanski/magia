@@ -10,7 +10,7 @@ const Wrap = styled.section`
   }
 `
 const H2 = styled.h2`
-  padding-bottom: 6vw;
+  padding-bottom: 4.5vw;
   font-size: 4vw;
   text-align: center;
   color: #ff0420;
@@ -262,7 +262,7 @@ const WhyUs = () => (
               placeholder="blurred"
               width={512}
               height={512}
-              formats={["auto", "webp", "avif"]}
+              formats={["auto", "webp"]}
               alt="opieka posprzedażowa strony internetowe"
               transformOptions={{ fit: "cover", cropFocus: "attention" }}
               loading='eager'
