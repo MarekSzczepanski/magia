@@ -24,6 +24,7 @@ const H2 = styled.h2`
 const Section = styled.section`
   display: flex;
   align-items: center;
+  min-height: 100vh;
   padding-bottom: 6vw;
   &:nth-of-type(even) {
     flex-direction: row-reverse;
