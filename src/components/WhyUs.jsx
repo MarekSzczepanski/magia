@@ -137,6 +137,11 @@ const Ol = styled.ol`
 const IframeParent = styled.section`
   display: flex;
   align-items: center;
+  iframe {
+    width: 45vw;
+    height: 30vw;
+  }
+  
 `
 const Iframe = styled.iframe`
   width: 40vw;
@@ -154,12 +159,11 @@ const ImageParent = styled.section`
   align-items: center;
   width: 30vw;
   height: 30vw;
-  margin-right: 5vw;
   border-radius: 50%;
   background-color: #ff0420;
-  -webkit-box-shadow: 0 0 10vw #ff0420;
-  -moz-box-shadow: 0 0 10vw #ff0420;
-  box-shadow: 0 0 10vw #ff0420;
+  -webkit-box-shadow: 0 0 7.5vw #ff0420;
+  -moz-box-shadow: 0 0 7.5vw #ff0420;
+  box-shadow: 0 0 7.5vw #ff0420;
   @media (orientation: portrait) {
     display: none;
     width: 80vw;
@@ -189,7 +193,8 @@ const all_text = [
       <P>Tworzymy w technologii <Strong>HEADLESS</Strong> - nowatorskiej metodzie umożliwiającej wstępne 
       ładowanie się strony <Strong>zanim</Strong> użytkownik ją odwiedzi - po stronie serwera!</P>
     </section>
-    </div>
+    </div>,
+    video: 'https://www.youtube.com/embed/YZL8VgEtXy4'
   },
   {
     content: <div>
@@ -200,7 +205,8 @@ const all_text = [
     Często spotykane są problemy z interfejsem przy zmianie wielkości okna przeglądarki na komputerze, czy przełączaniu widoku z pionowego na poziomy na telefonie.
     Nasze projekty są w pełni dostosowane do <Strong>wszystkich</Strong> urządzeń - komputerów stacjonarnych, laptopów, tabletów, smartfonów, a nawet telewizorów.
     </P>
-    </div>
+    </div>,
+    video: 'https://www.youtube.com/embed/brxHHpJZshw'
   },
   {
     content: <div>
@@ -219,7 +225,8 @@ const all_text = [
       <H4v2>Intuicyjny design</H4v2>
       <P>Nie wprowadzamy internautów w błąd przesadzonym designem, by każdy natychmiast się orientował co do czego służy oraz od razu znalazł to, czego szuka.</P>
     </section>
-    </div>
+    </div>,
+    video: 'https://www.youtube.com/embed/K-X_Rk5BaUg'
   },
   {
     content: <div>
@@ -245,17 +252,19 @@ const WhyUs = () => (
       <H2>dlaczego magia?</H2>
       {all_text.map((text, i) => {
         return <Section key={i}>
-          <Text padding={i%2 ? '0 0 0 6vw' : '0 6vw 0 0'}>
+          <Text padding={i%2 ? '0 0 0 12vw' : '0 6vw 0 0'}>
             {text.content}
           </Text>
-          { !text.noVideo && false ? <IframeParent>
+          { !text.noVideo? <IframeParent>
+            <div>
             <Iframe
-              src='https://www.youtube.com/embed/QKk8RGBcOaI'
+              src={text.video}
               title="YouTube video player" 
-              frameborder="0" 
+              frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen>
             </Iframe>
+            </div>
           </IframeParent> :
           <ImageParent>
             <StaticImage
