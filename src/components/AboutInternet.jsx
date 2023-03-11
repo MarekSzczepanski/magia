@@ -111,7 +111,7 @@ const AboutInternet = () => (
         Jest to szczególnie ważne dla małych i średnich firm.
         </P>
         <StyledLink>
-            <Link to='/oferta' rel='noreferer' className='button'>zapoznaj się z naszą ofertą</Link>
+            <Link to='/oferta' className='button'>zapoznaj się z naszą ofertą</Link>
         </StyledLink>
     </Container>
     <Container2>
@@ -134,7 +134,5 @@ const AboutInternet = () => (
     </Container2>
   </Wrap>
 )
-
-
 
 export default AboutInternet
