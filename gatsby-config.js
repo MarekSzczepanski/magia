@@ -81,7 +81,7 @@ module.exports = {
           // Setting this parameter is also optional
           respectDNT: true,
           // Avoids sending pageview hits from custom paths
-          exclude: ["/preview/**", "/using-dsg", "/404"],
+          exclude: ["/preview/**", "/using-dsg", "/404", "/polityka-prywatnosci"],
         },
       },
     },
@@ -91,7 +91,7 @@ module.exports = {
         // Exclude specific pages or groups of pages using glob parameters
         // See: https://github.com/isaacs/minimatch
         // The example below will exclude the single `path/to/page` and all routes beginning with `category`
-        excludes: [`/using-dsg`, `/404`],
+        excludes: [`/using-dsg`, `/404`, `/polityka-prywatnosci`],
         query: `
           {
             site {

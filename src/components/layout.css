@@ -72,7 +72,7 @@ li {
   letter-spacing: 0.05vw;
   background-color: var(--color1);
   color: var(--color3);
-  transition: background-color .2s ease-out, color .2s ease-out, border .2s ease-out;
+  transition: background-color .2s ease-out, color .2s ease-out, border-color .2s ease-out;
   cursor: pointer;
 }
 .button:hover {
@@ -90,6 +90,12 @@ li {
   color: var(--color3);
   background-color: var(--color1);
 }
+.button4 {
+  border: 0;
+  color: var(--color3);
+  background-color: var(--color2);
+}
+
 footer {
   display: flex;
   justify-content: space-between;

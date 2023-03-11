@@ -3,8 +3,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from 'styled-components'
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-
 import Header from "./header"
+import PrivacyPolicy from "../components/PrivacyPolicy"
 import "./layout.css"
 
 const Container = styled.div`
@@ -68,7 +68,7 @@ const StyledLink = styled.span`
   }
 `
 
-const Layout = ({ children }) => {
+const Layout = ({ children, headerColor }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -81,15 +81,27 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-        <main>{children}</main>
-        <footer>
-          <Container>
-            <P>Spotkajmy się osobiście:</P>
-            <StyledLink><Link to='/strony-internetowe-ostroda' rel='noreferer'>strony internetowe Ostróda</Link></StyledLink>
-            {/* <StyledLink><Link to='/strony-internetowe-ostroda' rel='noreferer'>strony internetowe Iława</Link></StyledLink> */}
-            {/* <StyledLink><Link to='/#' rel='noreferer'>strony internetowe Olsztyn</Link></StyledLink> */}
-          </Container>
+      <Header siteTitle={data.site.siteMetadata?.title || `Title`} headerColor={headerColor} />
+      <main>{children}</main>
+      <footer>
+        <Container>
+          <P>Spotkajmy się osobiście:</P>
+          <StyledLink><Link to='/strony-internetowe-ostroda'>strony internetowe Ostróda</Link></StyledLink>
+          {/* <StyledLink><Link to='/strony-internetowe-ostroda'>strony internetowe Iława</Link></StyledLink> */}
+          {/* <StyledLink><Link to='/#'>strony internetowe Olsztyn</Link></StyledLink> */}
+        </Container>
+        <StaticImage
+          src="../images/gwiazdy.svg"
+          placeholder="blurred"
+          width={60}
+          height={60}
+          formats={["auto", "webp"]}
+          alt="gwiazdy - przerywnik oferta"
+          transformOptions={{ fit: "cover", cropFocus: "attention" }}
+          loading='eager'
+          className='footer-stars'
+        />
+        <P>Zdalnie - cała Polska!</P>
           <StaticImage
             src="../images/gwiazdy.svg"
             placeholder="blurred"
@@ -101,21 +113,9 @@ const Layout = ({ children }) => {
             loading='eager'
             className='footer-stars'
           />
-          <P>Zdalnie - cała Polska!</P>
-          <StaticImage
-            src="../images/gwiazdy.svg"
-            placeholder="blurred"
-            width={60}
-            height={60}
-            formats={["auto", "webp"]}
-            alt="gwiazdy - przerywnik oferta"
-            transformOptions={{ fit: "cover", cropFocus: "attention" }}
-            loading='eager'
-            className='footer-stars'
-          />
-          
-          <P>© {new Date().getFullYear()} <StyledLink><Link to='/#' rel='noreferer'>magiainternetu.com</Link></StyledLink></P>
+          <P>© {new Date().getFullYear()} <StyledLink><Link to='/#'>magiainternetu.com</Link></StyledLink></P>
         </footer>
+        <PrivacyPolicy />
     </>
   )
 }

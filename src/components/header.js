@@ -11,6 +11,7 @@ const StyledHeader = styled.header`
   width: 100vw;
   height: 6vw;
   padding: 0 3vw;
+  background-color: ${props => props.headerColor ? props.headerColor : 'transparent'};
   z-index: 2;
   @media (orientation: portrait) {
     flex-direction: column;
@@ -208,16 +209,15 @@ const menuElements = [
   'oferta'/*, 'portfolio', 'o nas', 'blog', 'kontakt'*/
 ]
 
-const Header = () => {
+const Header = ({headerColor}) => {
   const [isPortraitMenuActive, togglePortraitMenu] = useState(false);
-
   const handleClick = () => {
     togglePortraitMenu(!isPortraitMenuActive);
   }
 
   return (
     <>
-      <StyledHeader isActiveOnPortrait={isPortraitMenuActive}>
+      <StyledHeader isActiveOnPortrait={isPortraitMenuActive} headerColor={headerColor}>
         <LogoParent>
           <StyledLink to="/">
             <StaticImage
@@ -236,8 +236,8 @@ const Header = () => {
         <Nav>
           <Ul>
             {menuElements.map((element, i)=> {
-              return <Li key={i}>
-                <StyledLink to={`/${element}`} rel='noopener noreferer'>{element}</StyledLink>
+              return <Li key={i} >
+                <StyledLink to={`/${element}`}>{element}</StyledLink>
               </Li>
             })}
             <Li className='phone'>
