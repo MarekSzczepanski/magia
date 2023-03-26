@@ -1,7 +1,6 @@
 import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Hero from '../components/Hero'
 import ListArticle from '../components/ListArticle'
@@ -10,20 +9,6 @@ import Portfolio from '../components/Portfolio'
 import WhyUs from '../components/WhyUs'
 import KnowledgeNotRequired from '../components/KnowledgeNotRequired'
 import { useState } from 'react'
-
-export const query = graphql`
-  query {
-    allWpPost {
-      edges {
-        node {
-          id
-          title
-          excerpt
-        }
-      }
-    }
-  }
-`
 
 const WebpagesInfo = styled.section`
   position: relative;
@@ -82,15 +67,14 @@ const Ostroda = ({data}) => {
       <KnowledgeNotRequired></KnowledgeNotRequired>
       
     
-     {/*
-     } <h3>Wpisy</h3>
+    {/*  <h3>Wpisy</h3>
     {data.allWpPost.edges.map(({ node }) => (
       <div key={node.id}>
         <p>{node.title}</p>
         {node.excerpt ? <p>{node.excerpt.replace('<p>', '').replace('</p>', '')}</p> : null}
       </div>
     ))}
-    */}
+    */} 
     
     </Layout>
   )

@@ -43,16 +43,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
           // Specify the URL of the WordPress source
-          url: `https://magia.vyost.usermd.net/graphql`,
-          protocol: `https`,
-          // Indicates if a site is hosted on WordPress.com
-          hostingWPCOM: false,
-          // Specify which URL structures to fetch
-          includedRoutes: [
-             //'**/posts',
-            // '**/tags',
-           // '**/categories'
-          ]
+          url: `https://magia.vyost.usermd.net/graphql`
       }
     },
     {
