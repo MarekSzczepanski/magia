@@ -206,7 +206,7 @@ const SocialsParent = styled.div`
 `
 
 const menuElements = [
-  'oferta'/*, 'portfolio', 'o nas', 'blog', 'kontakt'*/
+  'oferta', 'blog'/*, 'portfolio', 'o nas', 'blog', 'kontakt'*/
 ]
 
 const Header = ({headerColor}) => {
