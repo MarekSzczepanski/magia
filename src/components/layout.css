@@ -119,6 +119,12 @@ footer {
   width: 15vw;
   height: 15vw;
 }
+.cookies {
+  display: none;
+}
+.cookies.undefined {
+  display: flex;
+}
 
 @media(orientation: portrait) {
   html {
