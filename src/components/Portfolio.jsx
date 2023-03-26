@@ -111,7 +111,19 @@ const ImageParent = styled.div`
     picture > img {
         width: 100%;
         height: auto;
+        min-height: 33vw;
         transition: transform 9s ease-out !important;
+    }
+    .gatsby-image-wrapper {
+        min-height: 33vw;
+    }
+    .hedless > picture > img {
+        object-position: 27%;
+    }
+    @media (orientation: portrait) {
+        picture > img, .gatsby-image-wrapper {
+            min-height: 75vw;
+        }
     }
 `
 const LogoParent = styled.div`
@@ -150,7 +162,6 @@ const LogoParent = styled.div`
     }
 `
 const Chevron = styled.div`
-    
     position: absolute;
     top: 63%;
     left: 8vw;
@@ -222,8 +233,8 @@ const Boxes = [
         image: <StaticImage
             src='../images/mitro-ostroda-strona-internetowa.png'
             placeholder="blurred"
-            width={1000}
-            height={2218}
+            width={1585}
+            height={3515}
             formats={["auto", "webp"]}
             alt='strona internetowa Mitro Ostróda'
             transformOptions={{ fit: "cover", cropFocus: "attention" }}
@@ -248,34 +259,20 @@ const Boxes = [
         color: '#ff5e14'
     },
     {
-        heading: 'Saniko',
+        heading: 'Hedless',
         image: <StaticImage
-            src='../images/saniko-strona-internetowa.png'
+            src='../images/hedless-strona-internetowa.png'
             placeholder="blurred"
-            width={1000}
-            height={3470}
+            width={1413}
+            height={941}
             formats={["auto", "webp"]}
-            alt='strona internetowa Saniko'
+            alt='strona internetowa Hedless'
             transformOptions={{ fit: "cover", cropFocus: "attention" }}
             loading='lazy'
+            className='hedless'
         />,
-        link: 'http://saniko.eu',
-        color: '#ff5e14'
-    },
-    {
-        heading: 'Saniko',
-        image: <StaticImage
-            src='../images/saniko-strona-internetowa.png'
-            placeholder="blurred"
-            width={1000}
-            height={3470}
-            formats={["auto", "webp"]}
-            alt='strona internetowa Saniko'
-            transformOptions={{ fit: "cover", cropFocus: "attention" }}
-            loading='lazy'
-        />,
-        link: 'http://saniko.eu',
-        color: '#ff5e14'
+        link: 'https://hedless.io',
+        color: '#3177e8'
     },
 ]
 
@@ -304,11 +301,20 @@ let resizeLock = false;
 let touchStartScreenX = 0;
 
 const Portfolio = () => { 
+    const isBrowser = typeof window !== "undefined";
+
     const [sliderTransform, setSliderTransform] = useState(0);
     const [slidesSlid, setSlidesSlid] = useState(0);
-    const [dimensions, setDimensions] = useState({width: window.innerWidth, height: window.innerHeight});
+    const [dimensions, setDimensions] = useState({width: 0, height: 0});
     const [isSliding, setIsSliding] = useState(false);
 
+    useEffect(() => {
+        if (isBrowser) {
+          setDimensions({width: window.innerWidth, height: window.innerHeight})
+          window.addEventListener("resize", handleResize, false)
+        }
+    }, [isBrowser]);
+    
     const handleResize = () => {
         if (!resizeLock) {
             setDimensions({ width: window.innerWidth, height: window.innerHeight });
@@ -317,7 +323,6 @@ const Portfolio = () => {
         } 
     }
   
-    useEffect(() => window.addEventListener("resize", handleResize, false));
     useEffect(() => {
         resizeLock = true;
         setTimeout(() => {resizeLock = false}, 100);
