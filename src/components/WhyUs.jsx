@@ -32,6 +32,7 @@ const Section = styled.section`
   @media (orientation: portrait) {
     flex-direction: column;
     align-items: center;
+    min-height: unset;
     &:nth-of-type(even) {
       flex-direction: column;
     }
@@ -137,15 +138,10 @@ const Ol = styled.ol`
 const IframeParent = styled.section`
   display: flex;
   align-items: center;
-  iframe {
-    width: 45vw;
-    height: 30vw;
-  }
-  
 `
 const Iframe = styled.iframe`
-  width: 40vw;
-  height: 26.66vw;
+  width: 45vw;
+  height: 30vw;
   font-size: 1vw;
   @media (orientation: portrait) {
     width: 94vw;
@@ -259,6 +255,7 @@ const WhyUs = () => (
             <div>
             <Iframe
               src={text.video}
+              loading="lazy"
               title="YouTube video player" 
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
