@@ -15,7 +15,7 @@ const WebpagesInfo = styled.section`
   display: flex;
   background-color: #ff0420;
   z-index: 2;
-  @media (orientation: portrait) {
+  @media (max-width: 1023px) {
     flex-direction: column-reverse;
   }
 `

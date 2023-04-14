@@ -8,7 +8,7 @@ const Wrap = styled.article`
   border-top: .1vw solid #1a1e23;
   border-right: .3vw solid #1a1e23;
   background-color: #fff;
-  @media (orientation: portrait) {
+  @media (max-width: 1023px) {
     position: ${props => props.isActive ? 'static' : 'absolute'};
     transform: translateX(${props => props.isActive ? '0' : '100%'});
     width: 100%;
@@ -19,30 +19,30 @@ const Wrap = styled.article`
 const H2 = styled.h2`
   font-size: 2.4vw;
   color: #1a1e23;
-  @media (orientation: portrait) {
+  @media (max-width: 1023px) {
     font-size: 9vw;
     text-align: center;
   }
 `
 const Li = styled.li`
   padding-bottom: 1.5vw;
-  font-size: 1.2vw;
-  line-height: 1.8vw;
+  font-size: calc(.4rem + .7vw);
+  line-height: calc(.7rem + .9vw);
   color: #1a1e23;
   &:first-of-type {
     padding-top: 3vw;
   }
-  @media (orientation: portrait) {
+  @media (max-width: 1023px) {
     padding-bottom: 6vw;
-    font-size: 5vw;
-    line-height: 8vw;
+    font-size: 1rem;
+    line-height: 1.5rem;
     &:first-of-type {
       padding-top: 9vw;
     }
   }
 `
 const Container = styled.div`
-  @media (orientation: portrait) {
+  @media (max-width: 1023px) {
     display: flex;
     justify-content: center;
   }

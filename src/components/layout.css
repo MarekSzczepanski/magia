@@ -61,11 +61,10 @@ li {
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 3vw;
   align-self: center;
-  padding: 0 1.5vw;
+  padding: 1rem 1.5rem;
   border: .2vw solid var(--color1);
-  font-size: .9vw;
+  font-size: calc(.7vw + .3rem);
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;
@@ -100,7 +99,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5vw 3vw;
+  padding: calc(.8vw + 2rem) calc(1.6vw + .5rem);
 }
 .logo {
   width: 4.5vw;
@@ -109,8 +108,8 @@ footer {
   width: 2vw;
 }
 .infographic-image {
-  width: 9vw;
-  height: 9vw;
+  width: calc(4.5vw + 1.5rem);
+  height: calc(4.5vw + 1.5rem);
 }
 .footer-stars {
   width: 2vw;
@@ -143,17 +142,12 @@ footer {
   .stars-hero-bar > div {
     width: 8vw;
   }
-  .infographic-image {
-    width: 24vw;
-    height: 24vw;
-  }
   h1, h2, h3, h4, h5, footer {
     letter-spacing: 0.14vw;
   }
   .button {
-    height: 12vw;
-    padding: 0 6vw;
-    font-size: 3.7vw;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
     letter-spacing: 0.2vw;
   }
   .shield {
@@ -166,7 +160,14 @@ footer {
     padding: 9vw 3vw;
   }
   .footer-stars {
-    width: 6vw;
-    margin: 6vw 0;
+    width: 3rem;
+    margin: 2rem 0;
+  }
+}
+
+@media (max-width: 1023px) {
+  .infographic-image {
+    width: 20vw;
+    height: 20vw;
   }
 }

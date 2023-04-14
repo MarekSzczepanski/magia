@@ -5,8 +5,8 @@ import { StaticImage } from "gatsby-plugin-image"
 const Wrap = styled.section`
   padding: 3vw;
   background-color: #1a1e23;
-  @media (orientation: portrait) {
-    padding: 6vw 3vw;
+  @media (max-width: 1023px) {
+    padding: 6vw 3vw 2rem;
   }
 `
 const H2 = styled.h2`
@@ -14,8 +14,8 @@ const H2 = styled.h2`
   font-size: 4vw;
   text-align: center;
   color: #ff0420;
-  @media (orientation: portrait) {
-    padding-bottom: 6vw;
+  @media (max-width: 1023px) {
+    padding-bottom: 2rem;
     font-size: 8.5vw;
   }
 `
@@ -29,7 +29,7 @@ const Section = styled.section`
   &:nth-of-type(even) {
     flex-direction: row-reverse;
   }
-  @media (orientation: portrait) {
+  @media (max-width: 1023px) {
     flex-direction: column;
     align-items: center;
     min-height: unset;
@@ -50,7 +50,7 @@ const Section = styled.section`
 const Text = styled.section`
   width: 60vw;
   padding: ${props => props.padding};
-  @media (orientation: portrait) {
+  @media (max-width: 1023px) {
     width: 100%;
     padding: 0;
   }
@@ -59,77 +59,85 @@ const H3 = styled.h3`
   padding-bottom: .75vw;
   font-size: 2.5vw;
   color: #ff0420;
-  @media (orientation: portrait) {
-    padding-top: 6vw;
-    font-size: 7.5vw;
+  @media (max-width: 1023px) {
+    padding: 6vw 0 1rem;
+    font-size: min(2.5rem, 9vw);
+    line-height: min(2.5rem, 10vw);
     text-align: center;
   }
 `
 const H4v2 = styled.h4`
   padding-top: 1.5vw;
-  font-size: 1.5vw;
+  font-size: calc(.55rem + .9vw);
   color: #ff0420;
-  @media (orientation: portrait) {
+  @media (max-width: 1023px) {
     padding-top: 6vw;
-    font-size: 6vw;
-    line-height: 9vw;
+    font-size: min(2.5rem, 7vw);
+    line-height: min(3rem, 8vw);
     text-align: center;
   }
 `
 const PLarge = styled.p`
   padding: 0 0 3vw 0;
-  font-size: 1.5vw;
+  font-size: calc(.55rem + .9vw);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .1vw;
   color: #fff;
-  @media (orientation: portrait) {
-    font-size: 5vw;
-    line-height: 9vw;
+  @media (max-width: 1023px) {
+    padding-top: 1rem;
+    font-size: min(1.5rem, 6vw);
+    line-height: min(2rem, 7vw);
     text-align: center;
   }
 `
 const Li = styled.li`
+  max-width: 75ch;
   padding-bottom: 1.5vw;
-  font-size: 1.3vw;
-  line-height: 2vw;
+  font-size: calc(.4rem + .7vw);
+  line-height: calc(.7rem + .9vw);
   color: #fff;
-  @media (orientation: portrait) {
+  @media (max-width: 1023px) {
+    margin: 0 auto;
     padding-bottom: 6vw;
-    font-size: 5vw;
-    line-height: 8vw;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
     text-align: left;
   }
 `
 const LiSmallPadding = styled.li`
   padding-bottom: .75vw;
-  font-size: 1.3vw;
-  line-height: 2vw;
+  font-size: calc(.4rem + .7vw);
+  line-height: calc(.7rem + .9vw);
   color: #fff;
-  @media (orientation: portrait) {
-    padding-bottom: 3vw;
-    font-size: 5vw;
-    line-height: 8vw;
+  @media (max-width: 1023px) {
+    max-width: 75ch;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
     text-align: left;
   }
 `
 const P = styled.p`
-  font-size: 1.2vw;
-  line-height: 2vw;
+  font-size: calc(.4rem + .7vw);
+  line-height: calc(.7rem + .9vw);
   color: #fff;
-  @media (orientation: portrait) {
-    font-size: 5vw;
-    line-height: 8vw;
+  @media (max-width: 1023px) {
+    max-width: 75ch;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
     text-align: center;
   }
 `
 const Strong = styled.strong`
   padding-top: .1vw;
-  font-size: 1.3vw;
-  line-height: 2vw;
-  @media (orientation: portrait) {
-    font-size: 5vw;
-    line-height: 8vw;
+  font-size: calc(.4rem + .7vw);
+  line-height: calc(.7rem + .9vw);
+  @media (max-width: 1023px) {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 `
 const Ol = styled.ol`
@@ -142,8 +150,7 @@ const IframeParent = styled.section`
 const Iframe = styled.iframe`
   width: 45vw;
   height: 30vw;
-  font-size: 1vw;
-  @media (orientation: portrait) {
+  @media (max-width: 1023px) {
     width: 94vw;
     height: 62.66vw;
     margin-top: 6vw;
@@ -160,7 +167,7 @@ const ImageParent = styled.section`
   -webkit-box-shadow: 0 0 7.5vw #ff0420;
   -moz-box-shadow: 0 0 7.5vw #ff0420;
   box-shadow: 0 0 7.5vw #ff0420;
-  @media (orientation: portrait) {
+  @media (max-width: 1023px) {
     display: none;
     width: 80vw;
     height: 80vw;

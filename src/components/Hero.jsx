@@ -11,6 +11,9 @@ const Wrap = styled.section`
   position: relative;
   height: 100vh;
   background-color: #1a1e23;
+  @media (orientation: portrait) {
+    height: max(100vh, 150vw);
+  }
 `
 const HeroWrap = styled.div`
   display: flex;
@@ -56,8 +59,8 @@ const CircleWrap = styled.div`
   background-color: #ff0420;
   z-index: 2;
   @media (orientation: portrait) {
-    width: 75vw;
-    height: 75vw;
+    width: min(75vw, 50rem);
+    height: min(75vw, 50rem);
     -webkit-box-shadow: 0 0 18vw #ff0420;
     -moz-box-shadow: 0 0 18vw #ff0420;
     box-shadow: 0 0 18vw #ff0420;
@@ -79,7 +82,7 @@ const H1 = styled.h1`
   @media (orientation: portrait) {
     max-width: 100%;
     padding: 0;
-    font-size: 11vw;
+    font-size: min(11vw, 6rem);
     text-align: center;
     background-color: transparent;
   }
@@ -108,10 +111,10 @@ const HeroBarWrap = styled.div`
   width: 100%;
   height: 3vw;
   transform: translateX(105%);
-  animation: ${props => props.animation} 19s linear infinite;
+  animation: ${props => props.animation} 33s linear infinite;
   @media (orientation: portrait) {
     height: 12vw;
-    animation: ${props => props.animationPortrait} 19s linear infinite;
+    animation: ${props => props.animationPortrait} 33s linear infinite;
   }
 `
 const BarWord = styled.span`

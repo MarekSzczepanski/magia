@@ -18,9 +18,10 @@ const Container = styled.div`
   }
   @media (orientation: portrait) {
     max-width: 100%;
-    height: 18vw;
+    height: unset;
     > p {
-      font-size: 5vw;
+      font-size: 1.2rem;
+      text-align: center;
     }
   }
 `
@@ -28,22 +29,27 @@ const P = styled.p`
   display: flex;
   align-items: center;
   padding: 0;
-  font-size: 1.2vw;
+  font-size: calc(.6vw + .5rem);
   font-weight: 800;
   letter-spacing: .1vw;
   a {
     margin-left: 1.5vw;
   }
   @media (orientation: portrait) {
-    font-size: 4.5vw;
+    display: block;
+    font-size: 1.2rem;
     justify-content: center;
-    padding-bottom: 3vw;
+    padding-bottom: 2rem;
+    text-align: center;
     letter-spacing: .3vw;
+    &.lower-paragraph {
+      padding-bottom: 0;
+    }
   }
 `
 const StyledLink = styled.span`
   > a {
-    font-size: 1.2vw;
+    font-size: calc(.6vw + .5rem);
     font-weight: 800;
     letter-spacing: .1vw;
     text-decoration: underline;
@@ -60,10 +66,19 @@ const StyledLink = styled.span`
       display: flex;
       flex-direction column;
       width: 100%;
-      font-size: 4.5vw;
-      line-height: 6vw;
+      max-width: 90%;
+      margin: 0 auto;
+      font-size: 1.6rem;
+      line-height: 2rem;
       text-align: center;
+      text-underline-offset: .2rem;
       letter-spacing: .3vw;
+    }
+    &.lower-link {
+      > a {
+        max-width: 100%;
+        font-size: 1.2rem;
+      }
     }
   }
 `
@@ -101,7 +116,7 @@ const Layout = ({ children, headerColor }) => {
           loading='eager'
           className='footer-stars'
         />
-        <P>Zdalnie - cała Polska!</P>
+        <P className='lower-paragraph'>Zdalnie - cała Polska!</P>
           <StaticImage
             src="../images/gwiazdy.svg"
             placeholder="blurred"
@@ -113,7 +128,7 @@ const Layout = ({ children, headerColor }) => {
             loading='eager'
             className='footer-stars'
           />
-          <P>© {new Date().getFullYear()} <StyledLink><Link to='/#'>magiainternetu.com</Link></StyledLink></P>
+          <P>© {new Date().getFullYear()} <StyledLink className='lower-link'><Link to='/#'>magiainternetu.com</Link></StyledLink></P>
         </footer>
         <PrivacyPolicy />
     </>

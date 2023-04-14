@@ -10,7 +10,7 @@ const Wrap = styled.article`
   height: 100%;
   padding: 3vw 6vw;
   border-top: .1vw solid #1a1e23;
-  @media (orientation: portrait) {
+  @media (max-width: 1023px) {
     width: 100%;
     padding: 6vw;
   }
@@ -20,7 +20,7 @@ const AboveHeading = styled.span`
   font-weight: 600;
   text-transform: uppercase;
   color: #1a1e23;
-  @media (orientation: portrait) {
+  @media (max-width: 1023px) {
     font-size: 6vw;
   }
 `
@@ -30,7 +30,7 @@ const H2 = styled.h2`
   font-size: 2.5vw;
   text-align: center;
   color: #fff;
-  @media (orientation: portrait) {
+  @media (max-width: 1023px) {
     max-width: 90%;
     padding: 3vw 0 6vw;
     font-size: 7.5vw;
@@ -48,21 +48,23 @@ const InfographicPart = styled.section`
       justify-content: flex-end;
     }
     .infographic-half-circle {
-      transform: scale(-1) translateX(-100%);
+      transform: scale(-1) translateX(-50%);
     }
     > .infographic-part-text {
       padding: 0 1.5vw 0 0;
     }
   }
+  &:nth-of-type(odd) {
+    .infographic-half-circle {
+      transform: translateX(-50%);
+    }
+  }
   > * {
     width: 33%;
-    height: 12vw;
+    height: calc(6vw + 2rem);
   }
-  @media (orientation: portrait) {
+  @media (max-width: 1023px) {
     &:nth-of-type(even) {
-      .infographic-half-circle {
-        transform: scale(-1) translateX(calc(-100% + 7vw));
-      }
       > .infographic-part-text {
         padding: 0;
       }
@@ -78,11 +80,12 @@ const ImageContainer = styled.div`
 `
 const Circles = styled.div`
   position: relative;
-  padding-left: 4%;
+  display: flex;
+  justify-content: center;
 `
 const HalfCircle = styled.div`
-  width: 6vw;
-  height: 12vw;
+  width: calc(3vw + 1rem);
+  height: calc(6vw + 2rem);
   background-color: #1a1e23;
   border-bottom: 0;
   &:nth-of-type(odd) {
@@ -93,7 +96,7 @@ const HalfCircle = styled.div`
     border-top-right-radius: 7vw;
     border-bottom-right-radius: 7vw;
   }
-  @media (orientation: portrait) {
+  @media (max-width: 1023px) {
     width: 18vw;
     height: 36vw;
     transform: translateX(-7vw);
@@ -112,15 +115,15 @@ const Circle = styled.div`
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 3vw;
+  top: calc(1.5vw + .5rem);
   left: 50%;
-  width: 6vw;
-  height: 6vw;
+  width: calc(3vw + 1rem);;
+  height: calc(3vw + 1rem);;
   border-radius: 50%;
   background-color: #fff;
   transform: translateX(-50%);
   z-index: 3;
-  @media (orientation: portrait) {
+  @media (max-width: 1023px) {
     top: 9vw;
     width: 18vw;
     height: 18vw;
@@ -128,10 +131,10 @@ const Circle = styled.div`
 `
 const CircleNumber = styled.span`
   position: relative;
-  font-size: 4vw;
+  font-size: calc(2vw + .75rem);
   color: #1a1e23;
   z-index: 3;
-  @media (orientation: portrait) {
+  @media (max-width: 1023px) {
     font-size: 12vw;
   }
 `
@@ -140,35 +143,39 @@ const InfographicText = styled.div`
   flex-direction: column;
   justify-content: center;
   padding-left: 1.5vw;
-  @media (orientation: portrait) {
+  @media (max-width: 1023px) {
     padding-left: 0;
   }
 `
 const H3 = styled.h3`
-  font-size: 1.5vw;
+  font-size: calc(.6rem + .7vw);
   text-align: ${props => props.align ? props.align : 'left'};
   color: #fff;
-  @media (orientation: portrait) {
+  @media (max-width: 1023px) {
     font-size: 4vw;
   }
 `
 const P = styled.p`
-  font-size: 1.2vw;
+  font-size: calc(.3rem + .7vw);
+  line-height: calc(.4rem + .8vw);
   font-weight: 500;
   text-align: ${props => props.align ? props.align : 'left'};
-  @media (orientation: portrait) {
-    font-size: 3.6vw;
+  @media (max-width: 1023px) {
+    font-size: min(3vw, 1.4rem);
+    line-height: min(4vw, 1.85rem);
   }
 `
 const VerticalLine = styled.div`
   position: absolute;
   top: 0;
   left: 50%;
-  width: .2vw;
-  height: 12vw;
+  width: calc(.07vw + .03rem);
+  height: calc(6vw + 2rem);
   background-color: #fff;
+  transform: translateX(-50%);
   z-index: 2;
-  @media (orientation: portrait) {
+  @media (max-width: 1023px) {
+    left: unset;
     height: 36vw;
   }
 `
@@ -180,8 +187,32 @@ const Container = styled.div`
   &: > h3 {
     display: flex;
   }
-  @media (orientation: landscape) {
+  @media (min-width: 1024px) {
     display: none;
+  }
+`
+
+const Button = styled.button`
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  align-self: center;
+  padding: 1rem 1.5rem;
+  border: .2vw solid #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05vw;
+  background-color: #ff0420;
+  color: #fff;
+  transition: background-color .2s ease-out, color .2s ease-out, border-color .2s ease-out;
+  cursor: pointer;
+  &:hover {
+    background-color: #fff;
+    color: #ff0420;
+    border-color: #ff0420;
   }
 `
 
@@ -292,7 +323,7 @@ const Infographic = ({toggleReadMore, isReadMoreActive}) => {
         </InfographicPart>
       })}
       <Container isReadMoreActive={isReadMoreActive}>
-        <button onClick={handleClick} className='button button3'>dowiedz się więcej</button>
+        <Button onClick={handleClick} >dowiedz się więcej</Button>
       </Container>
     </Wrap>
   )

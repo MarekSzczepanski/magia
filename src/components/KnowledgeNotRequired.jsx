@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const Wrap = styled.section`
     padding: 3vw;
     background-color: #1a1e23;
-    @media (orientation: portrait) {
+    @media (max-width: 1023px) {
         padding-bottom: 9vw;
     }
 `
@@ -14,8 +14,9 @@ const H2 = styled.h2`
     font-size: 3vw;
     text-align: center;
     color: #fff;
-    @media (orientation: portrait) {
-        font-size: 7.5vw;
+    @media (max-width: 1023px) {
+        font-size: min(7.5vw, 3rem);
+        line-height: min(9vw, 3.5rem);
     }
 `
 const PLarge = styled.p`
@@ -25,24 +26,23 @@ const PLarge = styled.p`
     text-transform: uppercase;
     text-align: center;
     color: #ff0420;
-    @media (orientation: portrait) {
+    @media (max-width: 1023px) {
         padding-top: 3vw;
-        font-size: 6vw;
+        font-size: min(6vw, 1.5rem);
     }
 `
 const Ul = styled.ul`
     display: flex;
     justify-content: space-between;
     padding: 3vw 0 9vw;
-    @media (orientation: portrait) {
-        flex-direction: column;
+    @media (max-width: 1023px) {
+        flex-wrap: wrap;
     }
 `
 const Li = styled.li`
     display: flex;
     flex-direction: column;
     width: 21vw;
-    height: 30vw;
     padding: 3vw 1.5vw;
     border: solid .3vw #1a1e23;
     border-radius: 3vw;
@@ -53,25 +53,25 @@ const Li = styled.li`
     box-shadow: 0px 6vw 6vw -3vw rgba(255, 4, 32, 1);
     &:last-of-type > div {
         > p {
-            font-size: 1.3vw;
-            line-height: 1.8vw;
+            font-size: 1rem;
+            line-height: 1.2rem;
         }
     }
-    @media (orientation: portrait) {
+    @media (max-width: 1023px) {
         width: 100%;
-        height: 134.23vw;
-        margin: 6vw 0 12vw;
-        padding: 9vw 6vw;
-        border-width: .9vw;
-        border-radius: 12vw;
+        max-width: 25rem;
+        margin: 6vw auto 12vw;
+        padding: min(9vw, 3.5rem) min(6vw, 2.25rem);
+        border-width: .3rem;
+        border-radius: 3rem;
         -webkit-box-shadow: 0px 12vw 12vw -6vw rgba(255, 4, 32, 1);
         -moz-box-shadow: 0px 12vw 12vw -6vw rgba(255, 4, 32, 1);
         box-shadow: 0px 12w 12vw -6vw rgba(255, 4, 32, 1);
         &:last-of-type > div {
             > p {
-                padding-top: 6vw;
-                font-size: 5.7vw;
-                line-height: 8.5vw;
+                padding-top: min(6vw, 1.5rem);
+                font-size: min(5.7vw, 1.3rem);
+                line-height: min(8.5vw, 2rem);
             }
         }
     }
@@ -83,48 +83,49 @@ const Span = styled.span`
     margin: 0 auto;
     padding-bottom: 1.5vw;
     border-bottom: .1vw solid #fff;
-    font-size: 1.8vw;
+    font-size: calc(.8rem + .7vw);
     font-weight: 800;
     text-align: center;
     text-transform: uppercase;
-    line-height: 2.4vw;
+    line-height: calc(1.2rem + .9vw);
     color: #fff;
-    @media (orientation: portrait) {
-        padding-bottom: 6vw;
-        font-size: 7.5vw;
-        line-height: 9vw;
+    @media (max-width: 1023px) {
+        padding-bottom: min(6vw, 1.5rem);
+        font-size: min(7.5vw, 2rem);
+        line-height: min(8vw, 2.2rem);
         letter-spacing: .3vw;
     }
 `
 const H3 = styled.h3`
     padding-top: 1.5vw;
-    font-size: 1.1vw;
+    font-size: calc(.6rem + .4vw);
     text-align: center;
     text-transform: uppercase;
+    line-height: calc(.8em + .6vw);
     letter-spacing: .05vw;
     color: #fff;
-    @media (orientation: portrait) {
-        padding-top: 6vw;
-        font-size: 6vw;
-        line-height: 7.5vw;
+    @media (max-width: 1023px) {
+        padding-top: min(6vw, 1.3rem);
+        font-size: min(6vw, 1.3rem);
+        line-height: min(7.5vw, 1.5rem);
         letter-spacing: .15vw;
     }
 `
 const P = styled.p`
-    font-size: 1.1vw;
+    font-size: calc(.6rem + .4vw);
     font-weight: 500;
     text-align: center;
-    @media (orientation: portrait) {
-        padding-top: 3vw;
-        font-size: 4.5vw;
-        line-height: 6vw;
+    @media (max-width: 1023px) {
+        padding-top: min(3vw, 1rem);
+        font-size: min(4.5vw, 1.1rem);
+        line-height: min(6vw, 1.4rem);
     }
 `
 const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    @media (orientation: portrait) {
+    @media (max-width: 1023px) {
         > div {
             margin-bottom: 3vw;
         }
