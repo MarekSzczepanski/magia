@@ -44,7 +44,7 @@ const P = styled.p`
 `
 const Strong = styled.strong`
     letter-spacing: .2vw;
-    color: #ff0420;
+    color: #eb001a;
     @media (orientation: portrait) {
         letter-spacing: .4vw;
     }

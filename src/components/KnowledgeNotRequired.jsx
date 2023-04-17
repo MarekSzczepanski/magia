@@ -25,7 +25,8 @@ const PLarge = styled.p`
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
-    color: #ff0420;
+    letter-spacing: .1vw;
+    color: #eb001a;
     @media (max-width: 1023px) {
         padding-top: 3vw;
         font-size: min(6vw, 1.5rem);
@@ -47,7 +48,7 @@ const Li = styled.li`
     border: solid .3vw #1a1e23;
     border-radius: 3vw;
     list-style-type: none;
-    background-color: #ff0420;
+    background-color: #eb001a;
     -webkit-box-shadow: 0px 6vw 6vw -3vw rgba(255, 4, 32, 1);
     -moz-box-shadow: 0px 6vw 6vw -3vw rgba(255, 4, 32, 1);
     box-shadow: 0px 6vw 6vw -3vw rgba(255, 4, 32, 1);

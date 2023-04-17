@@ -9,30 +9,29 @@ const Wrap = styled.div`
   bottom: 4.5vw;
   left: 0;
   justify-content: space-between;
-  width: 42vw;
-  height: 6vw;
+  width: max(38vw, 30rem);
   padding: .75vw;
   border: solid 1px #fff;
   border-left: 0;
-  background-color: #ff0420;
+  background-color: #d40019;
   z-index: 3;
   @media (orientation: portrait) {
     bottom: 0vw;
     width: 100vw;
     height: 27vw;
-    padding: 1.5vw;
+    padding: 3vw;
     border-right: 0;
   }
 `
 const Span = styled.span`
   width: 60%;
-  font-size: 1vw;
-  line-height: 1.5vw;
+  font-size: clamp(.75rem, 1vw, 1rem);
+  line-height: clamp(1.125rem, 1.5vw, 1.5rem);
   letter-spacing: .05vw;
   color: #fff;
   @media (orientation: portrait) {
     font-size: 3.5vw;
-    line-height: 4.5vw;
+    line-height: 4.2vw;
   }
 `
 const ButtonsParent = styled.div`
@@ -41,14 +40,11 @@ const ButtonsParent = styled.div`
   justify-content: space-between;
 `
 const StyledLink2 = styled.span`
-  height: 2vw !important; 
   > a {
-    font-size: .9vw;
     font-weight: 300;
     color: #ff0420;
   }
   @media (orientation: portrait) {
-    height: 10vw !important; 
     > a {
       font-size: 3vw;
     }
@@ -56,10 +52,8 @@ const StyledLink2 = styled.span`
 `
 const Button = styled.button`
   width: 100%;
-  height: 2vw !important;
-  font-size: .9vw;
+  margin-top: .5rem;
   @media (orientation: portrait) {
-    height: 10vw !important; 
     font-size: 3vw;
   }
 `
@@ -79,8 +73,8 @@ const PrivacyPolicy = () => {
         <Wrap className={`cookies ${isPrivacyVisible}`}>
             <Span>Nasza witryna stosuje pliki cookies. Określenie warunków przechowywania i dostępu do plików cookies jest możliwe w przeglądarce.</Span>
             <ButtonsParent>
-                <StyledLink2 className='button button4'><Link to='/polityka-prywatnosci'>Dowiedz się więcej</Link></StyledLink2>
-                <Button className='button button4' onClick={acceptPolicy}>Akceptuj</Button>
+                <StyledLink2><Link className='button button4 privacy-button' to='/polityka-prywatnosci'>Dowiedz się więcej</Link></StyledLink2>
+                <Button className='button button4 privacy-button' onClick={acceptPolicy}>Akceptuj</Button>
             </ButtonsParent>
         </Wrap>
     )

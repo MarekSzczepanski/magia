@@ -205,7 +205,7 @@ const Button = styled.button`
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.05vw;
-  background-color: #ff0420;
+  background-color: #eb001a;
   color: #fff;
   transition: background-color .2s ease-out, color .2s ease-out, border-color .2s ease-out;
   cursor: pointer;

@@ -20,7 +20,7 @@ const Container = styled.div`
   padding: 3vw;
   > h1 {
     font-size: 6vw;
-    color: #ff0420;
+    color: #eb001a;
   }
   > p {
     padding-left: .1vw;
@@ -38,12 +38,12 @@ const Container = styled.div`
     padding-top: 3vw;
     font-size: 3vw;
     letter-spacing: .1vw;
-    color: #ff0420;
+    color: #eb001a;
   }
   > h3 {
     padding-top: 1.5vw;
     font-size: 2vw;
-    color: #ff0420;
+    color: #eb001a;
   }
   > ul {
     padding-top: .75vw;
@@ -62,7 +62,7 @@ const Container = styled.div`
         left: 0;
         width: .4vw;
         height: .4vw;
-        background-color: #ff0420;
+        background-color: #eb001a;
     }
   }
   > ol > li {

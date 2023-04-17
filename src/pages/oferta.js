@@ -11,7 +11,7 @@ const H1 = styled.h1`
   padding: 12vw 0;
   font-size: 6vw;
   text-align: center;
-  color: #ff0420;
+  color: #eb001a;
   @media (orientation: portrait) {
     font-size: 18vw;
     padding: 24vw 0;
@@ -38,7 +38,7 @@ const Box = styled.section`
 const H2 = styled.h2`
   padding-bottom: 1.5vw;
   font-size: 3vw;
-  color: #ff0420;
+  color: #eb001a;
   @media (orientation: portrait) {
     font-size: 9vw;
     text-align: center;
@@ -57,7 +57,7 @@ const H3 = styled.h3`
   padding: 3vw 0 .75vw;
   font-size: 1.8vw;
   line-height: 3vw;
-  color: #ff0420;
+  color: #eb001a;
   @media (orientation: portrait) {
     padding: 9vw 0 6vw;
     font-size: 6vw;
@@ -82,7 +82,7 @@ const Aside = styled.section`
   width: 20vw;
   height: 100vh;
   transform: translateX(3vw);
-  background-color: #ff0420;
+  background-color: #eb001a;
   @media (orientation: portrait) {
     position: fixed;
     top: 82vh;

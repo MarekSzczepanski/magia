@@ -39,7 +39,7 @@ const H1 = styled.h1`
   padding: 6vw 0 1.5vw;
   font-size: 6vw;
   text-align: center;
-  color: #ff0420;
+  color: #eb001a;
   @media (orientation: portrait) {
     font-size: 18vw;
     padding: 12vw 0 6vw;
@@ -65,7 +65,7 @@ const H2 = styled.h2`
   font-size: 2.5vw;
   text-align: center;
   letter-spacing: .1vw;
-  color: #ff0420;
+  color: #eb001a;
   @media (orientation: portrait) {
     font-size: 9vw;
     letter-spacing: .3vw;
@@ -82,7 +82,7 @@ const Li = styled.li`
   width: 31%;
   margin-top: 1.5vw;
   list-style-type: none;
-  background-color: #ff0420;
+  background-color: #eb001a;
   cursor: pointer;
   &:nth-of-type(3n+2) {
     margin: 1.5vw 3.5% 0;

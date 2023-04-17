@@ -2,6 +2,8 @@
   --color1: #ff0420;
   --color2: #1a1e23;
   --color3: #fff;
+  --color4: #eb001a;
+  --color5: #d40019;
 }
 html {
   box-sizing: border-box;
@@ -27,7 +29,7 @@ p *:last-child {
 body {
   position: relative;
   overflow-x: hidden;
-  background-color: var(--color1);
+  background-color: var(--color4);
 }
 h1, h2, h3, h4, h5, p, li, span, a, footer, strong, button, ol {
   font-family: 'Rubik', sans-serif;
@@ -69,7 +71,7 @@ li {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.05vw;
-  background-color: var(--color1);
+  background-color: var(--color4);
   color: var(--color3);
   transition: background-color .2s ease-out, color .2s ease-out, border-color .2s ease-out;
   cursor: pointer;
@@ -124,6 +126,10 @@ footer {
 .cookies.undefined {
   display: flex;
 }
+div > .privacy-button {
+  padding: clamp(.5rem, 1vw, 1rem) clamp(.75rem, 1.5vw, 1.5rem);
+  font-size: clamp(.75rem, .9vw, 1rem);
+}
 
 @media(orientation: portrait) {
   html {
@@ -162,6 +168,9 @@ footer {
   .footer-stars {
     width: 3rem;
     margin: 2rem 0;
+  }
+  .privacy-button {
+    height: 10vw;
   }
 }
 

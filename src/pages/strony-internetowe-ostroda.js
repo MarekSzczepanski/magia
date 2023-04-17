@@ -13,7 +13,7 @@ import { useState } from 'react'
 const WebpagesInfo = styled.section`
   position: relative;
   display: flex;
-  background-color: #ff0420;
+  background-color: #eb001a;;
   z-index: 2;
   @media (max-width: 1023px) {
     flex-direction: column-reverse;

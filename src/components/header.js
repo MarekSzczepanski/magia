@@ -20,7 +20,7 @@ const StyledHeader = styled.header`
     height: 100vh;
     height: 100dvh;
     ${props => props.isActiveOnPortrait ? null : 'transform: translateX(-100%);'}
-    background-color: #ff0420;
+    background-color: #eb001a;
     transition: transform .2s ease-out;
     z-index: 4;
   }

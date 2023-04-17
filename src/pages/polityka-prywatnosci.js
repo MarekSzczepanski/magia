@@ -12,7 +12,7 @@ const Wrap = styled.article`
 const H1 = styled.h1`
     padding-top: 6vw;
     font-size: 3vw;
-    color: #ff0420;
+    color: #eb001a;
     @media (orientation: portrait) {
         max-width: 80vw;
         padding-top: 3vw;
@@ -34,7 +34,7 @@ const MainLi = styled.li`
     &:: marker {
         font-size: 1.8vw;
         font-weight: 800;
-        color: #ff0420;
+        color: #eb001a;
     }
     @media (orientation: portrait) {
         padding-top: 9vw;
@@ -53,9 +53,9 @@ const H2 = styled.h2`
 `
 const StyledLink=styled.span`
     > a {
-        color: #ff0420;
+        color: #eb001a;
         &:visited {
-            color: #ff0420;
+            color: #d40019;
         }
     }
     @media (orientation: portrait) {
@@ -86,7 +86,7 @@ const Li = styled.li`
         left: 0;
         width: .4vw;
         height: .4vw;
-        background-color: #ff0420;
+        background-color: #eb001a;
     }
     @media (orientation: portrait) {
         padding-left: 3vw;
@@ -100,9 +100,9 @@ const Li = styled.li`
     }
 `
 const A = styled.a`
-    color: #ff0420;
+    color: #eb001a;
     &:visited {
-        color: #ff0420; 
+        color: #eb001a; 
     }
     @media (orientation: portrait) {
         font-size: 3.2vw;

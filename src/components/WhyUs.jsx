@@ -13,14 +13,13 @@ const H2 = styled.h2`
   padding-bottom: 4.5vw;
   font-size: 4vw;
   text-align: center;
-  color: #ff0420;
+  color: #eb001a;
   @media (max-width: 1023px) {
     padding-bottom: 2rem;
     font-size: 8.5vw;
   }
 `
 
-/* remember to change it after adding iframes */
 const Section = styled.section`
   display: flex;
   align-items: center;
@@ -58,7 +57,7 @@ const Text = styled.section`
 const H3 = styled.h3`
   padding-bottom: .75vw;
   font-size: 2.5vw;
-  color: #ff0420;
+  color: #eb001a;
   @media (max-width: 1023px) {
     padding: 6vw 0 1rem;
     font-size: min(2.5rem, 9vw);
@@ -69,7 +68,7 @@ const H3 = styled.h3`
 const H4v2 = styled.h4`
   padding-top: 1.5vw;
   font-size: calc(.55rem + .9vw);
-  color: #ff0420;
+  color: #eb001a;
   @media (max-width: 1023px) {
     padding-top: 6vw;
     font-size: min(2.5rem, 7vw);
@@ -163,7 +162,7 @@ const ImageParent = styled.section`
   width: 30vw;
   height: 30vw;
   border-radius: 50%;
-  background-color: #ff0420;
+  background-color: #eb001a;
   -webkit-box-shadow: 0 0 7.5vw #ff0420;
   -moz-box-shadow: 0 0 7.5vw #ff0420;
   box-shadow: 0 0 7.5vw #ff0420;
