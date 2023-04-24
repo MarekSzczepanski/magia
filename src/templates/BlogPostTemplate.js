@@ -23,20 +23,23 @@ const Container = styled.div`
     color: #eb001a;
   }
   > p {
+    max-width: 75ch;
     padding-left: .1vw;
-    font-size: 1.6vw;
-    line-height: 2.5vw;
+    font-size: clamp(.75rem, 1vw, 1rem);
+    line-height: clamp(1rem, 1.5vw, 1.5rem);
   }
   p + p {
     padding-top: 1.5vw;
   }
   > h1 + p {
-    max-width: 66%;
+    max-width: 75ch;
     font-weight: 600;
   }
   > h2 {
+    max-width: 45vw;
     padding-top: 3vw;
-    font-size: 3vw;
+    font-size: clamp(1.5rem, 2vw, 3rem);
+    line-height: clamp(2rem, 3vw, 4rem);
     letter-spacing: .1vw;
     color: #eb001a;
   }
@@ -51,24 +54,26 @@ const Container = styled.div`
   > ul > li {
     position: relative;
     padding-left: 1.5vw;
-    font-size: 1.5vw;
+    font-size: clamp(.75rem, 1vw, 1rem);
     font-weight: 500;
-    line-height: 2.5vw;
+    line-height: clamp(1rem, 1.5vw, 1.5rem);
     list-style: none;
     &:before {
         content: '';
         position: absolute;
-        top: 1.05vw;
+        top: 50%;
         left: 0;
         width: .4vw;
         height: .4vw;
+        transform: translateY(-50%);
         background-color: #eb001a;
     }
   }
   > ol > li {
+    max-width: 75ch;
     margin-top: 1.5vw;
-    font-size: 1.5vw;
-    line-height: 2.5vw;
+    font-size: clamp(.75rem, 1vw, 1rem);
+    line-height: clamp(1rem, 1.5vw, 1.5rem);
   }
   a {
     font-size: 1.3vw;
@@ -91,8 +96,10 @@ const Container = styled.div`
       max-width: 100%;
     }
     > h2 {
+      max-width: 100%;
       padding-top: 7.5vw;
       font-size: 7.5vw;
+      line-height: 9vw;
       letter-spacing: .3vw;
     }
     > h3 {
