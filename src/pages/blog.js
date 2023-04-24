@@ -46,11 +46,11 @@ const H1 = styled.h1`
   }
 `
 const P = styled.p`
-  max-width: 66vw;
+  max-width: 75ch;
   margin: 0 auto;
-  font-size: 1.4vw;
+  font-size: calc(0.6rem + 0.6vw);
   text-align: center;
-  line-height: 2.1vw;
+  line-height: calc(1rem + 0.8vw);
   letter-spacing: .07vw;
   color: #fff;
   @media (orientation: portrait) {
@@ -87,9 +87,6 @@ const Li = styled.li`
   &:nth-of-type(3n+2) {
     margin: 1.5vw 3.5% 0;
   }
-  > a > div {
-    height: 55%;
-  }
   @media (orientation: portrait) {
     width: 80%;
     margin: 3vw auto 9vw;
@@ -112,10 +109,9 @@ const H3 = styled.h3`
 `
 const Excerpt = styled.p`
   padding: 1.5vw;
-  font-size: 1.3vw;
+  font-size: calc(.7vw + .5rem);
   font-weight: 500;
-  line-height: 1.9vw;
-  text-align: center;
+  line-height: calc(.9vw + .7rem);
   text-transform: none;
   @media (orientation: portrait) {
     padding: 0 3vw 6vw;
