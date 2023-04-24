@@ -22,7 +22,7 @@ const ContainerParent = styled.div`
   position: relative;
 `
 const Container = styled.article`
-  display: flex;
+  display: flex; 
   flex-wrap: wrap;
   width: 80vw;
   @media (orientation: portrait) {
@@ -30,14 +30,14 @@ const Container = styled.article`
   }
 `
 const Box = styled.section`
-  padding-bottom: 6vw;
-  @media (orientation: portrait) {
-
+  padding: 0 6vw 6vw 0;
+  @media (orientation: landscape) {
+    width: 40vw;
   }
 `
 const H2 = styled.h2`
-  padding-bottom: 1.5vw;
-  font-size: 3vw;
+  font-size: clamp(2rem, 3vw, 4rem);
+  line-height: clamp(2.5rem, 4vw, 5.5rem);
   color: #eb001a;
   @media (orientation: portrait) {
     font-size: 9vw;
@@ -45,8 +45,9 @@ const H2 = styled.h2`
   }
 `
 const P = styled.p`
-  font-size: 1.5vw;
-  line-height: 2.5vw;
+  max-width: 75ch;
+  font-size: clamp(.75rem, 1vw, 1rem);
+  line-height: clamp(1.125rem, 1.5vw, 1.5rem);
   color: #fff;
   @media (orientation: portrait) {
     font-size: 4.5vw;
@@ -54,9 +55,9 @@ const P = styled.p`
   }
 `
 const H3 = styled.h3`
-  padding: 3vw 0 .75vw;
-  font-size: 1.8vw;
-  line-height: 3vw;
+  padding: 3vw 0 1.5vw;
+  font-size: clamp(1.5rem, 1.5vw, 2.5rem);
+  line-height: clamp(2rem, 2vw, 3rem);
   color: #eb001a;
   @media (orientation: portrait) {
     padding: 9vw 0 6vw;
@@ -66,9 +67,10 @@ const H3 = styled.h3`
   }
 `
 const Li = styled.li`
+  max-width: 75ch;
   padding-bottom: .75vw;
-  font-size: 1.5vw;
-  line-height: 2.5vw;
+  font-size: clamp(.75rem, 1vw, 1rem);
+  line-height: clamp(1.125rem, 1.5vw, 1.5rem);
   color: #fff;
   @media (orientation: portrait) {
     padding-bottom: 3vw;
