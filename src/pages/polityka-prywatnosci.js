@@ -20,9 +20,10 @@ const H1 = styled.h1`
     }
 `
 const P = styled.p`
-    font-size: 1.2vw;
+    max-width: 75ch;
+    font-size: 1rem;
     font-weight: ${props => props.fontWeight ? props.fontWeight : '400'};
-    line-height: 2vw;
+    line-height: 1.5rem;
     @media (orientation: portrait) {
         padding-top: 3vw;
         font-size: 3.5vw;
@@ -32,7 +33,7 @@ const P = styled.p`
 const MainLi = styled.li`
     padding-top: 3vw;
     &:: marker {
-        font-size: 1.8vw;
+        font-size: 1.5rem;
         font-weight: 800;
         color: #eb001a;
     }
@@ -44,9 +45,11 @@ const MainLi = styled.li`
     }
 `
 const H2 = styled.h2`
-    margin: -2.15vw 0 0 2.5vw;
-    font-size: 1.8vw;
+    max-width: 45vw;
+    margin: -1.8rem 0 0 2rem;
+    font-size: 1.5rem;
     @media (orientation: portrait) {
+        max-width: 100%;
         margin: -5.4vw 0 0 6vw;
         font-size: 4.5vw;
     }
@@ -65,9 +68,12 @@ const StyledLink=styled.span`
     }
 `
 const H3 = styled.h3`
+    max-width: 45vw;
     padding: 1.5vw 0 .75vw;
-    font-size: 1.2vw;
+    font-size: 1rem;
+    line-height: 1.5rem;
     @media (orientation: portrait) {
+        max-width: 100%;
         padding: 6vw 0 3vw;
         font-size: 3.5vw;
         line-height: 5vw;
@@ -75,9 +81,10 @@ const H3 = styled.h3`
 `
 const Li = styled.li`
     position: relative;
+    max-width: 75ch;
     padding-left: 1.5vw;
-    font-size: 1.2vw;
-    line-height: 2vw;
+    font-size: 1rem;
+    line-height: 1.5rem;
     list-style: none;
     &:before {
         content: '';
