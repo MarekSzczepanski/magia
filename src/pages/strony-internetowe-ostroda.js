@@ -26,7 +26,7 @@ const allLi = [
     text: 'Strona internetowa jest wizytówką Twojej firmy. Może być pierwszym miejscem, w którym potencjalni klienci będą ją oceniać. Posiadanie profesjonalnej i atrakcyjnej witryny wzmacnia pozytywny wizerunek Twojej firmy i buduje dobrą reputację wśród klientów.'
   },
   {
-    strong: 'Dostęność',
+    strong: 'Dostępność',
     text: 'Strona www umożliwia udostępnianie szerokiego zakresu informacji o Twojej działalności, w tym oferty produktów lub usług, godzin pracy, czy lokalizacji. Dostępność tych informacji 24 godziny na dobę, 7 dni w tygodniu, ułatwia klientom dotarcie do niezbędnych danych.'
   },
   {
