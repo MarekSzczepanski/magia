@@ -31,8 +31,10 @@ const Container = styled.div`
     }
 `
 const H2 = styled.h2`
-    font-size: 2.2vw;
+    max-width: 95%;
+    font-size: clamp(.6rem, 2vw, 4rem);
     text-align: center;
+    word-wrap: break-word;
     color: #1a1e23;
     &:after {
         content: '';
@@ -52,9 +54,9 @@ const H2 = styled.h2`
     }
 `
 const P = styled.p`
-    font-size: 1.5vw;
+    font-size: clamp(.5rem, 1.5vw, 2rem);
     font-weight: 500;
-    line-height: 2vw;
+    line-height: clamp(.75rem, 2vw, 2.75rem);
     text-align: center;
     @media (orientation: portrait) {
         font-size: 4.5vw;

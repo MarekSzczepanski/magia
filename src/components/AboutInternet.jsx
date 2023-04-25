@@ -19,7 +19,7 @@ const Container = styled.article`
 `
 const H2 = styled.h2`
     padding-bottom: 1.5vw;
-    font-size: 2.5vw;
+    font-size: clamp(1rem, 2.5vw, 2.5rem);
     color: #1a1e23;
     @media (orientation: portrait) {
         padding-bottom: 6vw;
@@ -28,9 +28,10 @@ const H2 = styled.h2`
     }
 `
 const P = styled.p`
+    max-width: 75ch;
     padding: 0 0 3vw;
-    font-size: 1.3vw;
-    line-height: 2.5vw;
+    font-size: clamp(.6rem, 1.3vw, 1.25rem);
+    line-height: clamp(1rem, 2.5vw, 2rem);
     @media (orientation: portrait) {
         padding: 0 0 12vw;
         font-size: 5vw;

@@ -21,11 +21,11 @@ const H2 = styled.h2`
     }
 `
 const P = styled.p`
-    font-size: 1.3vw;
-    line-height: 2.2vw;
+    max-width: 75ch;
+    font-size: clamp(.6rem, 1.3vw, 1.25rem);
+    line-height: clamp(1rem, 2.5vw, 2rem);
     color: #fff;
     &.top {
-        width: 66%;
         margin: 0 auto;
         padding-top: 3vw;
         text-align: center;
@@ -71,7 +71,6 @@ const Li = styled.li`
     }
     @media (orientation: landscape) {
         width: 50%;
-        height: 21vw;
         padding: 3vw;
         &:nth-of-type(odd) {
             border-right: .1vw solid #fff;
@@ -82,7 +81,8 @@ const Li = styled.li`
     }
 `
 const H3 = styled.h3`
-    font-size: 1.8vw;
+    font-size: clamp(1rem, 1.8vw, 2rem);
+    line-height: clamp(1.5rem, 2.5vw, 2.5rem);
     color: #ff0420;
     @media (orientation: portrait) {
         font-size: 6vw;
