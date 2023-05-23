@@ -1,8 +1,9 @@
-import React from "react"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import styled from 'styled-components'
+import React from 'react';
+import Layout from '../components/layout';
+import Seo from '../components/seo';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Wrap = styled.article`
   background-color: #fff;
@@ -15,7 +16,7 @@ const Wrap = styled.article`
       height: 60vw;
     }
   }
-`
+`;
 const Container = styled.div`
   padding: 3vw;
   > h1 {
@@ -128,20 +129,38 @@ const Container = styled.div`
     }
   }
 }
-`
+`;
 
-const BlogPostTemplate = ({pageContext}) => {
+const BlogPostTemplate = ({ pageContext }) => {
   const image = getImage(pageContext.featuredImage.node.localFile.childImageSharp.gatsbyImageData);
 
-  return(
-    <Layout headerColor='#1a1e23'>
+  return (
+    <Layout headerColor="#1a1e23">
       <Wrap>
-        <GatsbyImage image={image} alt={pageContext.alt}/>
-        <Container dangerouslySetInnerHTML={{ __html:  `<h1>${pageContext.title}</h1> ${pageContext.content}` }} />
+        <GatsbyImage image={image} alt={pageContext.alt} />
+        <Container
+          dangerouslySetInnerHTML={{
+            __html: `<h1>${pageContext.title}</h1> ${pageContext.content}`
+          }}
+        />
       </Wrap>
-		</Layout>
-  )
-}
+    </Layout>
+  );
+};
 
-export const Head = ({pageContext}) => <Seo title={pageContext.title + ' | Magia'} description={pageContext.excerpt}/>
-export default BlogPostTemplate
+BlogPostTemplate.propTypes = {
+  pageContext: PropTypes.object,
+  featuredImage: PropTypes.string
+};
+
+export const Head = ({ pageContext }) => (
+  <Seo title={pageContext.title + ' | Magia'} description={pageContext.excerpt} />
+);
+
+Head.propTypes = {
+  pageContext: PropTypes.object,
+  title: PropTypes.string,
+  excerpt: PropTypes.string
+};
+
+export default BlogPostTemplate;

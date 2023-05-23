@@ -1,6 +1,6 @@
-import * as React from "react"
-import styled from 'styled-components'
-import { StaticImage } from "gatsby-plugin-image"
+import * as React from 'react';
+import styled from 'styled-components';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const Wrap = styled.article`
   display: flex;
@@ -9,12 +9,12 @@ const Wrap = styled.article`
   width: 60%;
   height: 100%;
   padding: 3vw 6vw;
-  border-top: .1vw solid #1a1e23;
+  border-top: 0.1vw solid #1a1e23;
   @media (max-width: 1023px) {
     width: 100%;
     padding: 6vw;
   }
-`
+`;
 const AboveHeading = styled.span`
   font-size: 2.4vw;
   font-weight: 600;
@@ -23,7 +23,7 @@ const AboveHeading = styled.span`
   @media (max-width: 1023px) {
     font-size: 6vw;
   }
-`
+`;
 const H2 = styled.h2`
   max-width: 60%;
   padding: 1.3vw 0 2.6vw;
@@ -35,7 +35,7 @@ const H2 = styled.h2`
     padding: 3vw 0 6vw;
     font-size: 7.5vw;
   }
-`
+`;
 const InfographicPart = styled.section`
   display: flex;
   justify-content: space-around;
@@ -73,16 +73,16 @@ const InfographicPart = styled.section`
       height: 36vw;
     }
   }
-`
+`;
 const ImageContainer = styled.div`
   display: flex;
   align-items: center;
-`
+`;
 const Circles = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
-`
+`;
 const HalfCircle = styled.div`
   width: calc(3vw + 1rem);
   height: calc(6vw + 2rem);
@@ -109,16 +109,16 @@ const HalfCircle = styled.div`
       border-bottom-right-radius: 21vw;
     }
   }
-`
+`;
 const Circle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: calc(1.5vw + .5rem);
+  top: calc(1.5vw + 0.5rem);
   left: 50%;
-  width: calc(3vw + 1rem);;
-  height: calc(3vw + 1rem);;
+  width: calc(3vw + 1rem);
+  height: calc(3vw + 1rem);
   border-radius: 50%;
   background-color: #fff;
   transform: translateX(-50%);
@@ -128,16 +128,16 @@ const Circle = styled.div`
     width: 18vw;
     height: 18vw;
   }
-`
+`;
 const CircleNumber = styled.span`
   position: relative;
-  font-size: calc(2vw + .75rem);
+  font-size: calc(2vw + 0.75rem);
   color: #1a1e23;
   z-index: 3;
   @media (max-width: 1023px) {
     font-size: 12vw;
   }
-`
+`;
 const InfographicText = styled.div`
   display: flex;
   flex-direction: column;
@@ -146,30 +146,30 @@ const InfographicText = styled.div`
   @media (max-width: 1023px) {
     padding-left: 0;
   }
-`
+`;
 const H3 = styled.h3`
-  font-size: calc(.6rem + .7vw);
-  text-align: ${props => props.align ? props.align : 'left'};
+  font-size: calc(0.6rem + 0.7vw);
+  text-align: ${(props) => (props.align ? props.align : 'left')};
   color: #fff;
   @media (max-width: 1023px) {
     font-size: 4vw;
   }
-`
+`;
 const P = styled.p`
-  font-size: calc(.3rem + .7vw);
-  line-height: calc(.4rem + .8vw);
+  font-size: calc(0.3rem + 0.7vw);
+  line-height: calc(0.4rem + 0.8vw);
   font-weight: 500;
-  text-align: ${props => props.align ? props.align : 'left'};
+  text-align: ${(props) => (props.align ? props.align : 'left')};
   @media (max-width: 1023px) {
     font-size: min(3vw, 1.4rem);
     line-height: min(4vw, 1.85rem);
   }
-`
+`;
 const VerticalLine = styled.div`
   position: absolute;
   top: 0;
   left: 50%;
-  width: calc(.07vw + .03rem);
+  width: calc(0.07vw + 0.03rem);
   height: calc(6vw + 2rem);
   background-color: #fff;
   transform: translateX(-50%);
@@ -178,9 +178,9 @@ const VerticalLine = styled.div`
     left: unset;
     height: 36vw;
   }
-`
+`;
 const Container = styled.div`
-  display: ${props => props.isReadMoreActive ? 'none' : 'flex'}; 
+  display: ${(props) => (props.isReadMoreActive ? 'none' : 'flex')};
   justify-content: center;
   width: 100%;
   padding-top: 9vw;
@@ -190,7 +190,7 @@ const Container = styled.div`
   @media (min-width: 1024px) {
     display: none;
   }
-`
+`;
 
 const Button = styled.button`
   display: inline-flex;
@@ -199,7 +199,7 @@ const Button = styled.button`
   position: relative;
   align-self: center;
   padding: 1rem 1.5rem;
-  border: .2vw solid #fff;
+  border: 0.2vw solid #fff;
   font-size: 1rem;
   font-weight: 600;
   text-align: center;
@@ -207,126 +207,135 @@ const Button = styled.button`
   letter-spacing: 0.05vw;
   background-color: #eb001a;
   color: #fff;
-  transition: background-color .2s ease-out, color .2s ease-out, border-color .2s ease-out;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out, border-color 0.2s ease-out;
   cursor: pointer;
   &:hover {
     background-color: #fff;
     color: #ff0420;
     border-color: #ff0420;
   }
-`
+`;
 
 const infographicParts = [
   {
-    image: <StaticImage
-      src='../images/reputacja.svg'
-      placeholder="blurred"
-      width={200}
-      height={200}
-      formats={["auto", "webp"]}
-      alt="strony internetowe reputacja"
-      transformOptions={{ fit: "cover", cropFocus: "attention" }}
-      loading='eager'
-      class={'infographic-image'}
-      />,
+    image: (
+      <StaticImage
+        src="../images/reputacja.svg"
+        placeholder="blurred"
+        width={200}
+        height={200}
+        formats={['auto', 'webp']}
+        alt="strony internetowe reputacja"
+        transformOptions={{ fit: 'cover', cropFocus: 'attention' }}
+        loading="eager"
+        class={'infographic-image'}
+      />
+    ),
     heading: 'wizerunek',
     paragraph: 'Zaimponuj klientom budując swoją reputację w sieci.'
   },
   {
-    image: <StaticImage
-      src='../images/przystepnosc.svg'
-      placeholder="blurred"
-      width={200}
-      height={200}
-      formats={["auto", "webp"]}
-      alt="dostępność stron internetowych"
-      transformOptions={{ fit: "cover", cropFocus: "attention" }}
-      loading='eager'
-      class={'infographic-image'}
-      />,
+    image: (
+      <StaticImage
+        src="../images/przystepnosc.svg"
+        placeholder="blurred"
+        width={200}
+        height={200}
+        formats={['auto', 'webp']}
+        alt="dostępność stron internetowych"
+        transformOptions={{ fit: 'cover', cropFocus: 'attention' }}
+        loading="eager"
+        class={'infographic-image'}
+      />
+    ),
     heading: 'dostępność',
     paragraph: 'Pozwól klientom przeglądać Twoją ofertę 24/7.'
   },
   {
-    image: <StaticImage
-      src='../images/reklama-online.svg'
-      placeholder="blurred"
-      width={200}
-      height={200}
-      formats={["auto", "webp"]}
-      alt="reklama w internecie"
-      transformOptions={{ fit: "cover", cropFocus: "attention" }}
-      loading='eager'
-      class={'infographic-image'}
-      />,
+    image: (
+      <StaticImage
+        src="../images/reklama-online.svg"
+        placeholder="blurred"
+        width={200}
+        height={200}
+        formats={['auto', 'webp']}
+        alt="reklama w internecie"
+        transformOptions={{ fit: 'cover', cropFocus: 'attention' }}
+        loading="eager"
+        class={'infographic-image'}
+      />
+    ),
     heading: 'marketing',
     paragraph: 'Wykorzystaj swoją stronę jako skuteczne narzędzie marketingowe.'
   },
   {
-    image: <StaticImage
-      src='../images/e-commerce.svg'
-      placeholder="blurred"
-      width={200}
-      height={200}
-      formats={["auto", "webp"]}
-      alt="magia sklepy internetowe"
-      transformOptions={{ fit: "cover", cropFocus: "attention" }}
-      loading='eager'
-      class={'infographic-image'}
-    />,
+    image: (
+      <StaticImage
+        src="../images/e-commerce.svg"
+        placeholder="blurred"
+        width={200}
+        height={200}
+        formats={['auto', 'webp']}
+        alt="magia sklepy internetowe"
+        transformOptions={{ fit: 'cover', cropFocus: 'attention' }}
+        loading="eager"
+        class={'infographic-image'}
+      />
+    ),
     heading: 'sprzedaż',
     paragraph: 'Ułatw klientom zakup Twoich usług i produktów dzięki sprzedaży online.'
   },
   {
-    image: <StaticImage
-      src='../images/zainteresowanie.svg'
-      placeholder="blurred"
-      width={200}
-      height={200}
-      formats={["auto", "webp"]}
-      alt="piekielnie szybkie www"
-      transformOptions={{ fit: "cover", cropFocus: "attention" }}
-      loading='eager'
-      class={'infographic-image'}
-    />,
+    image: (
+      <StaticImage
+        src="../images/zainteresowanie.svg"
+        placeholder="blurred"
+        width={200}
+        height={200}
+        formats={['auto', 'webp']}
+        alt="piekielnie szybkie www"
+        transformOptions={{ fit: 'cover', cropFocus: 'attention' }}
+        loading="eager"
+        class={'infographic-image'}
+      />
+    ),
     heading: 'widoczność',
     paragraph: 'Zyskaj dotatkowe zainteresowanie dzięki widoczności w wyszukiwarce Google.'
-  },
-]
+  }
+];
 
-const Infographic = ({toggleReadMore, isReadMoreActive}) => {
-
+const Infographic = ({ toggleReadMore, isReadMoreActive }) => {
   const handleClick = () => {
     toggleReadMore(!isReadMoreActive);
-  }
+  };
 
   return (
     <Wrap>
       <AboveHeading>magia internetu</AboveHeading>
       <H2>korzyści płynące z twojej witryny</H2>
       {infographicParts.map((part, i) => {
-        return <InfographicPart key={i}>
-          <ImageContainer className='infographic-image-container'>
-            {part.image}
-          </ImageContainer>
-          <Circles>
-            <HalfCircle className='infographic-half-circle'></HalfCircle>
-            <Circle>
-              <CircleNumber>{i+1}</CircleNumber>
-            </Circle>
-            <VerticalLine></VerticalLine>
-          </Circles>
-          <InfographicText className='infographic-part-text'>
-            <H3 align={ (i + 1) % 2 ? 'right' : null }>{part.heading}</H3>
-            <P align={ (i + 1) % 2 ? 'right' : null }>{part.paragraph}</P>
-          </InfographicText>
-        </InfographicPart>
+        return (
+          <InfographicPart key={i}>
+            <ImageContainer className="infographic-image-container">{part.image}</ImageContainer>
+            <Circles>
+              <HalfCircle className="infographic-half-circle"></HalfCircle>
+              <Circle>
+                <CircleNumber>{i + 1}</CircleNumber>
+              </Circle>
+              <VerticalLine></VerticalLine>
+            </Circles>
+            <InfographicText className="infographic-part-text">
+              <H3 align={(i + 1) % 2 ? 'right' : null}>{part.heading}</H3>
+              <P align={(i + 1) % 2 ? 'right' : null}>{part.paragraph}</P>
+            </InfographicText>
+          </InfographicPart>
+        );
       })}
       <Container isReadMoreActive={isReadMoreActive}>
-        <Button onClick={handleClick} >dowiedz się więcej</Button>
+        <Button onClick={handleClick}>dowiedz się więcej</Button>
       </Container>
     </Wrap>
-  )
-}
+  );
+};
 
-export default Infographic
+export default Infographic;

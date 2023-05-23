@@ -1,11 +1,12 @@
-import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import styled from 'styled-components'
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-import Header from "./header"
-import PrivacyPolicy from "../components/PrivacyPolicy"
-import "./layout.css"
+import * as React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
+import { Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
+import Header from './header';
+import PrivacyPolicy from '../components/PrivacyPolicy';
+import './layout.css';
+import PropTypes from 'prop-types';
 
 const Container = styled.div`
   display: flex;
@@ -24,14 +25,14 @@ const Container = styled.div`
       text-align: center;
     }
   }
-`
+`;
 const P = styled.p`
   display: flex;
   align-items: center;
   padding: 0;
-  font-size: calc(.6vw + .5rem);
+  font-size: calc(0.6vw + 0.5rem);
   font-weight: 800;
-  letter-spacing: .1vw;
+  letter-spacing: 0.1vw;
   a {
     margin-left: 1.5vw;
   }
@@ -41,12 +42,12 @@ const P = styled.p`
     justify-content: center;
     padding-bottom: 2rem;
     text-align: center;
-    letter-spacing: .3vw;
+    letter-spacing: 0.3vw;
     &.lower-paragraph {
       padding-bottom: 0;
     }
   }
-`
+`;
 const StyledLink = styled.span`
   > a {
     font-size: calc(.6vw + .5rem);
@@ -81,7 +82,7 @@ const StyledLink = styled.span`
       }
     }
   }
-`
+`;
 
 const Layout = ({ children, headerColor }) => {
   const data = useStaticQuery(graphql`
@@ -92,7 +93,7 @@ const Layout = ({ children, headerColor }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <>
@@ -101,7 +102,9 @@ const Layout = ({ children, headerColor }) => {
       <footer>
         <Container>
           <P>Spotkajmy się osobiście:</P>
-          <StyledLink><Link to='/strony-internetowe-ostroda'>strony internetowe Ostróda</Link></StyledLink>
+          <StyledLink>
+            <Link to="/strony-internetowe-ostroda">strony internetowe Ostróda</Link>
+          </StyledLink>
           {/* <StyledLink><Link to='/strony-internetowe-ostroda'>strony internetowe Iława</Link></StyledLink> */}
           {/* <StyledLink><Link to='/#'>strony internetowe Olsztyn</Link></StyledLink> */}
         </Container>
@@ -110,29 +113,39 @@ const Layout = ({ children, headerColor }) => {
           placeholder="blurred"
           width={60}
           height={60}
-          formats={["auto", "webp"]}
+          formats={['auto', 'webp']}
           alt="gwiazdy - przerywnik oferta"
-          transformOptions={{ fit: "cover", cropFocus: "attention" }}
-          loading='eager'
-          className='footer-stars'
+          transformOptions={{ fit: 'cover', cropFocus: 'attention' }}
+          loading="eager"
+          className="footer-stars"
         />
-        <P className='lower-paragraph'>Zdalnie - cała Polska!</P>
-          <StaticImage
-            src="../images/gwiazdy.svg"
-            placeholder="blurred"
-            width={60}
-            height={60}
-            formats={["auto", "webp"]}
-            alt="gwiazdy - przerywnik oferta"
-            transformOptions={{ fit: "cover", cropFocus: "attention" }}
-            loading='eager'
-            className='footer-stars'
-          />
-          <P>© {new Date().getFullYear()} <StyledLink className='lower-link'><Link to='/#'>magiainternetu.com</Link></StyledLink></P>
-        </footer>
-        <PrivacyPolicy />
+        <P className="lower-paragraph">Zdalnie - cała Polska!</P>
+        <StaticImage
+          src="../images/gwiazdy.svg"
+          placeholder="blurred"
+          width={60}
+          height={60}
+          formats={['auto', 'webp']}
+          alt="gwiazdy - przerywnik oferta"
+          transformOptions={{ fit: 'cover', cropFocus: 'attention' }}
+          loading="eager"
+          className="footer-stars"
+        />
+        <P>
+          © {new Date().getFullYear()}{' '}
+          <StyledLink className="lower-link">
+            <Link to="/#">magiainternetu.com</Link>
+          </StyledLink>
+        </P>
+      </footer>
+      <PrivacyPolicy />
     </>
-  )
-}
+  );
+};
 
-export default Layout
+Layout.propTypes = {
+  children: PropTypes.string,
+  headerColor: PropTypes.string
+};
+
+export default Layout;

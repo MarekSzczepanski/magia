@@ -1,24 +1,24 @@
-import * as React from "react"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import styled from 'styled-components'
-import Hero from '../components/Hero'
-import ListArticle from '../components/ListArticle'
-import Infographic from '../components/Infographic'
-import Portfolio from '../components/Portfolio'
-import WhyUs from '../components/WhyUs'
-import KnowledgeNotRequired from '../components/KnowledgeNotRequired'
-import { useState } from 'react'
+import * as React from 'react';
+import Layout from '../components/layout';
+import Seo from '../components/seo';
+import styled from 'styled-components';
+import Hero from '../components/Hero';
+import ListArticle from '../components/ListArticle';
+import Infographic from '../components/Infographic';
+import Portfolio from '../components/Portfolio';
+import WhyUs from '../components/WhyUs';
+import KnowledgeNotRequired from '../components/KnowledgeNotRequired';
+import { useState } from 'react';
 
 const WebpagesInfo = styled.section`
   position: relative;
   display: flex;
-  background-color: #eb001a;;
+  background-color: #eb001a;
   z-index: 2;
   @media (max-width: 1023px) {
     flex-direction: column-reverse;
   }
-`
+`;
 
 const allLi = [
   {
@@ -40,45 +40,54 @@ const allLi = [
   {
     strong: 'Pozycja w Google',
     text: 'Wysokie miejsce w wynikach wyszukiwania może zwiększyć zaufanie i wiarygodność w oczach potencjalnych klientów, co może przełożyć się na większą liczbę odwiedzin i zamówień. Dobra pozycja w wynikach wyszukiwania może pomóc w zwiększeniu zasięgu marki i zbudowaniu wizerunku eksperta w swojej branży.'
-  },
-]
+  }
+];
 
 const heroBarHeadings = [
   'projektowanie i tworzenie stron www w Ostródzie',
   'sklepy internetowe',
   'wordpress',
-  'strony widoczne w wyszukiwarce Google', 
+  'strony widoczne w wyszukiwarce Google',
   'serwisy i aplikacje WWW',
   'Ostróda i okolice'
-]
+];
 
-const Ostroda = ({data}) => {
+const Ostroda = () => {
   const [isReadMoreActive, toggleReadMore] = useState(false);
-  
+
   return (
     <Layout>
-      <Hero h1={'strony internetowe ostróda'} heroBarHeadings={heroBarHeadings} heroBarTransform={'-260%'} heroBarTransformMobile={'-700%'}></Hero>
+      <Hero
+        h1={'strony internetowe ostróda'}
+        heroBarHeadings={heroBarHeadings}
+        heroBarTransform={'-260%'}
+        heroBarTransformMobile={'-700%'}></Hero>
       <WebpagesInfo>
         <ListArticle allLi={allLi} isActive={isReadMoreActive}></ListArticle>
-        <Infographic toggleReadMore={toggleReadMore} isReadMoreActive={isReadMoreActive}></Infographic>
+        <Infographic
+          toggleReadMore={toggleReadMore}
+          isReadMoreActive={isReadMoreActive}></Infographic>
       </WebpagesInfo>
       <Portfolio></Portfolio>
       <WhyUs></WhyUs>
       <KnowledgeNotRequired></KnowledgeNotRequired>
-      
-    
-    {/*  <h3>Wpisy</h3>
+
+      {/*  <h3>Wpisy</h3>
     {data.allWpPost.edges.map(({ node }) => (
       <div key={node.id}>
         <p>{node.title}</p>
         {node.excerpt ? <p>{node.excerpt.replace('<p>', '').replace('</p>', '')}</p> : null}
       </div>
     ))}
-    */} 
-    
+    */}
     </Layout>
-  )
-}
+  );
+};
 
-export const Head = () => <Seo title="Strony Internetowe Ostróda" description="Strony internetowe Ostróda - tworzymy strony oraz sklepy WWW. Zadzwoń po bezpłatną poradę i wycenę. ☎ 723-062-926" />
-export default Ostroda
+export const Head = () => (
+  <Seo
+    title="Strony Internetowe Ostróda"
+    description="Strony internetowe Ostróda - tworzymy strony oraz sklepy WWW. Zadzwoń po bezpłatną poradę i wycenę. ☎ 723-062-926"
+  />
+);
+export default Ostroda;
